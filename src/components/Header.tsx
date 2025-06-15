@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <header className="bg-white shadow-sm">
       {/* Top bar */}
-      <div className="bg-white">
+      <div className="bg-white relative z-40">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between py-3">
             <div className="flex items-center space-x-2">
@@ -52,7 +52,7 @@ const Header = () => {
       </div>
 
       {/* Bottom bar - Fixed navigation */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
+      <div className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between py-4">
             <div className="flex items-center">
@@ -82,7 +82,7 @@ const Header = () => {
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="md:hidden border-t border-gray-200 bg-white fixed top-0 left-0 right-0 z-40" style={{marginTop: '60px'}}>
+        <div className="md:hidden border-t border-gray-200 bg-white sticky top-[73px] z-40">
           <div className="container mx-auto px-4 py-4">
             <nav className="flex flex-col space-y-4">
               <a href="#" className="text-gray-700 hover:text-orange-500">Accueil</a>
