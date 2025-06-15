@@ -17,6 +17,7 @@ const Index = () => {
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between py-3">
               <div className="flex items-center space-x-2">
+                <Menu size={20} className="text-gray-600 cursor-pointer hover:text-orange-500 transition-colors" />
                 <div className="w-8 h-8 rounded-full flex items-center justify-center">
                   <img src="/lovable-uploads/6647e397-6122-4d74-83a6-4b085633170b.png" alt="Miel Fondal Logo" className="w-8 h-8" />
                 </div>
@@ -32,7 +33,6 @@ const Index = () => {
                 </button>
                 
                 <div className="hidden md:flex items-center space-x-4">
-                  <Menu size={20} className="text-gray-600 cursor-pointer hover:text-orange-500 transition-colors" />
                   <span className="text-sm font-medium text-gray-600">SUIVEZ-NOUS</span>
                   <div className="flex items-center space-x-3">
                     <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">
@@ -143,10 +143,10 @@ const Index = () => {
               </Button>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <img src="/lovable-uploads/a75ce3d9-b44b-4b23-8250-9a682b5ea636.png" alt="Community work 1" className="rounded-lg" />
-              <img src="https://images.unsplash.com/photo-1594736797933-d0c3d3d69d6f?w=400&h=300&fit=crop" alt="Community work 2" className="rounded-lg" />
-              <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop" alt="Community work 3" className="rounded-lg" />
-              <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=400&h=300&fit=crop" alt="Community work 4" className="rounded-lg" />
+              <img src="/lovable-uploads/24df8bff-b8d5-40d4-b409-723adb89c88d.png" alt="Miel Fondal Logo" className="rounded-lg" />
+              <img src="/lovable-uploads/24df8bff-b8d5-40d4-b409-723adb89c88d.png" alt="Miel Fondal Logo" className="rounded-lg" />
+              <img src="/lovable-uploads/24df8bff-b8d5-40d4-b409-723adb89c88d.png" alt="Miel Fondal Logo" className="rounded-lg" />
+              <img src="/lovable-uploads/24df8bff-b8d5-40d4-b409-723adb89c88d.png" alt="Miel Fondal Logo" className="rounded-lg" />
             </div>
           </div>
         </div>
