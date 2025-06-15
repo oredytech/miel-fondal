@@ -1,27 +1,23 @@
 
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Send } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-black text-white py-12">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 rounded-full flex items-center justify-center">
-                <img src="/lovable-uploads/6647e397-6122-4d74-83a6-4b085633170b.png" alt="Miel Fondal Logo" className="w-8 h-8" />
-              </div>
-              <span className="font-bold text-xl">MIEL FONDAL</span>
+              <img src="/lovable-uploads/8ea7e9f0-b6a9-4a64-a8a6-44636ba3eb85.png" alt="Miel Fondal Logo" className="h-12 w-auto" />
             </div>
           </div>
 
           <div>
             <h3 className="font-bold mb-4">Départements</h3>
             <ul className="space-y-2 text-gray-300">
-              <li>Développement</li>
-              <li>Éducation</li>
-              <li>Environnement</li>
-              <li>Social</li>
+              <li>Watoto Radio</li>
+              <li>Injili Everywere</li>
+              <li>Tetea Mazingira</li>
             </ul>
           </div>
 
@@ -29,16 +25,20 @@ const Footer = () => {
             <h3 className="font-bold mb-4">Contacts</h3>
             <ul className="space-y-2 text-gray-300">
               <li className="flex items-center space-x-2">
-                <Mail className="w-4 h-4" />
-                <span>contact@mielfondal.org</span>
-              </li>
-              <li className="flex items-center space-x-2">
                 <Phone className="w-4 h-4" />
-                <span>+243 XX XXX XXXX</span>
+                <span>+243840349640</span>
               </li>
               <li className="flex items-center space-x-2">
-                <MapPin className="w-4 h-4" />
-                <span>Kinshasa, RDC</span>
+                <Mail className="w-4 h-4" />
+                <span>info@meilfondal.org</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <Facebook className="w-4 h-4" />
+                <span>Facebook</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <Send className="w-4 h-4" />
+                <span>Telegram</span>
               </li>
             </ul>
           </div>
@@ -54,7 +54,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-          <p>© 2024 MIEL FONDAL. TOUS DROITS RÉSERVÉS</p>
+          <p>Copyright © 2025 MIEL FONDAL | Fièrement conçu par Oredy TECHNOLOGIES</p>
         </div>
       </div>
     </footer>
