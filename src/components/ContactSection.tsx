@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -30,10 +29,9 @@ const ContactSection = () => {
             {/* Formulaire à gauche */}
             <div
               className="
-                bg-white/85 p-8 flex flex-col justify-center
+                bg-white/85 backdrop-blur-md p-8 flex flex-col justify-center
                 rounded-t-2xl md:rounded-tl-2xl md:rounded-bl-2xl md:rounded-tr-none md:rounded-br-none
                 h-full
-                relative z-20
               "
             >
               <h2 className="text-2xl font-bold text-gray-800 mb-4">Contact Rapide</h2>
@@ -78,22 +76,18 @@ const ContactSection = () => {
                   />
                 </div>
                 
-                <Button className="bg-[#d39108] hover:bg-[#b37f07] text-white w-full py-3 rounded-full font-semibold relative z-30">
+                <Button className="bg-[#d39108] hover:bg-[#b37f07] text-white w-full py-3 rounded-full font-semibold">
                   Envoyer
                 </Button>
               </form>
             </div>
 
-            {/* Image à droite sur desktop, en dessous sur mobile */}
+            {/* Image à droite - déborde par le haut du cadre, sans blur */}
             <div className="relative flex items-end justify-center overflow-visible bg-transparent">
-              {/* Desktop/tablette : image absolue, grande, déborde en haut */}
               <img 
                 src="/lovable-uploads/e895f603-183e-4d3e-aa45-0ea43b7eb058.png"
                 alt="Femme souriante utilisant un téléphone" 
-                className="
-                  hidden md:block
-                  object-cover pointer-events-none
-                "
+                className="object-cover pointer-events-none"
                 style={{
                   position: 'absolute',
                   left: 0,
@@ -104,22 +98,6 @@ const ContactSection = () => {
                   width: '100%',
                   zIndex: 20,
                   transform: 'none',
-                }}
-              />
-              {/* Mobile : image relative, plus petite, sous le formulaire */}
-              <img 
-                src="/lovable-uploads/e895f603-183e-4d3e-aa45-0ea43b7eb058.png"
-                alt=""
-                className="block md:hidden object-cover pointer-events-none"
-                style={{
-                  position: 'relative',
-                  width: '100%',
-                  maxHeight: '240px',
-                  height: 'auto',
-                  marginTop: '2rem',
-                  zIndex: 10,
-                  transform: 'none',
-                  objectPosition: 'top center',
                 }}
               />
               {/* Garde une hauteur minimum pour le conteneur et force l'alignement bas */}
