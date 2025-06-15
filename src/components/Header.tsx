@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X, Search } from 'lucide-react';
@@ -34,10 +33,10 @@ const Header = () => {
                 <Link to="/realisations" className="text-white hover:text-[#d39108] transition-colors font-medium">Réalisations</Link>
                 <Link to="/experiences" className="text-white hover:text-[#d39108] transition-colors font-medium">Expériences</Link>
                 <Link to="/projets" className="text-white hover:text-[#d39108] transition-colors font-medium">Projets</Link>
-                <a href="#" className="text-white hover:text-[#d39108] transition-colors font-medium">Blog</a>
-                <a href="#" className="text-white hover:text-[#d39108] transition-colors font-medium">Contacts</a>
-                <Button className="text-white bg-[#3e0202]">
-                  Faire un don
+                <Link to="/blog" className="text-white hover:text-[#d39108] transition-colors font-medium">Blog</Link>
+                <Link to="/contacts" className="text-white hover:text-[#d39108] transition-colors font-medium">Contacts</Link>
+                <Button asChild className="text-white bg-[#3e0202]">
+                  <Link to="/donation">Faire un don</Link>
                 </Button>
               </nav>
             </div>
@@ -54,10 +53,10 @@ const Header = () => {
               <Link to="/realisations" className="text-white hover:text-[#d39108]">Réalisations</Link>
               <Link to="/experiences" className="text-white hover:text-[#d39108]">Expériences</Link>
               <Link to="/projets" className="text-white hover:text-[#d39108]">Projets</Link>
-              <a href="#" className="text-white hover:text-[#d39108]">Blog</a>
-              <a href="#" className="text-white hover:text-[#d39108]">Contacts</a>
-              <Button className="bg-[#d39108] hover:bg-[#d39108]/90 text-white w-full">
-                Faire un don
+              <Link to="/blog" className="text-white hover:text-[#d39108]">Blog</Link>
+              <Link to="/contacts" className="text-white hover:text-[#d39108]">Contacts</Link>
+              <Button asChild className="bg-[#d39108] hover:bg-[#d39108]/90 text-white w-full">
+                <Link to="/donation">Faire un don</Link>
               </Button>
             </nav>
           </div>
