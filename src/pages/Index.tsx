@@ -1,5 +1,4 @@
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -132,7 +131,7 @@ const Index = () => {
       </header>
 
       {/* Hero Section with Background Carousel */}
-      <section className="relative bg-gray-50 py-16" style={{marginTop: '60px'}}>
+      <section className="relative py-16" style={{marginTop: '60px'}}>
         {/* Background Carousel */}
         <div className="absolute inset-0 overflow-hidden">
           <Carousel 
@@ -149,9 +148,9 @@ const Index = () => {
                     <img 
                       src={image} 
                       alt={`Background ${index + 1}`}
-                      className="w-full h-full object-cover opacity-20"
+                      className="w-full h-full object-cover opacity-70"
                     />
-                    <div className="absolute inset-0 bg-gray-50/80"></div>
+                    <div className="absolute inset-0 bg-white/40"></div>
                   </div>
                 </CarouselItem>
               ))}
@@ -162,7 +161,7 @@ const Index = () => {
         {/* Content */}
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="bg-white/90 p-8 rounded-lg shadow-lg backdrop-blur-sm">
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 Un avenir durable et inclusif pour la RDC
               </h1>
@@ -180,7 +179,9 @@ const Index = () => {
               </Button>
             </div>
             <div className="flex justify-center">
-              <img src="/lovable-uploads/24df8bff-b8d5-40d4-b409-723adb89c88d.png" alt="Miel Fondal Logo" className="rounded-lg max-w-full h-auto" />
+              <div className="bg-white/90 p-4 rounded-lg shadow-lg backdrop-blur-sm">
+                <img src="/lovable-uploads/24df8bff-b8d5-40d4-b409-723adb89c88d.png" alt="Miel Fondal Logo" className="rounded-lg max-w-full h-auto" />
+              </div>
             </div>
           </div>
         </div>
