@@ -1,8 +1,6 @@
 import { Mail, Phone, MapPin, Facebook, Send } from 'lucide-react';
-
 const Footer = () => {
-  return (
-    <footer className="bg-black text-white py-12">
+  return <footer className="bg-black text-white py-[29px]">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
@@ -52,12 +50,10 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-          <p>Copyright © 2025 MIEL FONDAL | Fièrement conçu par Oredy TECHNOLOGIES</p>
+        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 my-0 py-0">
+          <p className="py-[6px]">Copyright © 2025 MIEL FONDAL | Fièrement conçu par Oredy TECHNOLOGIES</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
