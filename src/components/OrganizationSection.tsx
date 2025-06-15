@@ -8,7 +8,7 @@ const OrganizationSection = () => {
     <section 
       className="py-16 bg-gray-100 relative overflow-hidden"
       style={{
-        backgroundImage: `url('/lovable-uploads/472bedc1-d3f1-40a1-ab00-0aebafb1cffa.png')`,
+        backgroundImage: `url('/lovable-uploads/73ec414c-7cbd-4665-bb90-6189b236d824.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
