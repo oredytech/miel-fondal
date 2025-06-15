@@ -20,11 +20,8 @@ const ContactSection = () => {
         {/* Conteneur avec bordure pour formulaire + image */}
         <div
           className="
-            border-t-8 border-l-8 border-r-8 border-b-0 
-            border-[#d39108] 
             bg-white/10 backdrop-blur-sm
             overflow-hidden rounded-3xl relative
-            md:border-8 md:border-[#d39108] md:border-solid
           "
         >
           <div className="grid md:grid-cols-2 gap-0 items-stretch min-h-[600px]">
@@ -32,9 +29,7 @@ const ContactSection = () => {
             <div
               className="
                 bg-white/85 backdrop-blur-md p-8 flex flex-col justify-center
-                border-t-8 border-l-8 border-r-8 border-b-0 border-[#d39108]
                 rounded-t-3xl
-                md:border-t-0 md:border-l-8 md:border-b-8 md:border-r-0
                 md:rounded-none md:rounded-tl-3xl md:rounded-bl-3xl
               "
             >
