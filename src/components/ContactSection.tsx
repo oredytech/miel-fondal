@@ -19,7 +19,7 @@ const ContactSection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Conteneur avec bordure pour formulaire + image */}
-        <div className="border-8 border-orange-400 bg-white/10 backdrop-blur-sm overflow-hidden rounded-3xl relative">
+        <div className="border-8 border-[#d39108] bg-white/10 backdrop-blur-sm overflow-hidden rounded-3xl relative">
           <div className="grid md:grid-cols-2 gap-0 items-stretch min-h-[600px]">
             {/* Formulaire à gauche */}
             <div className="bg-white/85 backdrop-blur-md p-8 flex flex-col justify-center rounded-l-3xl">
@@ -65,7 +65,7 @@ const ContactSection = () => {
                   />
                 </div>
                 
-                <Button className="bg-orange-500 hover:bg-orange-600 text-white w-full py-3 rounded-full font-semibold">
+                <Button className="bg-[#d39108] hover:bg-[#b37f07] text-white w-full py-3 rounded-full font-semibold">
                   Envoyer
                 </Button>
               </form>
@@ -87,3 +87,4 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
+
