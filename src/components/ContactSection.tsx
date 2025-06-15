@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -31,7 +32,7 @@ const ContactSection = () => {
               className="
                 bg-white/85 backdrop-blur-md p-8 flex flex-col justify-center
                 rounded-t-2xl md:rounded-tl-2xl md:rounded-bl-2xl md:rounded-tr-none md:rounded-br-none
-                h-full
+                h-full relative z-30
               "
             >
               <h2 className="text-2xl font-bold text-gray-800 mb-4">Contact Rapide</h2>
@@ -76,18 +77,18 @@ const ContactSection = () => {
                   />
                 </div>
                 
-                <Button className="bg-[#d39108] hover:bg-[#b37f07] text-white w-full py-3 rounded-full font-semibold">
+                <Button className="bg-[#d39108] hover:bg-[#b37f07] text-white w-full py-3 rounded-full font-semibold relative z-40">
                   Envoyer
                 </Button>
               </form>
             </div>
 
-            {/* Image à droite - déborde par le haut du cadre, sans blur */}
+            {/* Image à droite - sur mobile, elle sera en arrière-plan */}
             <div className="relative flex items-end justify-center overflow-visible bg-transparent">
               <img 
                 src="/lovable-uploads/e895f603-183e-4d3e-aa45-0ea43b7eb058.png"
                 alt="Femme souriante utilisant un téléphone" 
-                className="object-cover pointer-events-none"
+                className="object-cover pointer-events-none md:relative md:z-20"
                 style={{
                   position: 'absolute',
                   left: 0,
@@ -96,7 +97,7 @@ const ContactSection = () => {
                   height: '120%',
                   minHeight: '700px',
                   width: '100%',
-                  zIndex: 20,
+                  zIndex: 10,
                   transform: 'none',
                 }}
               />
