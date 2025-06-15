@@ -2,24 +2,27 @@ import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X, Search } from 'lucide-react';
 import { CommandDialog, CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem } from "@/components/ui/command";
+
 const HeroSection = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  return <section className="relative min-h-screen bg-gradient-to-br from-amber-100 via-amber-50 to-white">
+
+  return (
+    <section className="relative min-h-screen" style={{ backgroundColor: '#9c6b04' }}>
       {/* Background overlay with texture */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#3e2e14]/10 to-[#d39108]/5"></div>
       
       {/* Decorative elements */}
       <div className="absolute top-20 right-20 w-3 h-3 bg-[#d39108] rounded-full opacity-60 animate-pulse"></div>
       <div className="absolute top-40 right-40 w-2 h-2 bg-[#3e2e14] rounded-full opacity-40 animate-pulse" style={{
-      animationDelay: '0.5s'
-    }}></div>
+        animationDelay: '0.5s'
+      }}></div>
       <div className="absolute bottom-40 left-20 w-2.5 h-2.5 bg-[#d39108] rounded-full opacity-50 animate-pulse" style={{
-      animationDelay: '1s'
-    }}></div>
+        animationDelay: '1s'
+      }}></div>
       <div className="absolute top-60 left-40 w-1.5 h-1.5 bg-[#3e2e14] rounded-full opacity-30 animate-pulse" style={{
-      animationDelay: '1.5s'
-    }}></div>
+        animationDelay: '1.5s'
+      }}></div>
 
       {/* Integrated Header */}
       <header className="relative z-50 bg-transparent">
@@ -105,8 +108,8 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10 flex items-center" style={{
-      minHeight: 'calc(100vh - 100px)'
-    }}>
+        minHeight: 'calc(100vh - 100px)'
+      }}>
         <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
           <div className="text-[#3e2e14] space-y-8">
             <div className="space-y-2">
@@ -156,6 +159,8 @@ const HeroSection = () => {
           <div className="w-1 h-3 bg-[#d39108] rounded-full mt-2 animate-bounce"></div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;
