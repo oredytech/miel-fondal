@@ -55,7 +55,7 @@ const Index = () => {
         </div>
 
         {/* Bottom bar - Fixed navigation */}
-        <div className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200" style={{marginTop: '60px'}}>
+        <div className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between py-4">
               <div className="flex items-center">
@@ -85,7 +85,7 @@ const Index = () => {
 
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-gray-200 bg-white fixed top-0 left-0 right-0 z-40" style={{marginTop: '120px'}}>
+          <div className="md:hidden border-t border-gray-200 bg-white fixed top-0 left-0 right-0 z-40" style={{marginTop: '60px'}}>
             <div className="container mx-auto px-4 py-4">
               <nav className="flex flex-col space-y-4">
                 <a href="#" className="text-gray-700 hover:text-orange-500">Accueil</a>
@@ -142,11 +142,8 @@ const Index = () => {
                 ADHÉSION À LA TRANSFORMATION
               </Button>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <img src="/lovable-uploads/24df8bff-b8d5-40d4-b409-723adb89c88d.png" alt="Miel Fondal Logo" className="rounded-lg" />
-              <img src="/lovable-uploads/24df8bff-b8d5-40d4-b409-723adb89c88d.png" alt="Miel Fondal Logo" className="rounded-lg" />
-              <img src="/lovable-uploads/24df8bff-b8d5-40d4-b409-723adb89c88d.png" alt="Miel Fondal Logo" className="rounded-lg" />
-              <img src="/lovable-uploads/24df8bff-b8d5-40d4-b409-723adb89c88d.png" alt="Miel Fondal Logo" className="rounded-lg" />
+            <div className="flex justify-center">
+              <img src="/lovable-uploads/24df8bff-b8d5-40d4-b409-723adb89c88d.png" alt="Miel Fondal Logo" className="rounded-lg max-w-full h-auto" />
             </div>
           </div>
         </div>
