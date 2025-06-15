@@ -1,19 +1,12 @@
-
 import { Button } from "@/components/ui/button";
-
 const BlogSection = () => {
-  return (
-    <section className="py-16 bg-orange-400">
+  return <section className="py-16 bg-[#d39108]">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Articles à gauche */}
           <div className="space-y-6">
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=400&h=200&fit=crop" 
-                alt="Article 1" 
-                className="w-full h-48 object-cover"
-              />
+              <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=400&h=200&fit=crop" alt="Article 1" className="w-full h-48 object-cover" />
               <div className="p-6">
                 <h3 className="font-bold text-lg mb-3">Ceci est le titre de l'article dans le blogue Miel Fondal</h3>
                 <p className="text-sm text-gray-600 mb-4">
@@ -28,11 +21,7 @@ const BlogSection = () => {
             </div>
 
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=400&h=200&fit=crop" 
-                alt="Article 2" 
-                className="w-full h-48 object-cover"
-              />
+              <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=400&h=200&fit=crop" alt="Article 2" className="w-full h-48 object-cover" />
               <div className="p-6">
                 <h3 className="font-bold text-lg mb-3">Ceci est le titre de l'article dans le blogue Miel Fondal</h3>
                 <p className="text-sm text-gray-600 mb-4">
@@ -59,8 +48,6 @@ const BlogSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default BlogSection;
