@@ -1,11 +1,8 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Radio, Headphones, Bell, Flag } from "lucide-react";
-
 const ActionsSection = () => {
-  return (
-    <section className="py-16 bg-white">
+  return <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -17,61 +14,67 @@ const ActionsSection = () => {
         </div>
 
         <div className="grid md:grid-cols-4 gap-6">
-          <Card className="bg-gray-900 text-white" style={{ borderRadius: '10px 0 0 10px' }}>
+          <Card className="bg-gray-900 text-white" style={{
+          borderRadius: '10px 0 0 10px'
+        }}>
             <CardContent className="p-6">
               <Radio className="w-8 h-8 text-orange-500 mb-4" />
               <h3 className="font-bold mb-3">Promotion de l'éducation et de la culture</h3>
               <p className="text-sm text-gray-300 mb-4">
                 Watoto Radio : Création d'une radio dédiée aux enfants pour leur permettre de s'exprimer et d'apprendre.
               </p>
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white text-sm">
+              <Button className="text-white text-sm bg-[#d39108]">
                 Ecouter la radio
               </Button>
             </CardContent>
           </Card>
 
-          <Card className="bg-gray-900 text-white" style={{ borderRadius: '10px 0 0 10px' }}>
+          <Card className="bg-gray-900 text-white" style={{
+          borderRadius: '10px 0 0 10px'
+        }}>
             <CardContent className="p-6">
               <Headphones className="w-8 h-8 text-orange-500 mb-4" />
               <h3 className="font-bold mb-3">Sensibilisation environnementale</h3>
               <p className="text-sm text-gray-300 mb-4">
                 Tetea Mazingira est un podcast de sensibilisation environnementale
               </p>
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white text-sm">
+              <Button className="text-white text-sm bg-[#d39108]">
                 Ecouter les podcasts
               </Button>
             </CardContent>
           </Card>
 
-          <Card className="bg-gray-900 text-white" style={{ borderRadius: '10px 0 0 10px' }}>
+          <Card className="bg-gray-900 text-white" style={{
+          borderRadius: '10px 0 0 10px'
+        }}>
             <CardContent className="p-6">
               <Bell className="w-8 h-8 text-orange-500 mb-4" />
               <h3 className="font-bold mb-3">Inclusion sociale et respect des aînés</h3>
               <p className="text-sm text-gray-300 mb-4">
                 Mushakulu FM : Espace radiophonique permettant aux personnes âgées de partager leurs expériences et conseils.
               </p>
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white text-sm">
+              <Button className="text-white text-sm bg-[#d39108]">
                 Ecouter la radio
               </Button>
             </CardContent>
           </Card>
 
-          <Card className="bg-gray-900 text-white" style={{ borderRadius: '10px 0 0 10px' }}>
+          <Card className="bg-gray-900 text-white" style={{
+          borderRadius: '10px 0 0 10px'
+        }}>
             <CardContent className="p-6">
               <Flag className="w-8 h-8 text-orange-500 mb-4" />
               <h3 className="font-bold mb-3">Sécurité routière et citoyenneté active</h3>
               <p className="text-sm text-gray-300 mb-4">
                 FRESE : Campagnes pour sensibiliser à la sécurité routière.
               </p>
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white text-sm">
+              <Button className="text-white text-sm bg-[#d39108]">
                 Découvrir l'impact
               </Button>
             </CardContent>
           </Card>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ActionsSection;
