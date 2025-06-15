@@ -1,19 +1,13 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Megaphone, Book, LeafyGreen, Users } from "lucide-react";
-
 const OrganizationSection = () => {
-  return (
-    <section 
-      className="py-16 bg-gray-100 relative overflow-hidden"
-      style={{
-        backgroundImage: `url('/lovable-uploads/73ec414c-7cbd-4665-bb90-6189b236d824.png')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
-    >
+  return <section className="py-16 bg-gray-100 relative overflow-hidden" style={{
+    backgroundImage: `url('/lovable-uploads/73ec414c-7cbd-4665-bb90-6189b236d824.png')`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat'
+  }}>
       <div className="container mx-auto px-4">
         {/* Sous-section du haut */}
         <div className="flex flex-col lg:flex-row items-center justify-between mb-16">
@@ -29,7 +23,7 @@ const OrganizationSection = () => {
             </p>
           </div>
           <div className="lg:w-1/3 flex justify-center lg:justify-end">
-            <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 text-lg font-semibold">
+            <Button className="text-white px-8 py-3 text-lg font-semibold bg-[#d39108]">
               SOUTENIR NOS CAMPAGNES
             </Button>
           </div>
@@ -98,8 +92,6 @@ const OrganizationSection = () => {
           </Card>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default OrganizationSection;
