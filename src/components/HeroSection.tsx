@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { Menu, X, Search, Bee } from 'lucide-react';
+import { Menu, X, Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { CommandDialog, CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem } from "@/components/ui/command";
 
@@ -11,7 +11,7 @@ const HeroSection = () => {
 
   return (
     <section
-      className="relative min-h-screen overflow-hidden"
+      className="relative min-h-screen"
       style={{
         backgroundColor: '#9c6b04',
         backgroundImage: 'url("/lovable-uploads/2b867ad8-bf1d-4836-ba4d-2816cb1d5203.png")',
@@ -24,12 +24,6 @@ const HeroSection = () => {
       {/* Background overlay with texture */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#3e2e14]/10 to-[#d39108]/5"></div>
       
-      {/* Animated bees */}
-      <Bee className="absolute top-[15%] left-[10%] w-5 h-5 text-white/40 animate-bee-float" style={{ animationDuration: '10s' }} />
-      <Bee className="absolute top-[70%] left-[20%] w-8 h-8 text-white/30 animate-bee-float" style={{ animationDelay: '-3s', animationDuration: '12s' }} />
-      <Bee className="absolute top-[30%] right-[15%] w-6 h-6 text-white/50 animate-bee-float" style={{ animationDelay: '-6s', animationDuration: '9s' }} />
-      <Bee className="absolute bottom-[10%] right-[5%] w-4 h-4 text-white/20 animate-bee-float" style={{ animationDelay: '-9s', animationDuration: '11s' }} />
-
       {/* Decorative elements */}
       <div className="absolute top-20 right-20 w-3 h-3 bg-[#d39108] rounded-full opacity-60 animate-pulse"></div>
       <div className="absolute top-40 right-40 w-2 h-2 bg-[#3e2e14] rounded-full opacity-40 animate-pulse" style={{

@@ -84,18 +84,11 @@ export default {
 					to: {
 						height: '0'
 					}
-				},
-        'bee-float': {
-          '0%, 100%': { transform: 'translateY(0) translateX(0) rotate(-10deg)' },
-          '25%': { transform: 'translateY(-15px) translateX(10px) rotate(0deg)' },
-          '50%': { transform: 'translateY(0px) translateX(20px) rotate(10deg)' },
-          '75%': { transform: 'translateY(-10px) translateX(10px) rotate(0deg)' },
-        }
+				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out',
-        'bee-float': 'bee-float 10s ease-in-out infinite'
+				'accordion-up': 'accordion-up 0.2s ease-out'
 			}
 		}
 	},
