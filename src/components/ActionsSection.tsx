@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Radio, Headphones, Bell, Flag } from "lucide-react";
@@ -18,7 +17,7 @@ const ActionsSection = () => {
 
         <div className="grid md:grid-cols-4 gap-6">
           <Card className="bg-[#3e0202] text-white" style={{
-            borderRadius: '10px 0 0 10px'
+            borderRadius: '10px 0 10px 0'
           }}>
             <CardContent className="p-6 h-full flex flex-col justify-between">
               <div>
@@ -35,7 +34,7 @@ const ActionsSection = () => {
           </Card>
 
           <Card className="bg-[#3e0202] text-white" style={{
-            borderRadius: '10px 0 0 10px'
+            borderRadius: '10px 0 10px 0'
           }}>
             <CardContent className="p-6 h-full flex flex-col justify-between">
               <div>
@@ -52,7 +51,7 @@ const ActionsSection = () => {
           </Card>
 
           <Card className="bg-[#3e0202] text-white" style={{
-            borderRadius: '10px 0 0 10px'
+            borderRadius: '10px 0 10px 0'
           }}>
             <CardContent className="p-6 h-full flex flex-col justify-between">
               <div>
@@ -69,7 +68,7 @@ const ActionsSection = () => {
           </Card>
 
           <Card className="bg-[#3e0202] text-white" style={{
-            borderRadius: '10px 0 0 10px'
+            borderRadius: '10px 0 10px 0'
           }}>
             <CardContent className="p-6 h-full flex flex-col justify-between">
               <div>
