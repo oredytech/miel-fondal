@@ -1,4 +1,3 @@
-
 import { Mail, Phone, MapPin, Facebook, Send } from 'lucide-react';
 
 const Footer = () => {
@@ -7,8 +6,8 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <img src="/lovable-uploads/8ea7e9f0-b6a9-4a64-a8a6-44636ba3eb85.png" alt="Miel Fondal Logo" className="h-12 w-auto" />
+            <div className="mb-4">
+              <img src="/lovable-uploads/8ea7e9f0-b6a9-4a64-a8a6-44636ba3eb85.png" alt="Miel Fondal Logo" className="w-full h-auto" />
             </div>
           </div>
 
