@@ -18,7 +18,8 @@ const Blog = () => {
       id: 2,
       title: "Radio Watoto : Donner une voix aux enfants",
       excerpt: "Comment notre station de radio permet aux enfants de s'exprimer et de sensibiliser leur communauté...",
-      image: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=400&h=200&fit=crop",
+      // Remplacement par l'image fournie
+      image: "/lovable-uploads/b5bcfda5-2783-4f28-a062-cc7d0c160b92.png",
       date: "10 Janvier 2025",
       author: "Équipe Radio Watoto",
       readTime: "4 min"
@@ -36,7 +37,8 @@ const Blog = () => {
       id: 4,
       title: "Tetea Mazingira : Protéger notre environnement",
       excerpt: "Les actions concrètes que nous menons pour la protection de l'environnement en RDC...",
-      image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=200&fit=crop",
+      // Remplacement par l'image fournie
+      image: "/lovable-uploads/941d66be-e492-48a4-9d3e-0cfe8c6ddb92.png",
       date: "5 Janvier 2025",
       author: "Département Tetea",
       readTime: "7 min"
