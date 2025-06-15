@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -19,7 +18,15 @@ const ContactSection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Conteneur avec bordure pour formulaire + image */}
-        <div className="border-8 border-[#d39108] bg-white/10 backdrop-blur-sm overflow-hidden rounded-3xl relative">
+        <div
+          className="
+            border-t-8 border-l-8 border-r-8 border-b-0 
+            border-[#d39108] 
+            bg-white/10 backdrop-blur-sm
+            overflow-hidden rounded-3xl relative
+            md:border-8 md:border-[#d39108] md:border-solid
+          "
+        >
           <div className="grid md:grid-cols-2 gap-0 items-stretch min-h-[600px]">
             {/* Formulaire à gauche */}
             <div className="bg-white/85 backdrop-blur-md p-8 flex flex-col justify-center rounded-l-3xl">
@@ -87,4 +94,3 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
-
