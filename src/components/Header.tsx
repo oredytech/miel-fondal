@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X, Search } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
-import { CommandDialog, CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem } from "@/components/ui/command";
 
 const SCROLL_TRIGGER = 30;
 
@@ -135,34 +134,6 @@ const Header = () => {
           </div>
         </div>
       )}
-
-      {/* Search Dialog */}
-      <CommandDialog open={isSearchOpen} onOpenChange={setIsSearchOpen}>
-        <CommandInput placeholder="Rechercher..." />
-        <CommandList>
-          <CommandEmpty>Aucun résultat trouvé.</CommandEmpty>
-          <CommandGroup heading="Pages">
-            <CommandItem>
-              <span>Accueil</span>
-            </CommandItem>
-            <CommandItem>
-              <span>Réalisations</span>
-            </CommandItem>
-            <CommandItem>
-              <span>Expériences</span>
-            </CommandItem>
-            <CommandItem>
-              <span>Projets</span>
-            </CommandItem>
-            <CommandItem>
-              <span>Blog</span>
-            </CommandItem>
-            <CommandItem>
-              <span>Contacts</span>
-            </CommandItem>
-          </CommandGroup>
-        </CommandList>
-      </CommandDialog>
     </header>
   );
 };
