@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -14,7 +13,7 @@ const Index = () => {
       {/* Header */}
       <header className="bg-white shadow-sm">
         {/* Top bar */}
-        <div className="border-b border-gray-200">
+        <div className="bg-white">
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between py-3">
               <div className="flex items-center space-x-2">
@@ -32,55 +31,61 @@ const Index = () => {
                   {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
                 </button>
                 
-                <div className="hidden md:flex items-center space-x-3">
-                  <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">
-                    <Facebook size={18} />
-                  </a>
-                  <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">
-                    <Twitter size={18} />
-                  </a>
-                  <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">
-                    <Instagram size={18} />
-                  </a>
-                  <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">
-                    <Linkedin size={18} />
-                  </a>
+                <div className="hidden md:flex items-center space-x-4">
+                  <Menu size={20} className="text-gray-600 cursor-pointer hover:text-orange-500 transition-colors" />
+                  <span className="text-sm font-medium text-gray-600">SUIVEZ-NOUS</span>
+                  <div className="flex items-center space-x-3">
+                    <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">
+                      <Facebook size={18} />
+                    </a>
+                    <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">
+                      <Twitter size={18} />
+                    </a>
+                    <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">
+                      <Instagram size={18} />
+                    </a>
+                    <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">
+                      <Linkedin size={18} />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between py-4">
-            <div className="flex items-center">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
-                <Input 
-                  placeholder="Rechercher..." 
-                  className="pl-10 w-64 bg-gray-50 border-gray-200 focus:border-orange-500"
-                />
+        {/* Bottom bar - Fixed navigation */}
+        <div className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200" style={{marginTop: '60px'}}>
+          <div className="container mx-auto px-4">
+            <div className="flex items-center justify-between py-4">
+              <div className="flex items-center">
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
+                  <Input 
+                    placeholder="Rechercher..." 
+                    className="pl-10 w-64 bg-gray-50 border-gray-200 focus:border-orange-500"
+                  />
+                </div>
               </div>
+              
+              <nav className="hidden md:flex items-center space-x-8">
+                <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Accueil</a>
+                <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Réalisations</a>
+                <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Expériences</a>
+                <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Projets</a>
+                <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Blog</a>
+                <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Contacts</a>
+                <Button className="bg-orange-500 hover:bg-orange-600 text-white">
+                  Faire un don
+                </Button>
+              </nav>
             </div>
-            
-            <nav className="hidden md:flex items-center space-x-8">
-              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Accueil</a>
-              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Réalisations</a>
-              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Expériences</a>
-              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Projets</a>
-              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Blog</a>
-              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Contacts</a>
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white">
-                Faire un don
-              </Button>
-            </nav>
           </div>
         </div>
 
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-gray-200 bg-white">
+          <div className="md:hidden border-t border-gray-200 bg-white fixed top-0 left-0 right-0 z-40" style={{marginTop: '120px'}}>
             <div className="container mx-auto px-4 py-4">
               <nav className="flex flex-col space-y-4">
                 <a href="#" className="text-gray-700 hover:text-orange-500">Accueil</a>
@@ -93,19 +98,22 @@ const Index = () => {
                   Faire un don
                 </Button>
                 
-                <div className="flex items-center space-x-4 pt-4 border-t border-gray-200">
-                  <a href="#" className="text-gray-600 hover:text-orange-500">
-                    <Facebook size={18} />
-                  </a>
-                  <a href="#" className="text-gray-600 hover:text-orange-500">
-                    <Twitter size={18} />
-                  </a>
-                  <a href="#" className="text-gray-600 hover:text-orange-500">
-                    <Instagram size={18} />
-                  </a>
-                  <a href="#" className="text-gray-600 hover:text-orange-500">
-                    <Linkedin size={18} />
-                  </a>
+                <div className="flex flex-col space-y-4 pt-4 border-t border-gray-200">
+                  <span className="text-sm font-medium text-gray-600">SUIVEZ-NOUS</span>
+                  <div className="flex items-center space-x-4">
+                    <a href="#" className="text-gray-600 hover:text-orange-500">
+                      <Facebook size={18} />
+                    </a>
+                    <a href="#" className="text-gray-600 hover:text-orange-500">
+                      <Twitter size={18} />
+                    </a>
+                    <a href="#" className="text-gray-600 hover:text-orange-500">
+                      <Instagram size={18} />
+                    </a>
+                    <a href="#" className="text-gray-600 hover:text-orange-500">
+                      <Linkedin size={18} />
+                    </a>
+                  </div>
                 </div>
               </nav>
             </div>
@@ -113,8 +121,8 @@ const Index = () => {
         )}
       </header>
 
-      {/* Hero Section */}
-      <section className="bg-gray-50 py-16">
+      {/* Hero Section - Add margin-top to account for fixed header */}
+      <section className="bg-gray-50 py-16" style={{marginTop: '60px'}}>
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
