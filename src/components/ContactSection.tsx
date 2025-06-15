@@ -19,10 +19,10 @@ const ContactSection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Conteneur avec bordure pour formulaire + image */}
-        <div className="border-4 border-orange-400 bg-white/10 backdrop-blur-sm overflow-hidden">
+        <div className="border-8 border-orange-400 bg-white/10 backdrop-blur-sm overflow-hidden rounded-3xl relative">
           <div className="grid md:grid-cols-2 gap-0 items-stretch min-h-[600px]">
             {/* Formulaire à gauche */}
-            <div className="bg-white/85 backdrop-blur-md p-8 flex flex-col justify-center">
+            <div className="bg-white/85 backdrop-blur-md p-8 flex flex-col justify-center rounded-l-3xl">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">Contact Rapide</h2>
               <p className="text-gray-600 mb-6 text-sm leading-relaxed">
                 Nous avons besoin de savoir ce que vous pensez de Miel Fondal, n'importe 
@@ -71,12 +71,12 @@ const ContactSection = () => {
               </form>
             </div>
 
-            {/* Image à droite */}
+            {/* Image à droite - avec z-index élevé pour déborder du cadre */}
             <div className="relative flex items-center justify-center overflow-visible">
               <img 
                 src="/lovable-uploads/e895f603-183e-4d3e-aa45-0ea43b7eb058.png"
                 alt="Femme souriante utilisant un téléphone" 
-                className="max-w-full h-full object-cover transform translate-y-[-20px] scale-110"
+                className="max-w-full h-full object-cover transform translate-y-[-20px] scale-110 relative z-50"
               />
             </div>
           </div>
