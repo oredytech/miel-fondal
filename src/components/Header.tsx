@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X, Search } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { CommandDialog, CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem } from "@/components/ui/command";
 
 const SCROLL_TRIGGER = 30;
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => {
@@ -76,7 +76,7 @@ const Header = () => {
           </button>
           <div className="flex items-center space-x-4">
             <button
-              onClick={() => setIsSearchOpen(true)}
+              onClick={() => navigate('/search')}
               className={`p-2 transition-colors ${mainTextClass}`}
               aria-label="Rechercher"
             >
