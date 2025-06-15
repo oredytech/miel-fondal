@@ -22,7 +22,7 @@ const ContactSection = () => {
         <div
           className="
             border-8 border-[#d39108] 
-            bg-white/10 backdrop-blur-sm
+            bg-white/10
             overflow-hidden rounded-3xl relative
           "
         >
@@ -83,18 +83,27 @@ const ContactSection = () => {
               </form>
             </div>
 
-            {/* Image à droite - déborde par le haut du cadre */}
-            <div className="relative flex items-center justify-center overflow-visible">
+            {/* Image à droite - déborde par le haut du cadre, sans blur */}
+            <div className="relative flex items-end justify-center overflow-visible bg-transparent">
               <img 
                 src="/lovable-uploads/e895f603-183e-4d3e-aa45-0ea43b7eb058.png"
                 alt="Femme souriante utilisant un téléphone" 
-                className="max-w-full h-full object-cover relative z-50 -translate-y-14 md:-translate-y-20 drop-shadow-xl"
+                className="max-w-full object-cover"
                 style={{
-                  // S'assure que l'image déborde par le haut
+                  position: 'absolute',
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  // Déborde en haut de la bordure jaune (sort en haut, pas en bas)
+                  transform: 'translateY(-60px)', // ajuste ce "60px" selon besoin
+                  zIndex: 20,
                   maxHeight: '700px',
-                  width: 'auto',
+                  width: '100%',
+                  pointerEvents: 'none',
                 }}
               />
+              {/* pour garder une hauteur minimum et forcer le bottom align */}
+              <div style={{minHeight: '500px', width: '100%', visibility: 'hidden'}} />
             </div>
           </div>
         </div>
