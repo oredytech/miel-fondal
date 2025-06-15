@@ -5,7 +5,7 @@ const BlogSection = () => {
   return (
     <section className="py-16 bg-orange-400">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Articles à gauche */}
           <div className="space-y-6">
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
