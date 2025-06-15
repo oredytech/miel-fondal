@@ -11,7 +11,7 @@ const BlogSection = () => {
         </div>
 
         {/* Articles en grille */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <img 
               src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=400&h=200&fit=crop" 
@@ -35,6 +35,25 @@ const BlogSection = () => {
             <img 
               src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=400&h=200&fit=crop" 
               alt="Article 2" 
+              className="w-full h-48 object-cover" 
+            />
+            <div className="p-6">
+              <h3 className="font-bold text-lg mb-3">Ceci est le titre de l'article dans le blogue Miel Fondal</h3>
+              <p className="text-sm text-gray-600 mb-4">
+                Lorem ipsum dolor, sit amet consectetur adipiscing elit. Nulla 
+                earum perspiciatis ut quam molestque soluta voluptatem 
+                autem vel hic exercitationem dolore tempora, magni perferendis...
+              </p>
+              <Button variant="outline" className="bg-black text-white hover:bg-gray-800">
+                Lire plus...
+              </Button>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=400&h=200&fit=crop" 
+              alt="Article 3" 
               className="w-full h-48 object-cover" 
             />
             <div className="p-6">
