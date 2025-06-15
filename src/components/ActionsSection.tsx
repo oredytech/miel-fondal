@@ -1,8 +1,11 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Radio, Headphones, Bell, Flag } from "lucide-react";
+
 const ActionsSection = () => {
-  return <section className="py-16 bg-white">
+  return (
+    <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -14,9 +17,9 @@ const ActionsSection = () => {
         </div>
 
         <div className="grid md:grid-cols-4 gap-6">
-          <Card className="bg-gray-900 text-white" style={{
-          borderRadius: '10px 0 0 10px'
-        }}>
+          <Card className="bg-[#3e0202] text-white" style={{
+            borderRadius: '10px 0 0 10px'
+          }}>
             <CardContent className="p-6">
               <Radio className="w-8 h-8 text-orange-500 mb-4" />
               <h3 className="font-bold mb-3">Promotion de l'éducation et de la culture</h3>
@@ -29,9 +32,9 @@ const ActionsSection = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-gray-900 text-white" style={{
-          borderRadius: '10px 0 0 10px'
-        }}>
+          <Card className="bg-[#3e0202] text-white" style={{
+            borderRadius: '10px 0 0 10px'
+          }}>
             <CardContent className="p-6">
               <Headphones className="w-8 h-8 text-orange-500 mb-4" />
               <h3 className="font-bold mb-3">Sensibilisation environnementale</h3>
@@ -44,9 +47,9 @@ const ActionsSection = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-gray-900 text-white" style={{
-          borderRadius: '10px 0 0 10px'
-        }}>
+          <Card className="bg-[#3e0202] text-white" style={{
+            borderRadius: '10px 0 0 10px'
+          }}>
             <CardContent className="p-6">
               <Bell className="w-8 h-8 text-orange-500 mb-4" />
               <h3 className="font-bold mb-3">Inclusion sociale et respect des aînés</h3>
@@ -59,9 +62,9 @@ const ActionsSection = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-gray-900 text-white" style={{
-          borderRadius: '10px 0 0 10px'
-        }}>
+          <Card className="bg-[#3e0202] text-white" style={{
+            borderRadius: '10px 0 0 10px'
+          }}>
             <CardContent className="p-6">
               <Flag className="w-8 h-8 text-orange-500 mb-4" />
               <h3 className="font-bold mb-3">Sécurité routière et citoyenneté active</h3>
@@ -75,6 +78,8 @@ const ActionsSection = () => {
           </Card>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default ActionsSection;
