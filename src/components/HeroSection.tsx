@@ -117,7 +117,7 @@ const HeroSection = () => {
               </p>
               <h1 className="text-5xl font-bold leading-tight lg:text-5xl">
                 Un avenir 
-                <span className="text-gray-950"> durable</span> et 
+                <span className="text-[#3e0202]"> durable</span> et 
                 <span className="text-white"> inclusif</span>
               </h1>
             </div>
@@ -126,7 +126,7 @@ const HeroSection = () => {
           </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="text-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105 bg-amber-800 hover:bg-amber-700">
+              <Button className="text-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105 bg-[#3e0202]">
                 DÉCOUVRIR
               </Button>
               <Button variant="outline" className="border-white hover:bg-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 text-amber-800">
