@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X, Search } from 'lucide-react';
@@ -10,9 +9,16 @@ const HeroSection = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   return (
-    <section className="relative min-h-screen" style={{
-      backgroundColor: '#9c6b04'
-    }}>
+    <section
+      className="relative min-h-screen"
+      style={{
+        backgroundColor: '#9c6b04',
+        backgroundImage: 'url("/lovable-uploads/2b867ad8-bf1d-4836-ba4d-2816cb1d5203.png")',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center'
+      }}
+    >
       {/* Background overlay with texture */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#3e2e14]/10 to-[#d39108]/5"></div>
       
