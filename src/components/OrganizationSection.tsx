@@ -1,6 +1,8 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Megaphone, Book, LeafyGreen, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 const OrganizationSection = () => {
   return <section className="py-16 bg-gray-100 relative overflow-hidden" style={{
     backgroundImage: `url('/lovable-uploads/73ec414c-7cbd-4665-bb90-6189b236d824.png')`,
@@ -23,8 +25,8 @@ const OrganizationSection = () => {
             </p>
           </div>
           <div className="lg:w-1/3 flex justify-center lg:justify-end">
-            <Button className="text-white px-8 py-3 text-lg font-semibold bg-[#d39108]">
-              SOUTENIR NOS CAMPAGNES
+            <Button asChild className="text-white px-8 py-3 text-lg font-semibold bg-[#d39108]">
+              <Link to="/donation">SOUTENIR NOS CAMPAGNES</Link>
             </Button>
           </div>
         </div>

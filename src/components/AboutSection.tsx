@@ -1,4 +1,6 @@
+
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 const AboutSection = () => {
   return <section className="py-16 bg-gray-900 text-white relative">
       {/* Background image */}
@@ -21,8 +23,8 @@ const AboutSection = () => {
             </p>
           </div>
           <div className="flex justify-center">
-            <Button className="text-white px-8 py-3 bg-[#d39108]">
-              VOIR PLUS DE PROJETS
+            <Button asChild className="text-white px-8 py-3 bg-[#d39108]">
+              <Link to="/projets">VOIR PLUS DE PROJETS</Link>
             </Button>
           </div>
         </div>

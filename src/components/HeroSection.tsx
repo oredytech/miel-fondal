@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X, Search } from 'lucide-react';
@@ -59,11 +60,11 @@ const HeroSection = () => {
                   <Link to="/" className="text-white hover:text-[#d39108] transition-colors font-medium">Accueil</Link>
                   <Link to="/realisations" className="text-white hover:text-[#d39108] transition-colors font-medium">Réalisations</Link>
                   <Link to="/experiences" className="text-white hover:text-[#d39108] transition-colors font-medium">Expériences</Link>
-                  <a href="#" className="text-white hover:text-[#d39108] transition-colors font-medium">Projets</a>
-                  <a href="#" className="text-white hover:text-[#d39108] transition-colors font-medium">Blog</a>
-                  <a href="#" className="text-white hover:text-[#d39108] transition-colors font-medium">Contacts</a>
-                  <Button className="text-white bg-[#3e0202]">
-                    Faire un don
+                  <Link to="/projets" className="text-white hover:text-[#d39108] transition-colors font-medium">Projets</Link>
+                  <Link to="/blog" className="text-white hover:text-[#d39108] transition-colors font-medium">Blog</Link>
+                  <Link to="/contacts" className="text-white hover:text-[#d39108] transition-colors font-medium">Contacts</Link>
+                  <Button asChild className="text-white bg-[#3e0202]">
+                    <Link to="/donation">Faire un don</Link>
                   </Button>
                 </nav>
               </div>
@@ -76,14 +77,14 @@ const HeroSection = () => {
           <div className="md:hidden border-t border-white/20 bg-white/10 backdrop-blur-sm">
             <div className="container mx-auto px-4 py-4">
               <nav className="flex flex-col space-y-4">
-                <Link to="/" className="text-white hover:text-[#d39108]">Accueil</Link>
-                <Link to="/realisations" className="text-white hover:text-[#d39108]">Réalisations</Link>
-                <Link to="/experiences" className="text-white hover:text-[#d39108]">Expériences</Link>
-                <a href="#" className="text-white hover:text-[#d39108]">Projets</a>
-                <a href="#" className="text-white hover:text-[#d39108]">Blog</a>
-                <a href="#" className="text-white hover:text-[#d39108]">Contacts</a>
-                <Button className="bg-[#d39108] hover:bg-[#d39108]/90 text-white w-full">
-                  Faire un don
+                <Link to="/" className="text-white hover:text-[#d39108]" onClick={()=>setIsMenuOpen(false)}>Accueil</Link>
+                <Link to="/realisations" className="text-white hover:text-[#d39108]" onClick={()=>setIsMenuOpen(false)}>Réalisations</Link>
+                <Link to="/experiences" className="text-white hover:text-[#d39108]" onClick={()=>setIsMenuOpen(false)}>Expériences</Link>
+                <Link to="/projets" className="text-white hover:text-[#d39108]" onClick={()=>setIsMenuOpen(false)}>Projets</Link>
+                <Link to="/blog" className="text-white hover:text-[#d39108]" onClick={()=>setIsMenuOpen(false)}>Blog</Link>
+                <Link to="/contacts" className="text-white hover:text-[#d39108]" onClick={()=>setIsMenuOpen(false)}>Contacts</Link>
+                <Button asChild className="bg-[#d39108] hover:bg-[#d39108]/90 text-white w-full">
+                  <Link to="/donation" onClick={()=>setIsMenuOpen(false)}>Faire un don</Link>
                 </Button>
               </nav>
             </div>
@@ -140,11 +141,11 @@ const HeroSection = () => {
           </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="text-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105 bg-[#3e0202]">
-                DÉCOUVRIR
+              <Button asChild className="text-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105 bg-[#3e0202]">
+                <Link to="/realisations">DÉCOUVRIR</Link>
               </Button>
-              <Button variant="outline" className="border-white hover:bg-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 text-amber-800">
-                EN SAVOIR PLUS
+              <Button asChild variant="outline" className="border-white hover:bg-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 text-amber-800">
+                <Link to="/experiences">EN SAVOIR PLUS</Link>
               </Button>
             </div>
           </div>

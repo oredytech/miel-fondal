@@ -1,5 +1,6 @@
 
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const BlogSection = () => {
   return (
@@ -25,8 +26,8 @@ const BlogSection = () => {
                 earum perspiciatis ut quam molestque soluta voluptatem 
                 autem vel hic exercitationem dolore tempora, magni perferendis...
               </p>
-              <Button variant="outline" className="bg-black text-white hover:bg-gray-800">
-                Lire plus...
+              <Button asChild variant="outline" className="bg-black text-white hover:bg-gray-800">
+                <Link to="/blog">Lire plus...</Link>
               </Button>
             </div>
           </div>
@@ -44,8 +45,8 @@ const BlogSection = () => {
                 earum perspiciatis ut quam molestque soluta voluptatem 
                 autem vel hic exercitationem dolore tempora, magni perferendis...
               </p>
-              <Button variant="outline" className="bg-black text-white hover:bg-gray-800">
-                Lire plus...
+              <Button asChild variant="outline" className="bg-black text-white hover:bg-gray-800">
+                <Link to="/blog">Lire plus...</Link>
               </Button>
             </div>
           </div>
@@ -63,8 +64,8 @@ const BlogSection = () => {
                 earum perspiciatis ut quam molestque soluta voluptatem 
                 autem vel hic exercitationem dolore tempora, magni perferendis...
               </p>
-              <Button variant="outline" className="bg-black text-white hover:bg-gray-800">
-                Lire plus...
+              <Button asChild variant="outline" className="bg-black text-white hover:bg-gray-800">
+                <Link to="/blog">Lire plus...</Link>
               </Button>
             </div>
           </div>
@@ -72,8 +73,8 @@ const BlogSection = () => {
 
         {/* Bouton centré en bas */}
         <div className="text-center">
-          <Button className="text-white px-8 py-3 text-lg font-semibold bg-[#3e0202]">
-            PLUS D'ARTICLES
+          <Button asChild className="text-white px-8 py-3 text-lg font-semibold bg-[#3e0202]">
+            <Link to="/blog">PLUS D'ARTICLES</Link>
           </Button>
         </div>
       </div>
