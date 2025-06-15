@@ -29,7 +29,7 @@ const HeroSection = () => {
           <div className="flex items-center justify-between py-4">
             <div className="flex items-center space-x-2">
               <div className="flex items-center space-x-2">
-                <img src="/lovable-uploads/f3aacb73-1808-4aa6-b994-bed9d9f69470.png" alt="Miel Fondal Logo" className="h-16" />
+                <img alt="Miel Fondal Logo" className="h-16" src="/lovable-uploads/763dba11-3f77-4075-98de-7039fbc49676.png" />
               </div>
             </div>
             
