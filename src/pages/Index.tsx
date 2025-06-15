@@ -1,12 +1,22 @@
+
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Menu, X, ChevronDown, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Search } from 'lucide-react';
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const backgroundImages = [
+    "/lovable-uploads/4d7248bc-caa6-4831-8038-1896c5792049.png",
+    "/lovable-uploads/2c960919-608e-4678-a9a8-7b3e314ac1c4.png",
+    "/lovable-uploads/889116bc-4820-442a-8158-32c119a35a1e.png",
+    "/lovable-uploads/7071e294-2a3e-40bc-8aa4-5751254872ad.png",
+    "/lovable-uploads/8fe1c3aa-1a5c-4a14-a251-0da65db21110.png"
+  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -121,9 +131,36 @@ const Index = () => {
         )}
       </header>
 
-      {/* Hero Section - Add margin-top to account for fixed header */}
-      <section className="bg-gray-50 py-16" style={{marginTop: '60px'}}>
-        <div className="container mx-auto px-4">
+      {/* Hero Section with Background Carousel */}
+      <section className="relative bg-gray-50 py-16" style={{marginTop: '60px'}}>
+        {/* Background Carousel */}
+        <div className="absolute inset-0 overflow-hidden">
+          <Carousel 
+            className="h-full w-full"
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+          >
+            <CarouselContent className="h-full">
+              {backgroundImages.map((image, index) => (
+                <CarouselItem key={index} className="h-full">
+                  <div className="relative h-full">
+                    <img 
+                      src={image} 
+                      alt={`Background ${index + 1}`}
+                      className="w-full h-full object-cover opacity-20"
+                    />
+                    <div className="absolute inset-0 bg-gray-50/80"></div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+        </div>
+
+        {/* Content */}
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
