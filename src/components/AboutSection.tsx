@@ -1,16 +1,9 @@
-
 import { Button } from "@/components/ui/button";
-
 const AboutSection = () => {
-  return (
-    <section className="py-16 bg-gray-900 text-white relative">
+  return <section className="py-16 bg-gray-900 text-white relative">
       {/* Background image */}
       <div className="absolute inset-0 opacity-20">
-        <img 
-          src="/lovable-uploads/bfa012fb-393b-45cf-92d7-b8773ef3707c.png" 
-          alt="À propos background" 
-          className="w-full h-full object-cover"
-        />
+        <img src="/lovable-uploads/bfa012fb-393b-45cf-92d7-b8773ef3707c.png" alt="À propos background" className="w-full h-full object-cover" />
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
@@ -28,14 +21,12 @@ const AboutSection = () => {
             </p>
           </div>
           <div className="flex justify-center">
-            <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3">
+            <Button className="text-white px-8 py-3 bg-[#d39108]">
               VOIR PLUS DE PROJETS
             </Button>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutSection;
