@@ -75,11 +75,11 @@ const ContactSection = () => {
 
           {/* Image à droite */}
           <div className="flex items-center justify-center">
-            <div className="relative">
+            <div className="relative border-4 border-orange-400 overflow-visible">
               <img 
                 src="/lovable-uploads/e895f603-183e-4d3e-aa45-0ea43b7eb058.png"
                 alt="Femme souriante utilisant un téléphone" 
-                className="rounded-2xl shadow-xl max-w-full h-auto"
+                className="max-w-full h-auto transform -translate-y-4"
               />
             </div>
           </div>
