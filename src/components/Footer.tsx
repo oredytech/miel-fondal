@@ -1,7 +1,33 @@
 
 import { Mail, Phone, MapPin, Facebook, Send } from 'lucide-react';
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import { useEffect, useState } from 'react';
+
 const Footer = () => {
-  return <footer className="bg-black text-white py-[29px]">
+  const [api, setApi] = useState<any>();
+
+  // Auto-scroll effect
+  useEffect(() => {
+    if (!api) return;
+
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [api]);
+
+  const partners = [
+    { name: "UNESCO", color: "bg-blue-600" },
+    { name: "UNICEF", color: "bg-cyan-500" },
+    { name: "ONU", color: "bg-blue-800" },
+    { name: "UE", color: "bg-yellow-400" },
+    { name: "USAID", color: "bg-red-600" },
+    { name: "AFD", color: "bg-green-600" },
+  ];
+
+  return (
+    <footer className="bg-black text-white py-[29px]">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="text-center md:text-left">
@@ -43,10 +69,27 @@ const Footer = () => {
 
           <div className="text-center md:text-left">
             <h3 className="font-bold mb-4">Partenaires</h3>
-            <div className="flex space-x-2 justify-center md:justify-start">
-              <div className="w-12 h-8 bg-blue-600 rounded"></div>
-              <div className="w-12 h-8 bg-red-600 rounded"></div>
-              <div className="w-12 h-8 bg-yellow-500 rounded"></div>
+            <div className="w-full max-w-[200px] mx-auto md:mx-0">
+              <Carousel
+                setApi={setApi}
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+                className="w-full"
+              >
+                <CarouselContent className="-ml-2 md:-ml-4">
+                  {partners.map((partner, index) => (
+                    <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/3">
+                      <div className={`w-12 h-8 ${partner.color} rounded flex items-center justify-center`}>
+                        <span className="text-white text-xs font-bold">
+                          {partner.name}
+                        </span>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </Carousel>
             </div>
           </div>
         </div>
@@ -55,6 +98,8 @@ const Footer = () => {
           <p className="py-[6px]">Copyright © 2025 MIEL FONDAL | Fièrement conçu par Oredy TECHNOLOGIES</p>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;
