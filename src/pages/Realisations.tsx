@@ -1,4 +1,4 @@
-
+import Layout from '@/components/Layout';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Calendar, MapPin, Users } from "lucide-react";
@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 
 const Realisations = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <Layout>
       {/* Header avec navigation de retour */}
-      <header className="bg-[#9c6b04] py-8">
+      <section className="bg-[#9c6b04] py-16">
         <div className="container mx-auto px-4">
           <Link to="/" className="inline-flex items-center text-white hover:text-[#d39108] transition-colors mb-4">
             <ArrowLeft className="w-5 h-5 mr-2" />
@@ -19,7 +19,7 @@ const Realisations = () => {
             Découvrez les projets concrets qui transforment positivement les communautés en RDC grâce à l'engagement de Miel-Fondal.
           </p>
         </div>
-      </header>
+      </section>
 
       {/* Section principale des réalisations */}
       <section className="py-16">
@@ -264,7 +264,7 @@ const Realisations = () => {
           </div>
         </div>
       </section>
-    </div>
+    </Layout>
   );
 };
 

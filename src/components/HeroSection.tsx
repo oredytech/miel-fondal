@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X, Search } from 'lucide-react';
@@ -50,7 +51,7 @@ const HeroSection = () => {
                 <nav className="hidden md:flex items-center space-x-8">
                   <Link to="/" className="text-white hover:text-[#d39108] transition-colors font-medium">Accueil</Link>
                   <Link to="/realisations" className="text-white hover:text-[#d39108] transition-colors font-medium">Réalisations</Link>
-                  <a href="#" className="text-white hover:text-[#d39108] transition-colors font-medium">Expériences</a>
+                  <Link to="/experiences" className="text-white hover:text-[#d39108] transition-colors font-medium">Expériences</Link>
                   <a href="#" className="text-white hover:text-[#d39108] transition-colors font-medium">Projets</a>
                   <a href="#" className="text-white hover:text-[#d39108] transition-colors font-medium">Blog</a>
                   <a href="#" className="text-white hover:text-[#d39108] transition-colors font-medium">Contacts</a>
@@ -70,7 +71,7 @@ const HeroSection = () => {
               <nav className="flex flex-col space-y-4">
                 <Link to="/" className="text-white hover:text-[#d39108]">Accueil</Link>
                 <Link to="/realisations" className="text-white hover:text-[#d39108]">Réalisations</Link>
-                <a href="#" className="text-white hover:text-[#d39108]">Expériences</a>
+                <Link to="/experiences" className="text-white hover:text-[#d39108]">Expériences</Link>
                 <a href="#" className="text-white hover:text-[#d39108]">Projets</a>
                 <a href="#" className="text-white hover:text-[#d39108]">Blog</a>
                 <a href="#" className="text-white hover:text-[#d39108]">Contacts</a>
