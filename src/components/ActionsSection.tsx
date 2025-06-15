@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Wrench, Users, Heart, Wheat } from "lucide-react";
+import { Radio, Headphones, Bell, Flag } from "lucide-react";
 
 const ActionsSection = () => {
   return (
@@ -19,52 +19,52 @@ const ActionsSection = () => {
         <div className="grid md:grid-cols-4 gap-6">
           <Card className="bg-gray-900 text-white" style={{ borderRadius: '10px 0 0 10px' }}>
             <CardContent className="p-6">
-              <Wrench className="w-8 h-8 text-orange-500 mb-4" />
-              <h3 className="font-bold mb-3">Promotion et adaptation de la transformation</h3>
+              <Radio className="w-8 h-8 text-orange-500 mb-4" />
+              <h3 className="font-bold mb-3">Promotion de l'éducation et de la culture</h3>
               <p className="text-sm text-gray-300 mb-4">
-                Construction et mise en oeuvre de centaines d'initiatives de changement pour renforcer la résilience des populations locales.
+                Watoto Radio : Création d'une radio dédiée aux enfants pour leur permettre de s'exprimer et d'apprendre.
               </p>
               <Button className="bg-orange-500 hover:bg-orange-600 text-white text-sm">
-                Découvrir
+                Ecouter la radio
               </Button>
             </CardContent>
           </Card>
 
           <Card className="bg-gray-900 text-white" style={{ borderRadius: '10px 0 0 10px' }}>
             <CardContent className="p-6">
-              <Users className="w-8 h-8 text-orange-500 mb-4" />
-              <h3 className="font-bold mb-3">Renforcement capacitaire</h3>
+              <Headphones className="w-8 h-8 text-orange-500 mb-4" />
+              <h3 className="font-bold mb-3">Sensibilisation environnementale</h3>
               <p className="text-sm text-gray-300 mb-4">
-                Formation technique professionnelle pour améliorer les capacités techniques et managements de la population.
+                Tetea Mazingira est un podcast de sensibilisation environnementale
               </p>
               <Button className="bg-orange-500 hover:bg-orange-600 text-white text-sm">
-                Découvrir
+                Ecouter les podcasts
               </Button>
             </CardContent>
           </Card>
 
           <Card className="bg-gray-900 text-white" style={{ borderRadius: '10px 0 0 10px' }}>
             <CardContent className="p-6">
-              <Heart className="w-8 h-8 text-orange-500 mb-4" />
-              <h3 className="font-bold mb-3">Inclusion sociale et économique</h3>
+              <Bell className="w-8 h-8 text-orange-500 mb-4" />
+              <h3 className="font-bold mb-3">Inclusion sociale et respect des aînés</h3>
               <p className="text-sm text-gray-300 mb-4">
-                Encourager les pratiques professionnelles inclusives et créer les techniques de formation et développement.
+                Mushakulu FM : Espace radiophonique permettant aux personnes âgées de partager leurs expériences et conseils.
               </p>
               <Button className="bg-orange-500 hover:bg-orange-600 text-white text-sm">
-                Découvrir
+                Ecouter la radio
               </Button>
             </CardContent>
           </Card>
 
           <Card className="bg-gray-900 text-white" style={{ borderRadius: '10px 0 0 10px' }}>
             <CardContent className="p-6">
-              <Wheat className="w-8 h-8 text-orange-500 mb-4" />
-              <h3 className="font-bold mb-3">Sécurité alimentaire et nutrition</h3>
+              <Flag className="w-8 h-8 text-orange-500 mb-4" />
+              <h3 className="font-bold mb-3">Sécurité routière et citoyenneté active</h3>
               <p className="text-sm text-gray-300 mb-4">
-                Améliorer l'accès à une alimentation saine et nutritive grâce aux techniques agricoles durables.
+                FRESE : Campagnes pour sensibiliser à la sécurité routière.
               </p>
               <Button className="bg-orange-500 hover:bg-orange-600 text-white text-sm">
-                Découvrir
+                Découvrir l'impact
               </Button>
             </CardContent>
           </Card>
