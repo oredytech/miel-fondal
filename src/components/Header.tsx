@@ -39,7 +39,7 @@ const Header = () => {
   return (
     <header className={`${headerClass} ${headerHeightClass} flex items-center transition-all duration-300`}>
       <div className="container mx-auto px-4 flex items-center justify-between h-full">
-        <div className="flex items-center space-x-2 min-w-0">
+        <Link to="/" className="flex items-center space-x-2 min-w-0">
           {/* Logo (change selon scroll) */}
           {!scrolled && (
             <img
@@ -60,7 +60,7 @@ const Header = () => {
               <span className="ml-2 text-[#2d2d2d] font-bold text-lg whitespace-nowrap transition-all duration-300">MIEL FONDAL</span>
             </>
           )}
-        </div>
+        </Link>
 
         <div className="flex items-center space-x-4">
           <button
