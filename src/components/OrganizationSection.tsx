@@ -16,7 +16,7 @@ const OrganizationSection = () => {
     >
       <div className="container mx-auto px-4">
         {/* Sous-section du haut */}
-        <div className="flex flex-col lg:flex-row items-start justify-between mb-16">
+        <div className="flex flex-col lg:flex-row items-center justify-between mb-16">
           <div className="lg:w-2/3 mb-8 lg:mb-0">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Une organisation structurée pour un impact maximal
@@ -28,7 +28,7 @@ const OrganizationSection = () => {
               en fonction de son expertise spécifique.
             </p>
           </div>
-          <div className="lg:w-1/3 flex justify-end">
+          <div className="lg:w-1/3 flex justify-center lg:justify-end">
             <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 text-lg font-semibold">
               SOUTENIR NOS CAMPAGNES
             </Button>
