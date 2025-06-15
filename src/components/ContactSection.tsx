@@ -77,7 +77,7 @@ const ContactSection = () => {
           <div className="flex items-center justify-center">
             <div className="relative">
               <img 
-                src="/lovable-uploads/7cd93635-9dca-4b62-b8da-ed9eb5a8f609.png"
+                src="/lovable-uploads/e895f603-183e-4d3e-aa45-0ea43b7eb058.png"
                 alt="Femme souriante utilisant un téléphone" 
                 className="rounded-2xl shadow-xl max-w-full h-auto"
               />
