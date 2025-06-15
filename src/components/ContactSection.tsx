@@ -32,9 +32,10 @@ const ContactSection = () => {
             <div
               className="
                 bg-white/85 backdrop-blur-md p-8 flex flex-col justify-center
-                rounded-t-3xl border-t-8 border-l-8 border-r-8 border-b-0 border-[#d39108]
-                md:rounded-l-3xl md:rounded-tr-3xl md:rounded-tl-3xl
+                border-t-8 border-l-8 border-r-8 border-b-0 border-[#d39108]
+                rounded-t-3xl
                 md:border-t-0 md:border-l-8 md:border-b-8 md:border-r-0
+                md:rounded-none md:rounded-tl-3xl md:rounded-bl-3xl
               "
             >
               <h2 className="text-2xl font-bold text-gray-800 mb-4">Contact Rapide</h2>
