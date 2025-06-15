@@ -146,7 +146,7 @@ const HeroSection = () => {
             <div className="relative">
               {/* Main logo container */}
               <div className="bg-white/20 backdrop-blur-sm p-8 rounded-3xl border border-[#d39108]/20 shadow-2xl">
-                <img src="/lovable-uploads/24df8bff-b8d5-40d4-b409-723adb89c88d.png" alt="Miel Fondal Logo" className="w-80 h-auto rounded-2xl" />
+                <img src="/lovable-uploads/c1c07705-ab8b-4527-a942-73a62e05d2ad.png" alt="Miel Fondal Logo" className="w-80 h-auto rounded-2xl" />
               </div>
               
               {/* Floating elements */}
