@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Wrench, Users, Heart, Wheat } from "lucide-react";
 
 const ActionsSection = () => {
   return (
@@ -16,8 +17,9 @@ const ActionsSection = () => {
         </div>
 
         <div className="grid md:grid-cols-4 gap-6">
-          <Card className="bg-gray-900 text-white">
+          <Card className="bg-gray-900 text-white" style={{ borderRadius: '10px 0 0 10px' }}>
             <CardContent className="p-6">
+              <Wrench className="w-8 h-8 text-orange-500 mb-4" />
               <h3 className="font-bold mb-3">Promotion et adaptation de la transformation</h3>
               <p className="text-sm text-gray-300 mb-4">
                 Construction et mise en oeuvre de centaines d'initiatives de changement pour renforcer la résilience des populations locales.
@@ -28,8 +30,9 @@ const ActionsSection = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-gray-900 text-white">
+          <Card className="bg-gray-900 text-white" style={{ borderRadius: '10px 0 0 10px' }}>
             <CardContent className="p-6">
+              <Users className="w-8 h-8 text-orange-500 mb-4" />
               <h3 className="font-bold mb-3">Renforcement capacitaire</h3>
               <p className="text-sm text-gray-300 mb-4">
                 Formation technique professionnelle pour améliorer les capacités techniques et managements de la population.
@@ -40,8 +43,9 @@ const ActionsSection = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-gray-900 text-white">
+          <Card className="bg-gray-900 text-white" style={{ borderRadius: '10px 0 0 10px' }}>
             <CardContent className="p-6">
+              <Heart className="w-8 h-8 text-orange-500 mb-4" />
               <h3 className="font-bold mb-3">Inclusion sociale et économique</h3>
               <p className="text-sm text-gray-300 mb-4">
                 Encourager les pratiques professionnelles inclusives et créer les techniques de formation et développement.
@@ -52,8 +56,9 @@ const ActionsSection = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-gray-900 text-white">
+          <Card className="bg-gray-900 text-white" style={{ borderRadius: '10px 0 0 10px' }}>
             <CardContent className="p-6">
+              <Wheat className="w-8 h-8 text-orange-500 mb-4" />
               <h3 className="font-bold mb-3">Sécurité alimentaire et nutrition</h3>
               <p className="text-sm text-gray-300 mb-4">
                 Améliorer l'accès à une alimentation saine et nutritive grâce aux techniques agricoles durables.
