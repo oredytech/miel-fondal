@@ -20,12 +20,14 @@ const ActionsSection = () => {
           <Card className="bg-[#3e0202] text-white" style={{
             borderRadius: '10px 0 0 10px'
           }}>
-            <CardContent className="p-6">
-              <Radio className="w-8 h-8 text-orange-500 mb-4" />
-              <h3 className="font-bold mb-3">Promotion de l'éducation et de la culture</h3>
-              <p className="text-sm text-gray-300 mb-4">
-                Watoto Radio : Création d'une radio dédiée aux enfants pour leur permettre de s'exprimer et d'apprendre.
-              </p>
+            <CardContent className="p-6 h-full flex flex-col justify-between">
+              <div>
+                <Radio className="w-8 h-8 text-orange-500 mb-4" />
+                <h3 className="font-bold mb-3">Promotion de l'éducation et de la culture</h3>
+                <p className="text-sm text-gray-300 mb-4">
+                  Watoto Radio : Création d'une radio dédiée aux enfants pour leur permettre de s'exprimer et d'apprendre.
+                </p>
+              </div>
               <Button className="text-white text-sm bg-[#d39108]">
                 Ecouter la radio
               </Button>
@@ -35,12 +37,14 @@ const ActionsSection = () => {
           <Card className="bg-[#3e0202] text-white" style={{
             borderRadius: '10px 0 0 10px'
           }}>
-            <CardContent className="p-6">
-              <Headphones className="w-8 h-8 text-orange-500 mb-4" />
-              <h3 className="font-bold mb-3">Sensibilisation environnementale</h3>
-              <p className="text-sm text-gray-300 mb-4">
-                Tetea Mazingira est un podcast de sensibilisation environnementale
-              </p>
+            <CardContent className="p-6 h-full flex flex-col justify-between">
+              <div>
+                <Headphones className="w-8 h-8 text-orange-500 mb-4" />
+                <h3 className="font-bold mb-3">Sensibilisation environnementale</h3>
+                <p className="text-sm text-gray-300 mb-4">
+                  Tetea Mazingira est un podcast de sensibilisation environnementale
+                </p>
+              </div>
               <Button className="text-white text-sm bg-[#d39108]">
                 Ecouter les podcasts
               </Button>
@@ -50,12 +54,14 @@ const ActionsSection = () => {
           <Card className="bg-[#3e0202] text-white" style={{
             borderRadius: '10px 0 0 10px'
           }}>
-            <CardContent className="p-6">
-              <Bell className="w-8 h-8 text-orange-500 mb-4" />
-              <h3 className="font-bold mb-3">Inclusion sociale et respect des aînés</h3>
-              <p className="text-sm text-gray-300 mb-4">
-                Mushakulu FM : Espace radiophonique permettant aux personnes âgées de partager leurs expériences et conseils.
-              </p>
+            <CardContent className="p-6 h-full flex flex-col justify-between">
+              <div>
+                <Bell className="w-8 h-8 text-orange-500 mb-4" />
+                <h3 className="font-bold mb-3">Inclusion sociale et respect des aînés</h3>
+                <p className="text-sm text-gray-300 mb-4">
+                  Mushakulu FM : Espace radiophonique permettant aux personnes âgées de partager leurs expériences et conseils.
+                </p>
+              </div>
               <Button className="text-white text-sm bg-[#d39108]">
                 Ecouter la radio
               </Button>
@@ -65,12 +71,14 @@ const ActionsSection = () => {
           <Card className="bg-[#3e0202] text-white" style={{
             borderRadius: '10px 0 0 10px'
           }}>
-            <CardContent className="p-6">
-              <Flag className="w-8 h-8 text-orange-500 mb-4" />
-              <h3 className="font-bold mb-3">Sécurité routière et citoyenneté active</h3>
-              <p className="text-sm text-gray-300 mb-4">
-                FRESE : Campagnes pour sensibiliser à la sécurité routière.
-              </p>
+            <CardContent className="p-6 h-full flex flex-col justify-between">
+              <div>
+                <Flag className="w-8 h-8 text-orange-500 mb-4" />
+                <h3 className="font-bold mb-3">Sécurité routière et citoyenneté active</h3>
+                <p className="text-sm text-gray-300 mb-4">
+                  FRESE : Campagnes pour sensibiliser à la sécurité routière.
+                </p>
+              </div>
               <Button className="text-white text-sm bg-[#d39108]">
                 Découvrir l'impact
               </Button>
