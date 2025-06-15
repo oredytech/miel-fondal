@@ -113,7 +113,7 @@ const HeroSection = () => {
               <p className="text-[#d39108] text-sm uppercase tracking-wider font-medium">
                 NOTRE MISSION
               </p>
-              <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
+              <h1 className="text-5xl font-bold leading-tight lg:text-5xl">
                 Un avenir 
                 <span className="text-[#d39108]"> durable</span> et 
                 <span className="text-[#3e2e14]"> inclusif</span>
