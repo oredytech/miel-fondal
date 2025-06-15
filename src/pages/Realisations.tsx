@@ -25,12 +25,12 @@ const Realisations = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Réalisation 1 */}
+            {/* Réalisation 1 : Watoto Radio */}
             <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow" style={{
               borderRadius: '10px 0 10px 0'
             }}>
               <img 
-                src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=400&h=250&fit=crop"
+                src="/lovable-uploads/b5bcfda5-2783-4f28-a062-cc7d0c160b92.png"
                 alt="Watoto Radio"
                 className="w-full h-48 object-cover"
               />
@@ -57,12 +57,12 @@ const Realisations = () => {
               </CardContent>
             </Card>
 
-            {/* Réalisation 2 */}
+            {/* Réalisation 2 : Tetea Mazingira */}
             <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow" style={{
               borderRadius: '10px 0 10px 0'
             }}>
               <img 
-                src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=250&fit=crop"
+                src="/lovable-uploads/941d66be-e492-48a4-9d3e-0cfe8c6ddb92.png"
                 alt="Tetea Mazingira"
                 className="w-full h-48 object-cover"
               />
@@ -89,12 +89,12 @@ const Realisations = () => {
               </CardContent>
             </Card>
 
-            {/* Réalisation 3 */}
+            {/* Réalisation 3 : Mushakulu FM */}
             <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow" style={{
               borderRadius: '10px 0 10px 0'
             }}>
               <img 
-                src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=400&h=250&fit=crop"
+                src="/lovable-uploads/d2a5b61d-b86c-49d2-9c79-02e164703647.png"
                 alt="Mushakulu FM"
                 className="w-full h-48 object-cover"
               />
@@ -121,12 +121,12 @@ const Realisations = () => {
               </CardContent>
             </Card>
 
-            {/* Réalisation 4 */}
+            {/* Réalisation 4 : FRESE - Sécurité Routière */}
             <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow" style={{
               borderRadius: '10px 0 10px 0'
             }}>
               <img 
-                src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=250&fit=crop"
+                src="/lovable-uploads/d2a5b61d-b86c-49d2-9c79-02e164703647.png"
                 alt="FRESE"
                 className="w-full h-48 object-cover"
               />
@@ -153,12 +153,12 @@ const Realisations = () => {
               </CardContent>
             </Card>
 
-            {/* Réalisation 5 */}
+            {/* Réalisation 5 : Formation Leadership Jeunes */}
             <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow" style={{
               borderRadius: '10px 0 10px 0'
             }}>
               <img 
-                src="https://images.unsplash.com/photo-1509909756405-be0199881695?w=400&h=250&fit=crop"
+                src="/lovable-uploads/d2a5b61d-b86c-49d2-9c79-02e164703647.png"
                 alt="Formation jeunes"
                 className="w-full h-48 object-cover"
               />
@@ -185,12 +185,12 @@ const Realisations = () => {
               </CardContent>
             </Card>
 
-            {/* Réalisation 6 */}
+            {/* Réalisation 6 : Projet Eau Potable */}
             <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow" style={{
               borderRadius: '10px 0 10px 0'
             }}>
               <img 
-                src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=250&fit=crop"
+                src="/lovable-uploads/d2a5b61d-b86c-49d2-9c79-02e164703647.png"
                 alt="Projet communautaire"
                 className="w-full h-48 object-cover"
               />
