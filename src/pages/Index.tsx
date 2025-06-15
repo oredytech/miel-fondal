@@ -26,7 +26,7 @@ const Index = () => {
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between py-3">
               <div className="flex items-center space-x-2">
-                <Menu size={20} className="text-gray-600 cursor-pointer hover:text-orange-500 transition-colors" />
+                <Menu size={20} className="hidden md:block text-gray-600 cursor-pointer hover:text-orange-500 transition-colors" />
                 <div className="w-8 h-8 rounded-full flex items-center justify-center">
                   <img src="/lovable-uploads/6647e397-6122-4d74-83a6-4b085633170b.png" alt="Miel Fondal Logo" className="w-8 h-8" />
                 </div>
@@ -207,7 +207,7 @@ const Index = () => {
               </Button>
             </div>
             <div>
-              <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=400&fit=crop" alt="About us" className="rounded-lg" />
+              <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=600&h=400&fit=crop" alt="About us" className="rounded-lg" />
             </div>
           </div>
         </div>
