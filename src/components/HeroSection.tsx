@@ -1,29 +1,27 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X, Search } from 'lucide-react';
 import { CommandDialog, CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem } from "@/components/ui/command";
-
 const HeroSection = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-
-  return (
-    <section className="relative min-h-screen" style={{ backgroundColor: '#9c6b04' }}>
+  return <section className="relative min-h-screen" style={{
+    backgroundColor: '#9c6b04'
+  }}>
       {/* Background overlay with texture */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#3e2e14]/10 to-[#d39108]/5"></div>
       
       {/* Decorative elements */}
       <div className="absolute top-20 right-20 w-3 h-3 bg-[#d39108] rounded-full opacity-60 animate-pulse"></div>
       <div className="absolute top-40 right-40 w-2 h-2 bg-[#3e2e14] rounded-full opacity-40 animate-pulse" style={{
-        animationDelay: '0.5s'
-      }}></div>
+      animationDelay: '0.5s'
+    }}></div>
       <div className="absolute bottom-40 left-20 w-2.5 h-2.5 bg-[#d39108] rounded-full opacity-50 animate-pulse" style={{
-        animationDelay: '1s'
-      }}></div>
+      animationDelay: '1s'
+    }}></div>
       <div className="absolute top-60 left-40 w-1.5 h-1.5 bg-[#3e2e14] rounded-full opacity-30 animate-pulse" style={{
-        animationDelay: '1.5s'
-      }}></div>
+      animationDelay: '1.5s'
+    }}></div>
 
       {/* Integrated Header */}
       <header className="relative z-50 bg-transparent">
@@ -52,7 +50,7 @@ const HeroSection = () => {
                   <a href="#" className="text-white hover:text-[#d39108] transition-colors font-medium">Projets</a>
                   <a href="#" className="text-white hover:text-[#d39108] transition-colors font-medium">Blog</a>
                   <a href="#" className="text-white hover:text-[#d39108] transition-colors font-medium">Contacts</a>
-                  <Button className="bg-[#d39108] hover:bg-[#d39108]/90 text-white">
+                  <Button className="text-white bg-[#3e0202]">
                     Faire un don
                   </Button>
                 </nav>
@@ -109,17 +107,17 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10 flex items-center" style={{
-        minHeight: 'calc(100vh - 100px)'
-      }}>
+      minHeight: 'calc(100vh - 100px)'
+    }}>
         <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
           <div className="text-white space-y-8">
             <div className="space-y-2">
-              <p className="text-[#d39108] text-sm uppercase tracking-wider font-medium">
+              <p className="text-sm uppercase tracking-wider font-medium text-slate-200">
                 NOTRE MISSION
               </p>
               <h1 className="text-5xl font-bold leading-tight lg:text-5xl">
                 Un avenir 
-                <span className="text-[#d39108]"> durable</span> et 
+                <span className="text-gray-950"> durable</span> et 
                 <span className="text-white"> inclusif</span>
               </h1>
             </div>
@@ -128,10 +126,10 @@ const HeroSection = () => {
           </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-[#d39108] hover:bg-[#d39108]/90 text-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105">
+              <Button className="text-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105 bg-amber-800 hover:bg-amber-700">
                 DÉCOUVRIR
               </Button>
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-[#9c6b04] px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300">
+              <Button variant="outline" className="border-white hover:bg-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 text-amber-800">
                 EN SAVOIR PLUS
               </Button>
             </div>
@@ -160,8 +158,6 @@ const HeroSection = () => {
           <div className="w-1 h-3 bg-[#d39108] rounded-full mt-2 animate-bounce"></div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
