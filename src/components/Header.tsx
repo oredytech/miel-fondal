@@ -33,7 +33,7 @@ const Header = () => {
                 <Link to="/" className="text-white hover:text-[#d39108] transition-colors font-medium">Accueil</Link>
                 <Link to="/realisations" className="text-white hover:text-[#d39108] transition-colors font-medium">Réalisations</Link>
                 <Link to="/experiences" className="text-white hover:text-[#d39108] transition-colors font-medium">Expériences</Link>
-                <a href="#" className="text-white hover:text-[#d39108] transition-colors font-medium">Projets</a>
+                <Link to="/projets" className="text-white hover:text-[#d39108] transition-colors font-medium">Projets</Link>
                 <a href="#" className="text-white hover:text-[#d39108] transition-colors font-medium">Blog</a>
                 <a href="#" className="text-white hover:text-[#d39108] transition-colors font-medium">Contacts</a>
                 <Button className="text-white bg-[#3e0202]">
@@ -53,7 +53,7 @@ const Header = () => {
               <Link to="/" className="text-white hover:text-[#d39108]">Accueil</Link>
               <Link to="/realisations" className="text-white hover:text-[#d39108]">Réalisations</Link>
               <Link to="/experiences" className="text-white hover:text-[#d39108]">Expériences</Link>
-              <a href="#" className="text-white hover:text-[#d39108]">Projets</a>
+              <Link to="/projets" className="text-white hover:text-[#d39108]">Projets</Link>
               <a href="#" className="text-white hover:text-[#d39108]">Blog</a>
               <a href="#" className="text-white hover:text-[#d39108]">Contacts</a>
               <Button className="bg-[#d39108] hover:bg-[#d39108]/90 text-white w-full">
