@@ -29,7 +29,14 @@ const ContactSection = () => {
         >
           <div className="grid md:grid-cols-2 gap-0 items-stretch min-h-[600px]">
             {/* Formulaire à gauche */}
-            <div className="bg-white/85 backdrop-blur-md p-8 flex flex-col justify-center rounded-l-3xl">
+            <div
+              className="
+                bg-white/85 backdrop-blur-md p-8 flex flex-col justify-center
+                rounded-t-3xl border-t-8 border-l-8 border-r-8 border-b-0 border-[#d39108]
+                md:rounded-l-3xl md:rounded-tr-3xl md:rounded-tl-3xl
+                md:border-t-0 md:border-l-8 md:border-b-8 md:border-r-0
+              "
+            >
               <h2 className="text-2xl font-bold text-gray-800 mb-4">Contact Rapide</h2>
               <p className="text-gray-600 mb-6 text-sm leading-relaxed">
                 Nous avons besoin de savoir ce que vous pensez de Miel Fondal, n'importe 
