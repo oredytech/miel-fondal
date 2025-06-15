@@ -1,4 +1,5 @@
 
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -83,26 +84,16 @@ const ContactSection = () => {
               </form>
             </div>
 
-            {/* Image à droite - sur mobile, elle sera en arrière-plan */}
-            <div className="relative flex items-end justify-center overflow-visible bg-transparent">
+            {/* Image à droite - visible sur desktop et mobile */}
+            <div className="relative flex items-end justify-center overflow-hidden bg-transparent">
               <img 
                 src="/lovable-uploads/e895f603-183e-4d3e-aa45-0ea43b7eb058.png"
                 alt="Femme souriante utilisant un téléphone" 
-                className="object-cover pointer-events-none md:relative md:z-20"
+                className="object-cover pointer-events-none w-full h-full md:absolute md:inset-0"
                 style={{
-                  position: 'absolute',
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  height: '120%',
-                  minHeight: '700px',
-                  width: '100%',
-                  zIndex: 10,
-                  transform: 'none',
+                  minHeight: '400px',
                 }}
               />
-              {/* Garde une hauteur minimum pour le conteneur et force l'alignement bas */}
-              <div style={{minHeight: '500px', width: '100%', visibility: 'hidden'}} />
             </div>
           </div>
         </div>
@@ -112,3 +103,4 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
+
