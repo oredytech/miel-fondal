@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 const ContactSection = () => {
   return (
     <section 
-      className="py-16 relative overflow-hidden"
+      className="py-16 relative overflow-hidden min-h-[650px]"
       style={{
         backgroundImage: 'url(/lovable-uploads/ccd3aed2-3947-4e80-8711-38ed4397853f.png)',
         backgroundSize: 'cover',
@@ -26,7 +26,7 @@ const ContactSection = () => {
             overflow-hidden rounded-3xl relative
           "
         >
-          <div className="grid md:grid-cols-2 gap-0 items-stretch min-h-[600px]">
+          <div className="grid md:grid-cols-2 gap-0 items-stretch min-h-[600px] relative">
             {/* Formulaire à gauche */}
             <div
               className="
@@ -84,9 +84,9 @@ const ContactSection = () => {
               </form>
             </div>
 
-            {/* Image à droite sur desktop, en dessous sur mobile */}
-            <div className="relative flex items-end justify-center overflow-visible bg-transparent">
-              {/* Desktop/tablette : image absolue, grande, déborde en haut */}
+            {/* Image à droite sur desktop / En arrière-plan sur mobile */}
+            <div className="relative flex items-end justify-center overflow-visible bg-transparent min-h-[500px]">
+              {/* Desktop : image absolue grande qui déborde en haut */}
               <img 
                 src="/lovable-uploads/e895f603-183e-4d3e-aa45-0ea43b7eb058.png"
                 alt="Femme souriante utilisant un téléphone" 
@@ -106,20 +106,22 @@ const ContactSection = () => {
                   transform: 'none',
                 }}
               />
-              {/* Mobile : image relative, plus petite, sous le formulaire */}
+              {/* Mobile : image très grande, absolument positionnée en fond, sous le contenu */}
               <img 
                 src="/lovable-uploads/e895f603-183e-4d3e-aa45-0ea43b7eb058.png"
                 alt=""
                 className="block md:hidden object-cover pointer-events-none"
                 style={{
-                  position: 'relative',
+                  position: 'absolute',
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
                   width: '100%',
-                  maxHeight: '240px',
-                  height: 'auto',
-                  marginTop: '2rem',
+                  height: '140%',
+                  minHeight: '540px',
                   zIndex: 10,
-                  transform: 'none',
                   objectPosition: 'top center',
+                  transform: 'translateY(-25%)',
                 }}
               />
               {/* Garde une hauteur minimum pour le conteneur et force l'alignement bas */}
@@ -133,3 +135,4 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
+
