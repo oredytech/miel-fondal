@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -84,11 +85,26 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'bee-float': {
+					'0%, 100%': {
+						transform: 'translateY(0px) translateX(0px) rotate(0deg)'
+					},
+					'25%': {
+						transform: 'translateY(-10px) translateX(5px) rotate(2deg)'
+					},
+					'50%': {
+						transform: 'translateY(-5px) translateX(-8px) rotate(-1deg)'
+					},
+					'75%': {
+						transform: 'translateY(-15px) translateX(3px) rotate(1deg)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'bee-float': 'bee-float 6s ease-in-out infinite'
 			}
 		}
 	},

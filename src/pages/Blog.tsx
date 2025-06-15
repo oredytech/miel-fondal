@@ -1,4 +1,3 @@
-
 import Layout from '@/components/Layout';
 import { Button } from "@/components/ui/button";
 import { Calendar, User, Clock } from 'lucide-react';
@@ -18,7 +17,6 @@ const Blog = () => {
       id: 2,
       title: "Radio Watoto : Donner une voix aux enfants",
       excerpt: "Comment notre station de radio permet aux enfants de s'exprimer et de sensibiliser leur communauté...",
-      // Remplacement par l'image fournie
       image: "/lovable-uploads/b5bcfda5-2783-4f28-a062-cc7d0c160b92.png",
       date: "10 Janvier 2025",
       author: "Équipe Radio Watoto",
@@ -37,7 +35,6 @@ const Blog = () => {
       id: 4,
       title: "Tetea Mazingira : Protéger notre environnement",
       excerpt: "Les actions concrètes que nous menons pour la protection de l'environnement en RDC...",
-      // Remplacement par l'image fournie
       image: "/lovable-uploads/941d66be-e492-48a4-9d3e-0cfe8c6ddb92.png",
       date: "5 Janvier 2025",
       author: "Département Tetea",
@@ -67,8 +64,28 @@ const Blog = () => {
     <Layout>
       <div className="min-h-screen bg-gray-50">
         {/* Header */}
-        <section className="bg-[#9c6b04] py-20">
-          <div className="container mx-auto px-4 text-center">
+        <section className="bg-[#9c6b04] py-20 relative overflow-hidden">
+          {/* Abeilles animées */}
+          <div className="absolute top-20 right-20 w-4 h-4 text-[#d39108] animate-bee-float opacity-80">
+            🐝
+          </div>
+          <div className="absolute top-40 left-32 w-3 h-3 text-[#d39108] animate-bee-float opacity-60" style={{
+            animationDelay: '2s'
+          }}>
+            🐝
+          </div>
+          <div className="absolute bottom-32 right-40 w-3 h-3 text-[#d39108] animate-bee-float opacity-70" style={{
+            animationDelay: '4s'
+          }}>
+            🐝
+          </div>
+          <div className="absolute top-60 left-20 w-4 h-4 text-[#d39108] animate-bee-float opacity-50" style={{
+            animationDelay: '1s'
+          }}>
+            🐝
+          </div>
+          
+          <div className="container mx-auto px-4 text-center relative z-10">
             <h1 className="text-5xl font-bold text-white mb-4">Blog Miel Fondal</h1>
             <p className="text-xl text-white/90 max-w-2xl mx-auto">
               Suivez nos actualités, découvrez nos projets et plongez dans nos réflexions 

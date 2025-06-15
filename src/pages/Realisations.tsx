@@ -8,8 +8,33 @@ const Realisations = () => {
   return (
     <Layout>
       {/* Header avec navigation de retour */}
-      <section className="bg-[#9c6b04] py-16">
-        <div className="container mx-auto px-4">
+      <section className="bg-[#9c6b04] py-16 relative overflow-hidden">
+        {/* Abeilles animées */}
+        <div className="absolute top-20 right-20 w-4 h-4 text-[#d39108] animate-bee-float opacity-80">
+          🐝
+        </div>
+        <div className="absolute top-40 left-32 w-3 h-3 text-[#d39108] animate-bee-float opacity-60" style={{
+          animationDelay: '2s'
+        }}>
+          🐝
+        </div>
+        <div className="absolute bottom-32 right-40 w-3 h-3 text-[#d39108] animate-bee-float opacity-70" style={{
+          animationDelay: '4s'
+        }}>
+          🐝
+        </div>
+        <div className="absolute top-60 left-20 w-4 h-4 text-[#d39108] animate-bee-float opacity-50" style={{
+          animationDelay: '1s'
+        }}>
+          🐝
+        </div>
+        <div className="absolute bottom-20 left-1/2 w-3 h-3 text-[#d39108] animate-bee-float opacity-80" style={{
+          animationDelay: '3s'
+        }}>
+          🐝
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <Link to="/" className="inline-flex items-center text-white hover:text-[#d39108] transition-colors mb-4">
             <ArrowLeft className="w-5 h-5 mr-2" />
             Retour à l'accueil

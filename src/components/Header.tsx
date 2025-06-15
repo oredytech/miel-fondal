@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X, Search } from 'lucide-react';
@@ -34,6 +33,9 @@ const Header = () => {
   const mainTextClass = scrolled
     ? "text-[#2d2d2d] hover:text-[#9c6b04]"
     : "text-white hover:text-[#d39108]";
+
+  // Classe pour le menu mobile - toujours lisible
+  const mobileMenuTextClass = "text-[#2d2d2d] hover:text-[#9c6b04]";
 
   return (
     <header className={`${headerClass} ${headerHeightClass} flex items-center transition-all duration-300`}>
@@ -109,26 +111,22 @@ const Header = () => {
       {/* Mobile menu */}
       {isMenuOpen && (
         <div
-          className={`md:hidden border-t bg-white/90 border-gray-200 absolute top-full left-0 w-full animate-fade-in shadow-lg z-40`}
+          className={`md:hidden border-t bg-white/95 border-gray-200 absolute top-full left-0 w-full animate-fade-in shadow-lg z-40 backdrop-blur-sm`}
         >
           <div className="container mx-auto px-4 py-4">
             <nav className="flex flex-col space-y-4">
-              <Link to="/" className={`${mainTextClass} transition-colors`} onClick={()=>setIsMenuOpen(false)}>Accueil</Link>
-              <Link to="/realisations" className={`${mainTextClass} transition-colors`} onClick={()=>setIsMenuOpen(false)}>Réalisations</Link>
-              <Link to="/experiences" className={`${mainTextClass} transition-colors`} onClick={()=>setIsMenuOpen(false)}>Expériences</Link>
-              <Link to="/projets" className={`${mainTextClass} transition-colors`} onClick={()=>setIsMenuOpen(false)}>Projets</Link>
-              <Link to="/blog" className={`${mainTextClass} transition-colors`} onClick={()=>setIsMenuOpen(false)}>Blog</Link>
-              <Link to="/contacts" className={`${mainTextClass} transition-colors`} onClick={()=>setIsMenuOpen(false)}>Contacts</Link>
+              <Link to="/" className={`${mobileMenuTextClass} transition-colors`} onClick={()=>setIsMenuOpen(false)}>Accueil</Link>
+              <Link to="/realisations" className={`${mobileMenuTextClass} transition-colors`} onClick={()=>setIsMenuOpen(false)}>Réalisations</Link>
+              <Link to="/experiences" className={`${mobileMenuTextClass} transition-colors`} onClick={()=>setIsMenuOpen(false)}>Expériences</Link>
+              <Link to="/projets" className={`${mobileMenuTextClass} transition-colors`} onClick={()=>setIsMenuOpen(false)}>Projets</Link>
+              <Link to="/blog" className={`${mobileMenuTextClass} transition-colors`} onClick={()=>setIsMenuOpen(false)}>Blog</Link>
+              <Link to="/contacts" className={`${mobileMenuTextClass} transition-colors`} onClick={()=>setIsMenuOpen(false)}>Contacts</Link>
               <Button
                 asChild
-                className={`w-full transition-all font-semibold ${
-                  scrolled
-                    ? "bg-[#9c6b04] text-white hover:bg-[#d39108]"
-                    : "bg-[#d39108] text-white"
-                }`}
+                className={`w-full transition-all font-semibold bg-[#9c6b04] text-white hover:bg-[#d39108]`}
                 style={{
-                  minHeight: scrolled ? 32 : 40,
-                  fontSize: scrolled ? '1rem' : '1.1rem'
+                  minHeight: 40,
+                  fontSize: '1rem'
                 }}
               >
                 <Link to="/donation">Faire un don</Link>
@@ -170,4 +168,3 @@ const Header = () => {
 };
 
 export default Header;
-
