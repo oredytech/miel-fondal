@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -88,21 +87,20 @@ const ContactSection = () => {
               <img 
                 src="/lovable-uploads/e895f603-183e-4d3e-aa45-0ea43b7eb058.png"
                 alt="Femme souriante utilisant un téléphone" 
-                className="max-w-full object-cover"
+                className="object-cover pointer-events-none"
                 style={{
                   position: 'absolute',
                   left: 0,
                   right: 0,
                   bottom: 0,
-                  // Déborde en haut de la bordure jaune (sort en haut, pas en bas)
-                  transform: 'translateY(-60px)', // ajuste ce "60px" selon besoin
-                  zIndex: 20,
-                  maxHeight: '700px',
+                  height: '120%',
+                  minHeight: '700px',
                   width: '100%',
-                  pointerEvents: 'none',
+                  zIndex: 20,
+                  transform: 'none',
                 }}
               />
-              {/* pour garder une hauteur minimum et forcer le bottom align */}
+              {/* Garde une hauteur minimum pour le conteneur et force l'alignement bas */}
               <div style={{minHeight: '500px', width: '100%', visibility: 'hidden'}} />
             </div>
           </div>
