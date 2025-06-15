@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X, Search } from 'lucide-react';
@@ -35,22 +36,22 @@ const HeroSection = () => {
             </div>
             
             <div className="flex items-center space-x-4">
-              <button className="md:hidden text-[#3e2e14]" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              <button className="md:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                 {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
               </button>
               
               <div className="flex items-center space-x-4">
-                <button onClick={() => setIsSearchOpen(true)} className="p-2 text-[#3e2e14] hover:text-[#d39108] transition-colors">
+                <button onClick={() => setIsSearchOpen(true)} className="p-2 text-white hover:text-[#d39108] transition-colors">
                   <Search size={20} />
                 </button>
                 
                 <nav className="hidden md:flex items-center space-x-8">
-                  <a href="#" className="text-[#3e2e14] hover:text-[#d39108] transition-colors font-medium">Accueil</a>
-                  <a href="#" className="text-[#3e2e14] hover:text-[#d39108] transition-colors font-medium">Réalisations</a>
-                  <a href="#" className="text-[#3e2e14] hover:text-[#d39108] transition-colors font-medium">Expériences</a>
-                  <a href="#" className="text-[#3e2e14] hover:text-[#d39108] transition-colors font-medium">Projets</a>
-                  <a href="#" className="text-[#3e2e14] hover:text-[#d39108] transition-colors font-medium">Blog</a>
-                  <a href="#" className="text-[#3e2e14] hover:text-[#d39108] transition-colors font-medium">Contacts</a>
+                  <a href="#" className="text-white hover:text-[#d39108] transition-colors font-medium">Accueil</a>
+                  <a href="#" className="text-white hover:text-[#d39108] transition-colors font-medium">Réalisations</a>
+                  <a href="#" className="text-white hover:text-[#d39108] transition-colors font-medium">Expériences</a>
+                  <a href="#" className="text-white hover:text-[#d39108] transition-colors font-medium">Projets</a>
+                  <a href="#" className="text-white hover:text-[#d39108] transition-colors font-medium">Blog</a>
+                  <a href="#" className="text-white hover:text-[#d39108] transition-colors font-medium">Contacts</a>
                   <Button className="bg-[#d39108] hover:bg-[#d39108]/90 text-white">
                     Faire un don
                   </Button>
@@ -61,15 +62,15 @@ const HeroSection = () => {
         </div>
 
         {/* Mobile menu */}
-        {isMenuOpen && <div className="md:hidden border-t border-[#3e2e14]/20 bg-white/80 backdrop-blur-sm">
+        {isMenuOpen && <div className="md:hidden border-t border-white/20 bg-white/10 backdrop-blur-sm">
             <div className="container mx-auto px-4 py-4">
               <nav className="flex flex-col space-y-4">
-                <a href="#" className="text-[#3e2e14] hover:text-[#d39108]">Accueil</a>
-                <a href="#" className="text-[#3e2e14] hover:text-[#d39108]">Réalisations</a>
-                <a href="#" className="text-[#3e2e14] hover:text-[#d39108]">Expériences</a>
-                <a href="#" className="text-[#3e2e14] hover:text-[#d39108]">Projets</a>
-                <a href="#" className="text-[#3e2e14] hover:text-[#d39108]">Blog</a>
-                <a href="#" className="text-[#3e2e14] hover:text-[#d39108]">Contacts</a>
+                <a href="#" className="text-white hover:text-[#d39108]">Accueil</a>
+                <a href="#" className="text-white hover:text-[#d39108]">Réalisations</a>
+                <a href="#" className="text-white hover:text-[#d39108]">Expériences</a>
+                <a href="#" className="text-white hover:text-[#d39108]">Projets</a>
+                <a href="#" className="text-white hover:text-[#d39108]">Blog</a>
+                <a href="#" className="text-white hover:text-[#d39108]">Contacts</a>
                 <Button className="bg-[#d39108] hover:bg-[#d39108]/90 text-white w-full">
                   Faire un don
                 </Button>
@@ -111,7 +112,7 @@ const HeroSection = () => {
         minHeight: 'calc(100vh - 100px)'
       }}>
         <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
-          <div className="text-[#3e2e14] space-y-8">
+          <div className="text-white space-y-8">
             <div className="space-y-2">
               <p className="text-[#d39108] text-sm uppercase tracking-wider font-medium">
                 NOTRE MISSION
@@ -119,18 +120,18 @@ const HeroSection = () => {
               <h1 className="text-5xl font-bold leading-tight lg:text-5xl">
                 Un avenir 
                 <span className="text-[#d39108]"> durable</span> et 
-                <span className="text-[#3e2e14]"> inclusif</span>
+                <span className="text-white"> inclusif</span>
               </h1>
             </div>
             
-            <p className="text-[#3e2e14]/80 text-lg leading-relaxed max-w-lg">Miel-Fondal œuvre à faire de la RDC un modèle de développement social et environnemental à travers des projets innovants qui éduquent, sensibilisent et responsabilisent toutes les générations.
+            <p className="text-white/90 text-lg leading-relaxed max-w-lg">Miel-Fondal œuvre à faire de la RDC un modèle de développement social et environnemental à travers des projets innovants qui éduquent, sensibilisent et responsabilisent toutes les générations.
           </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Button className="bg-[#d39108] hover:bg-[#d39108]/90 text-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105">
                 DÉCOUVRIR
               </Button>
-              <Button variant="outline" className="border-[#3e2e14] text-[#3e2e14] hover:bg-[#3e2e14] hover:text-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300">
+              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-[#9c6b04] px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300">
                 EN SAVOIR PLUS
               </Button>
             </div>
