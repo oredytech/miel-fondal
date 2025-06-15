@@ -42,7 +42,7 @@ const BlogSection = () => {
             <p className="text-lg mb-8 leading-relaxed">
               Le blog de Miel-Fondal est un espace de réflexion et d'action, pensé pour ceux qui aspirent à un monde plus durable et juste. À travers des articles éclairants, des analyses approfondies et des témoignages inspirants, nous explorons des thématiques essentielles telles que l'environnement, l'éducation, et le développement social. Chaque contenu vise à stimuler la réflexion et encourager des actions concrètes pour bâtir un avenir meilleur. Ensemble, engageons-nous dans une transformation positive et durable.
             </p>
-            <Button className="bg-black text-white hover:bg-gray-800 px-8 py-3 text-lg font-semibold">
+            <Button className="text-white px-8 py-3 text-lg font-semibold bg-[#3e0202]">
               PLUS D'ARTICLES
             </Button>
           </div>
