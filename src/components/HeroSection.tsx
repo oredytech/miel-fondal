@@ -1,27 +1,31 @@
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X, Search } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { CommandDialog, CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem } from "@/components/ui/command";
+
 const HeroSection = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  return <section className="relative min-h-screen" style={{
-    backgroundColor: '#9c6b04'
-  }}>
+
+  return (
+    <section className="relative min-h-screen" style={{
+      backgroundColor: '#9c6b04'
+    }}>
       {/* Background overlay with texture */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#3e2e14]/10 to-[#d39108]/5"></div>
       
       {/* Decorative elements */}
       <div className="absolute top-20 right-20 w-3 h-3 bg-[#d39108] rounded-full opacity-60 animate-pulse"></div>
       <div className="absolute top-40 right-40 w-2 h-2 bg-[#3e2e14] rounded-full opacity-40 animate-pulse" style={{
-      animationDelay: '0.5s'
-    }}></div>
+        animationDelay: '0.5s'
+      }}></div>
       <div className="absolute bottom-40 left-20 w-2.5 h-2.5 bg-[#d39108] rounded-full opacity-50 animate-pulse" style={{
-      animationDelay: '1s'
-    }}></div>
+        animationDelay: '1s'
+      }}></div>
       <div className="absolute top-60 left-40 w-1.5 h-1.5 bg-[#3e2e14] rounded-full opacity-30 animate-pulse" style={{
-      animationDelay: '1.5s'
-    }}></div>
+        animationDelay: '1.5s'
+      }}></div>
 
       {/* Integrated Header */}
       <header className="relative z-50 bg-transparent">
@@ -44,8 +48,8 @@ const HeroSection = () => {
                 </button>
                 
                 <nav className="hidden md:flex items-center space-x-8">
-                  <a href="#" className="text-white hover:text-[#d39108] transition-colors font-medium">Accueil</a>
-                  <a href="#" className="text-white hover:text-[#d39108] transition-colors font-medium">Réalisations</a>
+                  <Link to="/" className="text-white hover:text-[#d39108] transition-colors font-medium">Accueil</Link>
+                  <Link to="/realisations" className="text-white hover:text-[#d39108] transition-colors font-medium">Réalisations</Link>
                   <a href="#" className="text-white hover:text-[#d39108] transition-colors font-medium">Expériences</a>
                   <a href="#" className="text-white hover:text-[#d39108] transition-colors font-medium">Projets</a>
                   <a href="#" className="text-white hover:text-[#d39108] transition-colors font-medium">Blog</a>
@@ -60,11 +64,12 @@ const HeroSection = () => {
         </div>
 
         {/* Mobile menu */}
-        {isMenuOpen && <div className="md:hidden border-t border-white/20 bg-white/10 backdrop-blur-sm">
+        {isMenuOpen && (
+          <div className="md:hidden border-t border-white/20 bg-white/10 backdrop-blur-sm">
             <div className="container mx-auto px-4 py-4">
               <nav className="flex flex-col space-y-4">
-                <a href="#" className="text-white hover:text-[#d39108]">Accueil</a>
-                <a href="#" className="text-white hover:text-[#d39108]">Réalisations</a>
+                <Link to="/" className="text-white hover:text-[#d39108]">Accueil</Link>
+                <Link to="/realisations" className="text-white hover:text-[#d39108]">Réalisations</Link>
                 <a href="#" className="text-white hover:text-[#d39108]">Expériences</a>
                 <a href="#" className="text-white hover:text-[#d39108]">Projets</a>
                 <a href="#" className="text-white hover:text-[#d39108]">Blog</a>
@@ -74,7 +79,8 @@ const HeroSection = () => {
                 </Button>
               </nav>
             </div>
-          </div>}
+          </div>
+        )}
 
         {/* Search Dialog */}
         <CommandDialog open={isSearchOpen} onOpenChange={setIsSearchOpen}>
@@ -158,6 +164,8 @@ const HeroSection = () => {
           <div className="w-1 h-3 bg-[#d39108] rounded-full mt-2 animate-bounce"></div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;

@@ -1,0 +1,271 @@
+
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowLeft, Calendar, MapPin, Users } from "lucide-react";
+import { Link } from "react-router-dom";
+
+const Realisations = () => {
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Header avec navigation de retour */}
+      <header className="bg-[#9c6b04] py-8">
+        <div className="container mx-auto px-4">
+          <Link to="/" className="inline-flex items-center text-white hover:text-[#d39108] transition-colors mb-4">
+            <ArrowLeft className="w-5 h-5 mr-2" />
+            Retour à l'accueil
+          </Link>
+          <h1 className="text-5xl font-bold text-white">Nos Réalisations</h1>
+          <p className="text-white/90 text-lg mt-4 max-w-2xl">
+            Découvrez les projets concrets qui transforment positivement les communautés en RDC grâce à l'engagement de Miel-Fondal.
+          </p>
+        </div>
+      </header>
+
+      {/* Section principale des réalisations */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Réalisation 1 */}
+            <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow" style={{
+              borderRadius: '10px 0 10px 0'
+            }}>
+              <img 
+                src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=400&h=250&fit=crop"
+                alt="Watoto Radio"
+                className="w-full h-48 object-cover"
+              />
+              <CardContent className="p-6">
+                <div className="flex items-center text-sm text-[#9c6b04] mb-2">
+                  <Calendar className="w-4 h-4 mr-1" />
+                  2023 - En cours
+                </div>
+                <h3 className="font-bold text-xl mb-3 text-[#3e0202]">Watoto Radio</h3>
+                <p className="text-gray-600 mb-4">
+                  Une station de radio dédiée aux enfants pour leur permettre de s'exprimer, d'apprendre et de développer leurs talents de communication.
+                </p>
+                <div className="flex items-center text-sm text-gray-500 mb-4">
+                  <MapPin className="w-4 h-4 mr-1" />
+                  Kinshasa, RDC
+                </div>
+                <div className="flex items-center text-sm text-gray-500 mb-4">
+                  <Users className="w-4 h-4 mr-1" />
+                  +500 enfants touchés
+                </div>
+                <Button className="w-full bg-[#d39108] hover:bg-[#d39108]/90">
+                  Découvrir le projet
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Réalisation 2 */}
+            <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow" style={{
+              borderRadius: '10px 0 10px 0'
+            }}>
+              <img 
+                src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=250&fit=crop"
+                alt="Tetea Mazingira"
+                className="w-full h-48 object-cover"
+              />
+              <CardContent className="p-6">
+                <div className="flex items-center text-sm text-[#9c6b04] mb-2">
+                  <Calendar className="w-4 h-4 mr-1" />
+                  2022 - En cours
+                </div>
+                <h3 className="font-bold text-xl mb-3 text-[#3e0202]">Tetea Mazingira</h3>
+                <p className="text-gray-600 mb-4">
+                  Podcast de sensibilisation environnementale pour éduquer les communautés sur la protection de l'environnement.
+                </p>
+                <div className="flex items-center text-sm text-gray-500 mb-4">
+                  <MapPin className="w-4 h-4 mr-1" />
+                  National, RDC
+                </div>
+                <div className="flex items-center text-sm text-gray-500 mb-4">
+                  <Users className="w-4 h-4 mr-1" />
+                  +2000 auditeurs réguliers
+                </div>
+                <Button className="w-full bg-[#d39108] hover:bg-[#d39108]/90">
+                  Écouter les épisodes
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Réalisation 3 */}
+            <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow" style={{
+              borderRadius: '10px 0 10px 0'
+            }}>
+              <img 
+                src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=400&h=250&fit=crop"
+                alt="Mushakulu FM"
+                className="w-full h-48 object-cover"
+              />
+              <CardContent className="p-6">
+                <div className="flex items-center text-sm text-[#9c6b04] mb-2">
+                  <Calendar className="w-4 h-4 mr-1" />
+                  2023 - En cours
+                </div>
+                <h3 className="font-bold text-xl mb-3 text-[#3e0202]">Mushakulu FM</h3>
+                <p className="text-gray-600 mb-4">
+                  Espace radiophonique permettant aux personnes âgées de partager leurs expériences, conseils et sagesse.
+                </p>
+                <div className="flex items-center text-sm text-gray-500 mb-4">
+                  <MapPin className="w-4 h-4 mr-1" />
+                  Kinshasa, RDC
+                </div>
+                <div className="flex items-center text-sm text-gray-500 mb-4">
+                  <Users className="w-4 h-4 mr-1" />
+                  +300 participants
+                </div>
+                <Button className="w-full bg-[#d39108] hover:bg-[#d39108]/90">
+                  Découvrir l'impact
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Réalisation 4 */}
+            <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow" style={{
+              borderRadius: '10px 0 10px 0'
+            }}>
+              <img 
+                src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=250&fit=crop"
+                alt="FRESE"
+                className="w-full h-48 object-cover"
+              />
+              <CardContent className="p-6">
+                <div className="flex items-center text-sm text-[#9c6b04] mb-2">
+                  <Calendar className="w-4 h-4 mr-1" />
+                  2022 - 2023
+                </div>
+                <h3 className="font-bold text-xl mb-3 text-[#3e0202]">FRESE - Sécurité Routière</h3>
+                <p className="text-gray-600 mb-4">
+                  Campagnes de sensibilisation à la sécurité routière pour réduire les accidents et promouvoir une conduite responsable.
+                </p>
+                <div className="flex items-center text-sm text-gray-500 mb-4">
+                  <MapPin className="w-4 h-4 mr-1" />
+                  Kinshasa, RDC
+                </div>
+                <div className="flex items-center text-sm text-gray-500 mb-4">
+                  <Users className="w-4 h-4 mr-1" />
+                  +1500 conducteurs sensibilisés
+                </div>
+                <Button className="w-full bg-[#d39108] hover:bg-[#d39108]/90">
+                  Voir les résultats
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Réalisation 5 */}
+            <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow" style={{
+              borderRadius: '10px 0 10px 0'
+            }}>
+              <img 
+                src="https://images.unsplash.com/photo-1509909756405-be0199881695?w=400&h=250&fit=crop"
+                alt="Formation jeunes"
+                className="w-full h-48 object-cover"
+              />
+              <CardContent className="p-6">
+                <div className="flex items-center text-sm text-[#9c6b04] mb-2">
+                  <Calendar className="w-4 h-4 mr-1" />
+                  2023 - En cours
+                </div>
+                <h3 className="font-bold text-xl mb-3 text-[#3e0202]">Formation Leadership Jeunes</h3>
+                <p className="text-gray-600 mb-4">
+                  Programme de formation au leadership pour développer les compétences des jeunes leaders de demain.
+                </p>
+                <div className="flex items-center text-sm text-gray-500 mb-4">
+                  <MapPin className="w-4 h-4 mr-1" />
+                  Kinshasa, RDC
+                </div>
+                <div className="flex items-center text-sm text-gray-500 mb-4">
+                  <Users className="w-4 h-4 mr-1" />
+                  +150 jeunes formés
+                </div>
+                <Button className="w-full bg-[#d39108] hover:bg-[#d39108]/90">
+                  Rejoindre la formation
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Réalisation 6 */}
+            <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow" style={{
+              borderRadius: '10px 0 10px 0'
+            }}>
+              <img 
+                src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=250&fit=crop"
+                alt="Projet communautaire"
+                className="w-full h-48 object-cover"
+              />
+              <CardContent className="p-6">
+                <div className="flex items-center text-sm text-[#9c6b04] mb-2">
+                  <Calendar className="w-4 h-4 mr-1" />
+                  2022 - 2023
+                </div>
+                <h3 className="font-bold text-xl mb-3 text-[#3e0202]">Projet Eau Potable</h3>
+                <p className="text-gray-600 mb-4">
+                  Installation de points d'eau potable dans les communautés rurales pour améliorer l'accès à l'eau propre.
+                </p>
+                <div className="flex items-center text-sm text-gray-500 mb-4">
+                  <MapPin className="w-4 h-4 mr-1" />
+                  Province du Bandundu, RDC
+                </div>
+                <div className="flex items-center text-sm text-gray-500 mb-4">
+                  <Users className="w-4 h-4 mr-1" />
+                  +5000 bénéficiaires
+                </div>
+                <Button className="w-full bg-[#d39108] hover:bg-[#d39108]/90">
+                  Voir l'impact
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Section statistiques */}
+      <section className="py-16 bg-[#d39108]">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-white text-center mb-12">Notre Impact en Chiffres</h2>
+          <div className="grid md:grid-cols-4 gap-8">
+            <div className="text-center text-white">
+              <div className="text-5xl font-bold mb-2">6</div>
+              <div className="text-xl">Projets Réalisés</div>
+            </div>
+            <div className="text-center text-white">
+              <div className="text-5xl font-bold mb-2">9K+</div>
+              <div className="text-xl">Personnes Touchées</div>
+            </div>
+            <div className="text-center text-white">
+              <div className="text-5xl font-bold mb-2">5</div>
+              <div className="text-xl">Provinces Couvertes</div>
+            </div>
+            <div className="text-center text-white">
+              <div className="text-5xl font-bold mb-2">3</div>
+              <div className="text-xl">Années d'Expérience</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to action */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-[#3e0202] mb-4">
+            Rejoignez-nous dans notre mission
+          </h2>
+          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+            Ensemble, nous pouvons créer un impact encore plus grand. Découvrez comment vous pouvez contribuer à nos projets.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button className="bg-[#3e0202] text-white px-8 py-3 text-lg">
+              Nous Soutenir
+            </Button>
+            <Button variant="outline" className="border-[#d39108] text-[#d39108] hover:bg-[#d39108] hover:text-white px-8 py-3 text-lg">
+              Devenir Partenaire
+            </Button>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Realisations;
