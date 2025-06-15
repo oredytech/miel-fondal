@@ -16,7 +16,8 @@ const HeroSection = () => {
         backgroundImage: 'url("/lovable-uploads/2b867ad8-bf1d-4836-ba4d-2816cb1d5203.png")',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center'
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
       }}
     >
       {/* Background overlay with texture */}
