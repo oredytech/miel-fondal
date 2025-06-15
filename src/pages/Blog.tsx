@@ -65,26 +65,6 @@ const Blog = () => {
       <div className="min-h-screen bg-gray-50">
         {/* Header */}
         <section className="bg-[#9c6b04] py-20 relative overflow-hidden">
-          {/* Abeilles animées */}
-          <div className="absolute top-20 right-20 w-4 h-4 text-[#d39108] animate-bee-float opacity-80">
-            🐝
-          </div>
-          <div className="absolute top-40 left-32 w-3 h-3 text-[#d39108] animate-bee-float opacity-60" style={{
-            animationDelay: '2s'
-          }}>
-            🐝
-          </div>
-          <div className="absolute bottom-32 right-40 w-3 h-3 text-[#d39108] animate-bee-float opacity-70" style={{
-            animationDelay: '4s'
-          }}>
-            🐝
-          </div>
-          <div className="absolute top-60 left-20 w-4 h-4 text-[#d39108] animate-bee-float opacity-50" style={{
-            animationDelay: '1s'
-          }}>
-            🐝
-          </div>
-          
           <div className="container mx-auto px-4 text-center relative z-10">
             <h1 className="text-5xl font-bold text-white mb-4">Blog Miel Fondal</h1>
             <p className="text-xl text-white/90 max-w-2xl mx-auto">
