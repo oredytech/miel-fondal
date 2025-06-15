@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -17,9 +18,10 @@ const ContactSection = () => {
       <div className="absolute inset-0 bg-gray-900/20"></div>
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Conteneur avec bordure pour formulaire + image */}
+        {/* Conteneur avec bordure jaune pour formulaire + image */}
         <div
           className="
+            border-8 border-[#d39108] 
             bg-white/10 backdrop-blur-sm
             overflow-hidden rounded-3xl relative
           "
@@ -29,8 +31,8 @@ const ContactSection = () => {
             <div
               className="
                 bg-white/85 backdrop-blur-md p-8 flex flex-col justify-center
-                rounded-t-3xl
-                md:rounded-none md:rounded-tl-3xl md:rounded-bl-3xl
+                rounded-t-2xl md:rounded-tl-2xl md:rounded-bl-2xl md:rounded-tr-none md:rounded-br-none
+                h-full
               "
             >
               <h2 className="text-2xl font-bold text-gray-800 mb-4">Contact Rapide</h2>
@@ -81,12 +83,17 @@ const ContactSection = () => {
               </form>
             </div>
 
-            {/* Image à droite - avec z-index élevé pour déborder du cadre */}
+            {/* Image à droite - déborde par le haut du cadre */}
             <div className="relative flex items-center justify-center overflow-visible">
               <img 
                 src="/lovable-uploads/e895f603-183e-4d3e-aa45-0ea43b7eb058.png"
                 alt="Femme souriante utilisant un téléphone" 
-                className="max-w-full h-full object-cover transform translate-y-[-20px] scale-110 relative z-50"
+                className="max-w-full h-full object-cover relative z-50 -translate-y-14 md:-translate-y-20 drop-shadow-xl"
+                style={{
+                  // S'assure que l'image déborde par le haut
+                  maxHeight: '700px',
+                  width: 'auto',
+                }}
               />
             </div>
           </div>
