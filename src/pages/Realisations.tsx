@@ -1,15 +1,22 @@
+
 import Layout from '@/components/Layout';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, Calendar, MapPin, Users } from "lucide-react";
+import { ArrowLeft, Calendar, MapPin, Users, Bee } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Realisations = () => {
   return (
     <Layout>
       {/* Header avec navigation de retour */}
-      <section className="bg-[#9c6b04] py-16">
-        <div className="container mx-auto px-4">
+      <section className="bg-[#9c6b04] py-16 relative overflow-hidden">
+        {/* Animated bees */}
+        <Bee className="absolute top-[20%] left-[10%] w-6 h-6 text-white/30 animate-bee-float" style={{ animationDelay: '0s' }} />
+        <Bee className="absolute top-[60%] left-[30%] w-4 h-4 text-white/20 animate-bee-float" style={{ animationDelay: '-5s' }} />
+        <Bee className="absolute top-[40%] right-[15%] w-8 h-8 text-white/25 animate-bee-float" style={{ animationDelay: '-2s' }} />
+        <Bee className="absolute bottom-[10%] right-[25%] w-5 h-5 text-white/35 animate-bee-float" style={{ animationDelay: '-8s' }} />
+
+        <div className="container mx-auto px-4 relative z-10">
           <Link to="/" className="inline-flex items-center text-white hover:text-[#d39108] transition-colors mb-4">
             <ArrowLeft className="w-5 h-5 mr-2" />
             Retour à l'accueil
