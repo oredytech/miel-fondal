@@ -1,9 +1,10 @@
+
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
-import { Menu, X, ChevronDown, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Menu, X, ChevronDown, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Search } from 'lucide-react';
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,35 +13,104 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       {/* Header */}
       <header className="bg-white shadow-sm">
+        {/* Top bar */}
+        <div className="border-b border-gray-200">
+          <div className="container mx-auto px-4">
+            <div className="flex items-center justify-between py-3">
+              <div className="flex items-center space-x-2">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center">
+                  <img src="/lovable-uploads/6647e397-6122-4d74-83a6-4b085633170b.png" alt="Miel Fondal Logo" className="w-8 h-8" />
+                </div>
+                <span className="font-bold text-xl">MIEL FONDAL</span>
+              </div>
+              
+              <div className="flex items-center space-x-4">
+                <button 
+                  className="md:hidden"
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                >
+                  {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+                </button>
+                
+                <div className="hidden md:flex items-center space-x-3">
+                  <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">
+                    <Facebook size={18} />
+                  </a>
+                  <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">
+                    <Twitter size={18} />
+                  </a>
+                  <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">
+                    <Instagram size={18} />
+                  </a>
+                  <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">
+                    <Linkedin size={18} />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom bar */}
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between py-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 rounded-full flex items-center justify-center">
-                <img src="/lovable-uploads/6647e397-6122-4d74-83a6-4b085633170b.png" alt="Miel Fondal Logo" className="w-8 h-8" />
+            <div className="flex items-center">
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
+                <Input 
+                  placeholder="Rechercher..." 
+                  className="pl-10 w-64 bg-gray-50 border-gray-200 focus:border-orange-500"
+                />
               </div>
-              <span className="font-bold text-xl">MIEL FONDAL</span>
             </div>
             
             <nav className="hidden md:flex items-center space-x-8">
-              <a href="#" className="text-gray-700 hover:text-orange-500">Accueil</a>
-              <a href="#" className="text-gray-700 hover:text-orange-500">Réalisations</a>
-              <a href="#" className="text-gray-700 hover:text-orange-500">Expériences</a>
-              <a href="#" className="text-gray-700 hover:text-orange-500">Projets</a>
-              <a href="#" className="text-gray-700 hover:text-orange-500">Blog</a>
-              <a href="#" className="text-gray-700 hover:text-orange-500">Contacts</a>
+              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Accueil</a>
+              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Réalisations</a>
+              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Expériences</a>
+              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Projets</a>
+              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Blog</a>
+              <a href="#" className="text-gray-700 hover:text-orange-500 transition-colors">Contacts</a>
               <Button className="bg-orange-500 hover:bg-orange-600 text-white">
-                PARTICIPER
+                Faire un don
               </Button>
             </nav>
-
-            <button 
-              className="md:hidden"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X /> : <Menu />}
-            </button>
           </div>
         </div>
+
+        {/* Mobile menu */}
+        {isMenuOpen && (
+          <div className="md:hidden border-t border-gray-200 bg-white">
+            <div className="container mx-auto px-4 py-4">
+              <nav className="flex flex-col space-y-4">
+                <a href="#" className="text-gray-700 hover:text-orange-500">Accueil</a>
+                <a href="#" className="text-gray-700 hover:text-orange-500">Réalisations</a>
+                <a href="#" className="text-gray-700 hover:text-orange-500">Expériences</a>
+                <a href="#" className="text-gray-700 hover:text-orange-500">Projets</a>
+                <a href="#" className="text-gray-700 hover:text-orange-500">Blog</a>
+                <a href="#" className="text-gray-700 hover:text-orange-500">Contacts</a>
+                <Button className="bg-orange-500 hover:bg-orange-600 text-white w-full">
+                  Faire un don
+                </Button>
+                
+                <div className="flex items-center space-x-4 pt-4 border-t border-gray-200">
+                  <a href="#" className="text-gray-600 hover:text-orange-500">
+                    <Facebook size={18} />
+                  </a>
+                  <a href="#" className="text-gray-600 hover:text-orange-500">
+                    <Twitter size={18} />
+                  </a>
+                  <a href="#" className="text-gray-600 hover:text-orange-500">
+                    <Instagram size={18} />
+                  </a>
+                  <a href="#" className="text-gray-600 hover:text-orange-500">
+                    <Linkedin size={18} />
+                  </a>
+                </div>
+              </nav>
+            </div>
+          </div>
+        )}
       </header>
 
       {/* Hero Section */}
