@@ -24,21 +24,6 @@ const BlogSection = () => {
     );
   }
 
-  if (error) {
-    return (
-      <section className="py-16 bg-[#d39108]">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-6xl font-bold text-white">Blog</h2>
-          </div>
-          <div className="text-center py-12">
-            <p className="text-white">Erreur lors du chargement des articles</p>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
   const posts = data?.posts || [];
 
   return (
@@ -47,6 +32,11 @@ const BlogSection = () => {
         {/* Titre centré en haut */}
         <div className="text-center mb-12">
           <h2 className="text-6xl font-bold text-white">Blog</h2>
+          {error && (
+            <p className="text-white/80 mt-2 text-sm">
+              Articles de démonstration affichés
+            </p>
+          )}
         </div>
 
         {/* Articles en grille */}
@@ -84,7 +74,7 @@ const BlogSection = () => {
 
         {/* Bouton centré en bas */}
         <div className="text-center">
-          <Button asChild className="text-white px-8 py-3 text-lg font-semibold bg-[#3e0202]">
+          <Button asChild className="text-white px-8 py-3 text-lg font-semibold bg-[#3e0202] hover:bg-[#3e0202]/90">
             <Link to="/blog">PLUS D'ARTICLES</Link>
           </Button>
         </div>

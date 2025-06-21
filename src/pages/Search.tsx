@@ -1,104 +1,129 @@
 
-import { useState } from 'react';
-import { Search as SearchIcon, ArrowLeft } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import Layout from '@/components/Layout';
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Search as SearchIcon, Calendar, User } from 'lucide-react';
+import { useState } from 'react';
+import { useWordPressPosts } from "@/hooks/useWordPressPosts";
+import { stripHtmlTags, truncateText, formatDate } from "@/utils/textUtils";
 
 const Search = () => {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredResults, setFilteredResults] = useState<any[]>([]);
+  const { data } = useWordPressPosts(1, 20); // Récupérer plus d'articles pour la recherche
 
-  const searchResults = [
-    { title: "Accueil", description: "Page d'accueil de Miel Fondal", url: "/" },
-    { title: "Réalisations", description: "Nos principales réalisations", url: "/realisations" },
-    { title: "Expériences", description: "Nos expériences et témoignages", url: "/experiences" },
-    { title: "Projets", description: "Nos projets en cours et futurs", url: "/projets" },
-    { title: "Blog", description: "Articles et actualités", url: "/blog" },
-    { title: "Contacts", description: "Nous contacter", url: "/contacts" }
-  ];
+  const handleSearch = () => {
+    if (!searchTerm.trim() || !data?.posts) {
+      setFilteredResults([]);
+      return;
+    }
 
-  const filteredResults = searchResults.filter(result =>
-    result.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    result.description.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+    const results = data.posts.filter(post => 
+      post.title.rendered.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      stripHtmlTags(post.excerpt.rendered).toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    setFilteredResults(results);
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    handleSearch();
+  };
 
   return (
     <Layout>
-      <div 
-        className="min-h-screen bg-cover bg-center bg-no-repeat relative"
-        style={{
-          backgroundImage: `url('/lovable-uploads/9f8e900a-d10d-4f39-9d64-c92b55a659be.png')`
-        }}
-      >
-        {/* Overlay pour améliorer la lisibilité */}
-        <div className="absolute inset-0 bg-white/80"></div>
-        
-        <div className="relative z-10 container mx-auto px-4 py-8">
-          {/* Header avec bouton retour */}
-          <div className="flex items-center gap-4 mb-8">
-            <Link to="/">
-              <Button variant="outline" size="sm">
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Retour
-              </Button>
-            </Link>
-            <h1 className="text-3xl font-bold text-[#2d2d2d]">Recherche</h1>
+      <div className="min-h-screen bg-gray-50">
+        {/* Header */}
+        <section className="bg-[#3e0202] py-20">
+          <div className="container mx-auto px-4 text-center">
+            <h1 className="text-5xl font-bold text-white mb-4">Rechercher</h1>
+            <p className="text-white/90 text-lg max-w-2xl mx-auto">
+              Trouvez les articles, projets et informations qui vous intéressent.
+            </p>
           </div>
+        </section>
 
-          {/* Barre de recherche */}
-          <div className="max-w-2xl mx-auto mb-8">
-            <div className="relative">
-              <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+        {/* Search Form */}
+        <section className="py-16">
+          <div className="container mx-auto px-4 max-w-2xl">
+            <form onSubmit={handleSubmit} className="flex gap-4">
               <Input
                 type="text"
-                placeholder="Rechercher sur le site..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 pr-4 py-3 text-lg border-2 border-[#9c6b04] focus:border-[#d39108] rounded-lg"
+                placeholder="Rechercher des articles, projets..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="flex-1 px-4 py-3 text-lg"
               />
-            </div>
+              <Button 
+                type="submit"
+                className="bg-[#d39108] hover:bg-[#d39108]/90 text-white px-8 py-3"
+              >
+                <SearchIcon className="w-5 h-5 mr-2" />
+                Rechercher
+              </Button>
+            </form>
           </div>
+        </section>
 
-          {/* Résultats de recherche */}
-          <div className="max-w-4xl mx-auto">
-            {searchQuery.length > 0 ? (
-              <>
-                <p className="text-gray-600 mb-6">
-                  {filteredResults.length} résultat(s) trouvé(s) pour "{searchQuery}"
-                </p>
-                <div className="space-y-4">
-                  {filteredResults.map((result, index) => (
-                    <Card key={index} className="hover:shadow-lg transition-shadow">
-                      <CardContent className="p-6">
-                        <Link to={result.url} className="block">
-                          <h3 className="text-xl font-semibold text-[#9c6b04] hover:text-[#d39108] mb-2">
-                            {result.title}
-                          </h3>
-                          <p className="text-gray-600">{result.description}</p>
-                          <span className="text-sm text-gray-400 mt-2 inline-block">
-                            {window.location.origin}{result.url}
-                          </span>
-                        </Link>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </>
-            ) : (
-              <div className="text-center py-12">
-                <SearchIcon className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-                <h2 className="text-2xl font-semibold text-gray-600 mb-2">
-                  Rechercher du contenu
-                </h2>
-                <p className="text-gray-500">
-                  Tapez dans la barre de recherche pour trouver ce que vous cherchez
+        {/* Results */}
+        {filteredResults.length > 0 && (
+          <section className="py-8">
+            <div className="container mx-auto px-4">
+              <h2 className="text-2xl font-bold text-[#3e0202] mb-8">
+                {filteredResults.length} résultat{filteredResults.length > 1 ? 's' : ''} trouvé{filteredResults.length > 1 ? 's' : ''}
+              </h2>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {filteredResults.map((post) => {
+                  const featuredImage = post._embedded?.['wp:featuredmedia']?.[0]?.source_url;
+                  const author = post._embedded?.author?.[0]?.name || 'Équipe Miel-Fondal';
+                  const excerpt = stripHtmlTags(post.excerpt.rendered);
+                  const truncatedExcerpt = truncateText(excerpt, 150);
+                  
+                  return (
+                    <div key={post.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
+                      <img 
+                        src={featuredImage || "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=400&h=200&fit=crop"} 
+                        alt={post.title.rendered}
+                        className="w-full h-48 object-cover"
+                      />
+                      <div className="p-6">
+                        <h3 className="font-bold text-lg mb-3">{post.title.rendered}</h3>
+                        <p className="text-gray-600 mb-4">{truncatedExcerpt}</p>
+                        
+                        <div className="flex items-center justify-between text-sm text-gray-500">
+                          <div className="flex items-center gap-2">
+                            <User size={16} />
+                            <span>{author}</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <Calendar size={16} />
+                            <span>{formatDate(post.date)}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {searchTerm && filteredResults.length === 0 && (
+          <section className="py-16">
+            <div className="container mx-auto px-4 text-center">
+              <div className="bg-gray-100 rounded-lg p-8 max-w-md mx-auto">
+                <SearchIcon className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-gray-700 mb-2">Aucun résultat trouvé</h3>
+                <p className="text-gray-600">
+                  Essayez avec d'autres mots-clés ou parcourez nos articles récents.
                 </p>
               </div>
-            )}
-          </div>
-        </div>
+            </div>
+          </section>
+        )}
       </div>
     </Layout>
   );

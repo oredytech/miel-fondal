@@ -5,6 +5,7 @@ import { Calendar, User, Clock, Loader2 } from 'lucide-react';
 import { useWordPressPosts } from "@/hooks/useWordPressPosts";
 import { stripHtmlTags, truncateText, formatDate } from "@/utils/textUtils";
 import { useState } from 'react';
+import NewsletterForm from '@/components/NewsletterForm';
 
 const Blog = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -43,9 +44,16 @@ const Blog = () => {
               </div>
             ) : error ? (
               <div className="text-center py-12">
-                <p className="text-red-600">Erreur lors du chargement des articles</p>
+                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 max-w-md mx-auto">
+                  <h3 className="text-lg font-semibold text-yellow-800 mb-2">Articles en cours de chargement</h3>
+                  <p className="text-yellow-700">
+                    Nous affichons des articles de démonstration en attendant la connexion à notre API.
+                  </p>
+                </div>
               </div>
-            ) : (
+            ) : null}
+
+            {posts.length > 0 && (
               <>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {posts.map((post) => {
@@ -81,7 +89,11 @@ const Blog = () => {
                               <User size={16} className="text-gray-500" />
                               <span className="text-sm text-gray-600">{author}</span>
                             </div>
-                            <Button variant="outline" size="sm" className="bg-[#9c6b04] text-white hover:bg-[#9c6b04]/90">
+                            <Button 
+                              variant="outline" 
+                              size="sm" 
+                              className="bg-[#9c6b04] text-white hover:bg-[#9c6b04]/90 border-[#9c6b04]"
+                            >
                               Lire plus
                             </Button>
                           </div>
@@ -123,16 +135,7 @@ const Blog = () => {
               Abonnez-vous à notre newsletter pour recevoir nos dernières actualités 
               et nos réflexions sur le développement durable.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input 
-                type="email" 
-                placeholder="Votre adresse email"
-                className="flex-1 px-4 py-3 rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-white"
-              />
-              <Button className="bg-[#3e0202] hover:bg-[#3e0202]/90 text-white px-6 py-3">
-                S'abonner
-              </Button>
-            </div>
+            <NewsletterForm />
           </div>
         </section>
       </div>
