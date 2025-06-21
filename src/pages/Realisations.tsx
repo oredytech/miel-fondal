@@ -1,3 +1,4 @@
+
 import Layout from '@/components/Layout';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -280,11 +281,11 @@ const Realisations = () => {
             Ensemble, nous pouvons créer un impact encore plus grand. Découvrez comment vous pouvez contribuer à nos projets.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-[#3e0202] text-white px-8 py-3 text-lg">
-              Nous Soutenir
+            <Button asChild className="bg-[#3e0202] text-white px-8 py-3 text-lg">
+              <Link to="/donation">Nous Soutenir</Link>
             </Button>
-            <Button variant="outline" className="border-[#d39108] text-[#d39108] hover:bg-[#d39108] hover:text-white px-8 py-3 text-lg">
-              Devenir Partenaire
+            <Button asChild variant="outline" className="border-[#d39108] text-[#d39108] hover:bg-[#d39108] hover:text-white px-8 py-3 text-lg">
+              <Link to="/partenaire">Devenir Partenaire</Link>
             </Button>
           </div>
         </div>
