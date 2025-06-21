@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, Users, Heart, Calendar, MapPin, Target, Clock, CheckCircle } from "lucide-react";
+import { ArrowLeft, Users, Heart, Calendar, MapPin, Target, Clock, CheckCircle, Leaf, Radio } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Benevole = () => {
