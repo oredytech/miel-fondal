@@ -1,64 +1,23 @@
+
 import Layout from '@/components/Layout';
 import { Button } from "@/components/ui/button";
-import { Calendar, User, Clock } from 'lucide-react';
+import { Calendar, User, Clock, Loader2 } from 'lucide-react';
+import { useWordPressPosts } from "@/hooks/useWordPressPosts";
+import { stripHtmlTags, truncateText, formatDate } from "@/utils/textUtils";
+import { useState } from 'react';
 
 const Blog = () => {
-  const articles = [
-    {
-      id: 1,
-      title: "L'impact de l'éducation environnementale sur les jeunes",
-      excerpt: "Découvrez comment nos programmes d'éducation transforment la perception de l'environnement chez les jeunes congolais...",
-      image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=400&h=200&fit=crop",
-      date: "15 Janvier 2025",
-      author: "Équipe Miel Fondal",
-      readTime: "5 min"
-    },
-    {
-      id: 2,
-      title: "Radio Watoto : Donner une voix aux enfants",
-      excerpt: "Comment notre station de radio permet aux enfants de s'exprimer et de sensibiliser leur communauté...",
-      image: "/lovable-uploads/b5bcfda5-2783-4f28-a062-cc7d0c160b92.png",
-      date: "10 Janvier 2025",
-      author: "Équipe Radio Watoto",
-      readTime: "4 min"
-    },
-    {
-      id: 3,
-      title: "Injili Everywhere : L'évangile par tous les moyens",
-      excerpt: "Notre approche innovante pour répandre l'évangile dans toute la République Démocratique du Congo...",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=200&fit=crop",
-      date: "8 Janvier 2025",
-      author: "Département Injili",
-      readTime: "6 min"
-    },
-    {
-      id: 4,
-      title: "Tetea Mazingira : Protéger notre environnement",
-      excerpt: "Les actions concrètes que nous menons pour la protection de l'environnement en RDC...",
-      image: "/lovable-uploads/941d66be-e492-48a4-9d3e-0cfe8c6ddb92.png",
-      date: "5 Janvier 2025",
-      author: "Département Tetea",
-      readTime: "7 min"
-    },
-    {
-      id: 5,
-      title: "Nos partenariats stratégiques pour un impact durable",
-      excerpt: "Comment nos collaborations avec d'autres organisations amplifient notre impact social...",
-      image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=400&h=200&fit=crop",
-      date: "2 Janvier 2025",
-      author: "Direction Générale",
-      readTime: "5 min"
-    },
-    {
-      id: 6,
-      title: "Bilan 2024 : Nos réalisations et perspectives",
-      excerpt: "Retour sur une année riche en réalisations et présentation de nos objectifs pour 2025...",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=200&fit=crop",
-      date: "28 Décembre 2024",
-      author: "Équipe Miel Fondal",
-      readTime: "8 min"
+  const [currentPage, setCurrentPage] = useState(1);
+  const { data, isLoading, error } = useWordPressPosts(currentPage, 6);
+
+  const posts = data?.posts || [];
+  const totalPages = data?.totalPages || 1;
+
+  const handleLoadMore = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(prev => prev + 1);
     }
-  ];
+  };
 
   return (
     <Layout>
@@ -77,49 +36,82 @@ const Blog = () => {
         {/* Articles */}
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {articles.map((article) => (
-                <div key={article.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                  <img 
-                    src={article.image} 
-                    alt={article.title}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-6">
-                    <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
-                      <div className="flex items-center gap-1">
-                        <Calendar size={14} />
-                        <span>{article.date}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Clock size={14} />
-                        <span>{article.readTime}</span>
-                      </div>
-                    </div>
+            {isLoading && currentPage === 1 ? (
+              <div className="flex justify-center items-center py-12">
+                <Loader2 className="h-8 w-8 animate-spin text-[#9c6b04]" />
+                <span className="ml-2 text-gray-600">Chargement des articles...</span>
+              </div>
+            ) : error ? (
+              <div className="text-center py-12">
+                <p className="text-red-600">Erreur lors du chargement des articles</p>
+              </div>
+            ) : (
+              <>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {posts.map((post) => {
+                    const featuredImage = post._embedded?.['wp:featuredmedia']?.[0]?.source_url;
+                    const author = post._embedded?.author?.[0]?.name || 'Équipe Panaradio';
+                    const excerpt = stripHtmlTags(post.excerpt.rendered);
+                    const truncatedExcerpt = truncateText(excerpt, 150);
                     
-                    <h3 className="font-bold text-lg mb-3 line-clamp-2">{article.title}</h3>
-                    <p className="text-gray-600 mb-4 line-clamp-3">{article.excerpt}</p>
-                    
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <User size={16} className="text-gray-500" />
-                        <span className="text-sm text-gray-600">{article.author}</span>
+                    return (
+                      <div key={post.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <img 
+                          src={featuredImage || "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=400&h=200&fit=crop"} 
+                          alt={post.title.rendered}
+                          className="w-full h-48 object-cover"
+                        />
+                        <div className="p-6">
+                          <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
+                            <div className="flex items-center gap-1">
+                              <Calendar size={14} />
+                              <span>{formatDate(post.date)}</span>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <Clock size={14} />
+                              <span>5 min</span>
+                            </div>
+                          </div>
+                          
+                          <h3 className="font-bold text-lg mb-3 line-clamp-2">{post.title.rendered}</h3>
+                          <p className="text-gray-600 mb-4 line-clamp-3">{truncatedExcerpt}</p>
+                          
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-2">
+                              <User size={16} className="text-gray-500" />
+                              <span className="text-sm text-gray-600">{author}</span>
+                            </div>
+                            <Button variant="outline" size="sm" className="bg-[#9c6b04] text-white hover:bg-[#9c6b04]/90">
+                              Lire plus
+                            </Button>
+                          </div>
+                        </div>
                       </div>
-                      <Button variant="outline" size="sm" className="bg-[#9c6b04] text-white hover:bg-[#9c6b04]/90">
-                        Lire plus
-                      </Button>
-                    </div>
-                  </div>
+                    );
+                  })}
                 </div>
-              ))}
-            </div>
 
-            {/* Load More */}
-            <div className="text-center mt-12">
-              <Button className="bg-[#9c6b04] hover:bg-[#9c6b04]/90 text-white px-8 py-3">
-                Charger plus d'articles
-              </Button>
-            </div>
+                {/* Load More */}
+                {currentPage < totalPages && (
+                  <div className="text-center mt-12">
+                    <Button 
+                      onClick={handleLoadMore}
+                      disabled={isLoading}
+                      className="bg-[#9c6b04] hover:bg-[#9c6b04]/90 text-white px-8 py-3"
+                    >
+                      {isLoading ? (
+                        <>
+                          <Loader2 className="h-4 w-4 animate-spin mr-2" />
+                          Chargement...
+                        </>
+                      ) : (
+                        'Charger plus d\'articles'
+                      )}
+                    </Button>
+                  </div>
+                )}
+              </>
+            )}
           </div>
         </section>
 
