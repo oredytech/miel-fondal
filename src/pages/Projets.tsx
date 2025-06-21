@@ -244,12 +244,16 @@ const Projets = () => {
             Ensemble, nous pouvons créer un impact encore plus grand. Participez à nos projets ou proposez-nous de nouvelles initiatives.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-[#3e0202] text-white px-8 py-3 text-lg hover:bg-[#3e0202]/90">
-              Devenir Bénévole
-            </Button>
-            <Button variant="outline" className="border-white text-white hover:bg-white hover:text-[#d39108] px-8 py-3 text-lg">
-              Proposer un Projet
-            </Button>
+            <Link to="/benevole">
+              <Button className="bg-[#3e0202] text-white px-8 py-3 text-lg hover:bg-[#3e0202]/90">
+                Devenir Bénévole
+              </Button>
+            </Link>
+            <Link to="/proposer-projet">
+              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-[#d39108] px-8 py-3 text-lg">
+                Proposer un Projet
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
