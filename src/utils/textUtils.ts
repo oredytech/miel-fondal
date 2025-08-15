@@ -37,6 +37,7 @@ export const cleanArticleContent = (htmlContent: string): string => {
     .replace(/<h([1-6])/g, '<h$1 class="text-2xl font-bold mb-4 mt-6 text-gray-900"')
     .replace(/<p>/g, '<p class="mb-4 text-gray-700 leading-relaxed">')
     .replace(/<img/g, '<img class="w-full h-auto rounded-lg shadow-md my-6"')
+    .replace(/<iframe\s+([^>]*src="[^"]*"[^>]*)>/gi, '<div class="responsive-iframe-container my-8"><iframe $1 class="responsive-iframe" loading="lazy"></iframe></div>')
     .replace(/<blockquote>/g, '<blockquote class="border-l-4 border-primary pl-4 my-6 italic text-gray-600">')
     .replace(/<ul>/g, '<ul class="list-disc list-inside mb-4 text-gray-700">')
     .replace(/<ol>/g, '<ol class="list-decimal list-inside mb-4 text-gray-700">')

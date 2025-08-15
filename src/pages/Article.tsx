@@ -40,8 +40,9 @@ const Article = () => {
   const author = article._embedded?.author?.[0]?.name || 'Équipe Miel-Fondal';
 
   const handleShare = (platform: string) => {
-    const url = window.location.href;
-    const title = article.title.rendered;
+    const currentSlug = createSlug(article.title.rendered);
+    const url = `https://mielfondal.org/blog/${currentSlug}`;
+    const title = stripHtmlTags(article.title.rendered);
     
     switch (platform) {
       case 'facebook':
@@ -75,7 +76,7 @@ const Article = () => {
             {/* Article principal */}
             <div className="lg:col-span-2">
               <article className="bg-white rounded-lg shadow-lg overflow-hidden">
-                <div className="p-4 sm:p-6 md:p-8">
+                <div className="p-4 sm:p-6 md:p-8 pt-8 sm:pt-12">
                   {/* Titre */}
                   <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
                     {stripHtmlTags(article.title.rendered)}

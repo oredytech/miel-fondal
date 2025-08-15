@@ -101,3 +101,22 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Styles pour les vidéos responsives */
+.responsive-iframe-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* Ratio 16:9 */
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
