@@ -30,7 +30,7 @@ export interface WordPressApiResponse {
   totalPosts: number;
 }
 
-const API_BASE_URL = 'https://panaradio.org/wp-json/wp/v2';
+const API_BASE_URL = 'https://mielfondal.org/wp-json/wp/v2';
 
 export const fetchWordPressPosts = async (page: number = 1, perPage: number = 6): Promise<WordPressApiResponse> => {
   try {

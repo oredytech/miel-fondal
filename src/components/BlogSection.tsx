@@ -64,7 +64,7 @@ const BlogSection = () => {
                     <span>{formatDate(post.date)}</span>
                   </div>
                   <Button asChild variant="outline" className="bg-black text-white hover:bg-gray-800">
-                    <Link to="/blog">Lire plus...</Link>
+                    <Link to={`/article/${post.id}`}>Lire plus...</Link>
                   </Button>
                 </div>
               </div>
