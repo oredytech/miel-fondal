@@ -70,25 +70,12 @@ const Article = () => {
   return (
     <Layout>
       <div className="min-h-screen bg-gray-50">
-        {/* Breadcrumb */}
-        <div className="bg-white border-b">
-          <div className="container mx-auto px-4 py-4">
-            <nav className="flex items-center space-x-2 text-sm text-gray-600">
-              <Link to="/" className="hover:text-[#9c6b04]">Accueil</Link>
-              <ChevronRight size={16} />
-              <Link to="/blog" className="hover:text-[#9c6b04]">Blog</Link>
-              <ChevronRight size={16} />
-              <span className="text-gray-800">{stripHtmlTags(article.title.rendered)}</span>
-            </nav>
-          </div>
-        </div>
-
-        <div className="container mx-auto px-4 py-8">
-          <div className="grid lg:grid-cols-3 gap-8">
+        <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8">
+          <div className="grid lg:grid-cols-3 gap-4 lg:gap-8">
             {/* Article principal */}
             <div className="lg:col-span-2">
               <article className="bg-white rounded-lg shadow-lg overflow-hidden">
-                <div className="p-6 md:p-8">
+                <div className="p-4 sm:p-6 md:p-8">
                   {/* Titre */}
                   <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
                     {stripHtmlTags(article.title.rendered)}
@@ -107,10 +94,6 @@ const Article = () => {
                     <div className="flex items-center gap-1">
                       <Clock size={16} />
                       <span>5 min de lecture</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Eye size={16} />
-                      <span>142 vues</span>
                     </div>
                   </div>
 
