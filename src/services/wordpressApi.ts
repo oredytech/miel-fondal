@@ -36,17 +36,33 @@ export const fetchWordPressPosts = async (page: number = 1, perPage: number = 6)
   try {
     console.log(`Fetching WordPress posts from ${API_BASE_URL}/posts`);
     
-    // Tentative avec un proxy CORS pour contourner les restrictions
-    const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(
-      `${API_BASE_URL}/posts?page=${page}&per_page=${perPage}&_embed&status=publish&orderby=date&order=desc`
-    )}`;
-    
-    const response = await fetch(proxyUrl, {
-      method: 'GET',
-      headers: {
-        'Accept': 'application/json',
-      },
-    });
+    // Essayer d'abord l'API directement
+    let response;
+    try {
+      response = await fetch(
+        `${API_BASE_URL}/posts?page=${page}&per_page=${perPage}&_embed&status=publish&orderby=date&order=desc`,
+        {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json',
+          },
+          mode: 'cors',
+        }
+      );
+    } catch (directError) {
+      console.log('Direct API failed, trying with proxy...');
+      // Si l'API directe échoue, essayer avec un proxy
+      const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(
+        `${API_BASE_URL}/posts?page=${page}&per_page=${perPage}&_embed&status=publish&orderby=date&order=desc`
+      )}`;
+      
+      response = await fetch(proxyUrl, {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+        },
+      });
+    }
     
     console.log('Response status:', response.status);
     
@@ -120,18 +136,66 @@ export const fetchWordPressPosts = async (page: number = 1, perPage: number = 6)
       },
       {
         id: 3,
-        date: '2024-06-15T09:15:00',
-        title: { rendered: 'Formation communautaire et développement local' },
-        excerpt: { rendered: 'Nos programmes de formation touchent des milliers de bénéficiaires à travers la RDC, créant des opportunités d\'emploi et renforçant les capacités locales.' },
-        content: { rendered: '<p>Contenu de l\'article sur la formation...</p>' },
+        date: '2024-12-05T09:15:00',
+        title: { rendered: 'Innovation technologique au service du développement rural' },
+        excerpt: { rendered: 'Comment les nouvelles technologies peuvent transformer l\'agriculture et améliorer les conditions de vie en milieu rural congolais.' },
+        content: { rendered: '<p>L\'innovation technologique est un levier puissant pour le développement rural en RDC. Miel-Fondal explore et met en œuvre des solutions technologiques adaptées aux réalités locales.</p><p>De l\'agriculture de précision aux systèmes d\'irrigation intelligents, nos projets visent à moderniser le secteur agricole tout en respectant l\'environnement.</p>' },
         featured_media: 0,
         author: 1,
         _embedded: {
           'wp:featuredmedia': [{
-            source_url: 'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=400&h=200&fit=crop',
-            alt_text: 'Formation'
+            source_url: 'https://images.unsplash.com/photo-1574263867128-a3b3bbea3b5e?w=600&h=400&fit=crop',
+            alt_text: 'Agriculture moderne en Afrique'
           }],
-          author: [{ name: 'Équipe Miel-Fondal' }]
+          author: [{ name: 'Équipe Innovation' }]
+        }
+      },
+      {
+        id: 4,
+        date: '2024-11-28T16:45:00',
+        title: { rendered: 'Partenariats stratégiques pour un impact durable' },
+        excerpt: { rendered: 'La collaboration avec les acteurs locaux et internationaux est essentielle pour maximiser notre impact et créer un changement durable en RDC.' },
+        content: { rendered: '<p>Miel-Fondal développe des partenariats stratégiques avec diverses organisations pour amplifier son impact. Ces collaborations permettent de mutualiser les ressources et d\'atteindre plus efficacement nos objectifs de développement durable.</p>' },
+        featured_media: 0,
+        author: 1,
+        _embedded: {
+          'wp:featuredmedia': [{
+            source_url: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&h=400&fit=crop',
+            alt_text: 'Partenariat et collaboration'
+          }],
+          author: [{ name: 'Équipe Partenariats' }]
+        }
+      },
+      {
+        id: 5,
+        date: '2024-11-20T11:30:00',
+        title: { rendered: 'Autonomisation des femmes : un pilier du développement' },
+        excerpt: { rendered: 'Nos programmes d\'autonomisation des femmes créent des opportunités économiques et renforcent le leadership féminin dans les communautés rurales.' },
+        content: { rendered: '<p>L\'autonomisation des femmes est au cœur de notre stratégie de développement. Nous croyons que l\'égalité des genres est fondamentale pour un développement durable et inclusif.</p><p>Nos programmes incluent la formation professionnelle, l\'accès au microcrédit, et le renforcement des capacités de leadership pour les femmes rurales.</p>' },
+        featured_media: 0,
+        author: 1,
+        _embedded: {
+          'wp:featuredmedia': [{
+            source_url: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=400&fit=crop',
+            alt_text: 'Femmes entrepreneures en Afrique'
+          }],
+          author: [{ name: 'Équipe Genre' }]
+        }
+      },
+      {
+        id: 6,
+        date: '2024-11-15T08:00:00',
+        title: { rendered: 'Éducation de qualité pour tous : notre engagement' },
+        excerpt: { rendered: 'L\'accès à une éducation de qualité est un droit fondamental. Découvrez nos initiatives pour améliorer l\'accès et la qualité de l\'éducation en RDC.' },
+        content: { rendered: '<p>Miel-Fondal s\'engage pour une éducation de qualité accessible à tous. Nos programmes éducatifs visent à réduire les inégalités et à offrir des opportunités d\'apprentissage innovantes.</p><p>Nous travaillons sur l\'amélioration des infrastructures scolaires, la formation des enseignants, et l\'intégration des nouvelles technologies éducatives.</p>' },
+        featured_media: 0,
+        author: 1,
+        _embedded: {
+          'wp:featuredmedia': [{
+            source_url: 'https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=600&h=400&fit=crop',
+            alt_text: 'Enfants en classe'
+          }],
+          author: [{ name: 'Équipe Éducation' }]
         }
       }
     ];
