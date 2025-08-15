@@ -70,7 +70,7 @@ const Article = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-50 pt-[74px]">
         <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8">
           <div className="grid lg:grid-cols-3 gap-4 lg:gap-8">
             {/* Article principal */}
