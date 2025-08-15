@@ -1,7 +1,7 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import { useWordPressPosts } from '@/hooks/useWordPressPosts';
-import { stripHtmlTags, formatDate } from '@/utils/textUtils';
+import { stripHtmlTags, formatDate, createSlug, cleanArticleContent } from '@/utils/textUtils';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Share2, Facebook, Twitter, Linkedin, Mail, Calendar, User, Clock, Eye, ChevronRight } from 'lucide-react';
@@ -14,13 +14,13 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 const Article = () => {
-  const { id } = useParams<{ id: string }>();
+  const { slug } = useParams<{ slug: string }>();
   const { data } = useWordPressPosts(1, 20); // Récupérer plus d'articles pour la sidebar
   const [comment, setComment] = useState({ name: '', email: '', message: '' });
 
-  // Trouver l'article spécifique
-  const article = data?.posts.find(post => post.id.toString() === id);
-  const otherPosts = data?.posts.filter(post => post.id.toString() !== id).slice(0, 5);
+  // Trouver l'article spécifique par slug
+  const article = data?.posts.find(post => createSlug(post.title.rendered) === slug);
+  const otherPosts = data?.posts.filter(post => createSlug(post.title.rendered) !== slug).slice(0, 5);
 
   if (!article) {
     return (
@@ -78,7 +78,7 @@ const Article = () => {
               <ChevronRight size={16} />
               <Link to="/blog" className="hover:text-[#9c6b04]">Blog</Link>
               <ChevronRight size={16} />
-              <span className="text-gray-800">{article.title.rendered}</span>
+              <span className="text-gray-800">{stripHtmlTags(article.title.rendered)}</span>
             </nav>
           </div>
         </div>
@@ -88,16 +88,12 @@ const Article = () => {
             {/* Article principal */}
             <div className="lg:col-span-2">
               <article className="bg-white rounded-lg shadow-lg overflow-hidden">
-                {/* Image à la une */}
-                {featuredImage && (
-                  <img 
-                    src={featuredImage} 
-                    alt={article.title.rendered}
-                    className="w-full h-64 md:h-96 object-cover"
-                  />
-                )}
-
                 <div className="p-6 md:p-8">
+                  {/* Titre */}
+                  <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                    {stripHtmlTags(article.title.rendered)}
+                  </h1>
+
                   {/* Métadonnées */}
                   <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-6">
                     <div className="flex items-center gap-1">
@@ -118,17 +114,14 @@ const Article = () => {
                     </div>
                   </div>
 
-                  {/* Titre */}
-                  <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-                    {article.title.rendered}
-                  </h1>
-
-                  {/* Extrait */}
-                  <div className="bg-gray-50 border-l-4 border-[#9c6b04] p-4 mb-8">
-                    <p className="text-lg text-gray-700 font-medium">
-                      {stripHtmlTags(article.excerpt.rendered)}
-                    </p>
-                  </div>
+                  {/* Image à la une */}
+                  {featuredImage && (
+                    <img 
+                      src={featuredImage} 
+                      alt={stripHtmlTags(article.title.rendered)}
+                      className="w-full h-64 md:h-96 object-cover rounded-lg mb-8"
+                    />
+                  )}
 
                   {/* Partage social */}
                   <div className="flex items-center gap-2 mb-8 p-4 bg-gray-50 rounded-lg">
@@ -170,8 +163,8 @@ const Article = () => {
 
                   {/* Contenu de l'article */}
                   <div 
-                    className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-p:leading-relaxed prose-a:text-[#9c6b04] prose-a:no-underline hover:prose-a:underline"
-                    dangerouslySetInnerHTML={{ __html: article.content.rendered }}
+                    className="article-content"
+                    dangerouslySetInnerHTML={{ __html: cleanArticleContent(article.content.rendered) }}
                   />
 
                   {/* Tags */}
@@ -311,7 +304,7 @@ const Article = () => {
                       {otherPosts?.map((post) => (
                         <Link 
                           key={post.id} 
-                          to={`/article/${post.id}`}
+                          to={`/blog/${createSlug(post.title.rendered)}`}
                           className="block group"
                         >
                           <div className="flex gap-3">
@@ -322,7 +315,7 @@ const Article = () => {
                             />
                             <div className="flex-1">
                               <h4 className="font-medium text-sm group-hover:text-[#9c6b04] transition-colors line-clamp-2">
-                                {post.title.rendered}
+                                {stripHtmlTags(post.title.rendered)}
                               </h4>
                               <p className="text-xs text-gray-600 mt-1">
                                 {formatDate(post.date)}

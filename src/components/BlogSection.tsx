@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useWordPressPosts } from "@/hooks/useWordPressPosts";
-import { stripHtmlTags, truncateText, formatDate } from "@/utils/textUtils";
+import { stripHtmlTags, truncateText, formatDate, createSlug } from "@/utils/textUtils";
 import { Loader2 } from "lucide-react";
 
 const BlogSection = () => {
@@ -55,7 +55,7 @@ const BlogSection = () => {
                   className="w-full h-48 object-cover" 
                 />
                 <div className="p-6">
-                  <h3 className="font-bold text-lg mb-3 line-clamp-2">{post.title.rendered}</h3>
+                  <h3 className="font-bold text-lg mb-3 line-clamp-2">{stripHtmlTags(post.title.rendered)}</h3>
                   <p className="text-sm text-gray-600 mb-4">
                     {truncatedExcerpt}
                   </p>
@@ -64,7 +64,7 @@ const BlogSection = () => {
                     <span>{formatDate(post.date)}</span>
                   </div>
                   <Button asChild variant="outline" className="bg-black text-white hover:bg-gray-800">
-                    <Link to={`/article/${post.id}`}>Lire plus...</Link>
+                    <Link to={`/blog/${createSlug(post.title.rendered)}`}>Lire plus...</Link>
                   </Button>
                 </div>
               </div>

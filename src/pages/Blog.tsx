@@ -3,7 +3,7 @@ import Layout from '@/components/Layout';
 import { Button } from "@/components/ui/button";
 import { Calendar, User, Clock, Loader2 } from 'lucide-react';
 import { useWordPressPosts } from "@/hooks/useWordPressPosts";
-import { stripHtmlTags, truncateText, formatDate } from "@/utils/textUtils";
+import { stripHtmlTags, truncateText, formatDate, createSlug } from "@/utils/textUtils";
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import NewsletterForm from '@/components/NewsletterForm';
@@ -82,7 +82,7 @@ const Blog = () => {
                             </div>
                           </div>
                           
-                          <h3 className="font-bold text-lg mb-3 line-clamp-2">{post.title.rendered}</h3>
+                          <h3 className="font-bold text-lg mb-3 line-clamp-2">{stripHtmlTags(post.title.rendered)}</h3>
                           <p className="text-gray-600 mb-4 line-clamp-3">{truncatedExcerpt}</p>
                           
                           <div className="flex items-center justify-between">
@@ -96,7 +96,7 @@ const Blog = () => {
                               size="sm" 
                               className="bg-[#9c6b04] text-white hover:bg-[#9c6b04]/90 border-[#9c6b04]"
                             >
-                              <Link to={`/article/${post.id}`}>Lire plus</Link>
+                              <Link to={`/blog/${createSlug(post.title.rendered)}`}>Lire plus</Link>
                             </Button>
                           </div>
                         </div>
