@@ -36,29 +36,43 @@ export const fetchWordPressPosts = async (page: number = 1, perPage: number = 6)
   try {
     console.log(`Fetching WordPress posts from ${API_BASE_URL}/posts`);
     
-    const response = await fetch(
-      `${API_BASE_URL}/posts?page=${page}&per_page=${perPage}&_embed&status=publish&orderby=date&order=desc`,
-      {
-        method: 'GET',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-        },
-        mode: 'cors',
-      }
-    );
+    // Tentative avec un proxy CORS pour contourner les restrictions
+    const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(
+      `${API_BASE_URL}/posts?page=${page}&per_page=${perPage}&_embed&status=publish&orderby=date&order=desc`
+    )}`;
+    
+    const response = await fetch(proxyUrl, {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+      },
+    });
     
     console.log('Response status:', response.status);
-    console.log('Response headers:', response.headers);
     
     if (!response.ok) {
       console.error(`HTTP error! status: ${response.status}`);
       throw new Error(`Erreur HTTP: ${response.status} - ${response.statusText}`);
     }
     
-    const posts = await response.json();
-    const totalPosts = parseInt(response.headers.get('X-WP-Total') || '0');
-    const totalPages = parseInt(response.headers.get('X-WP-TotalPages') || '1');
+    const data = await response.json();
+    
+    // Si on utilise le proxy, les données sont dans data.contents
+    let posts, totalPosts, totalPages;
+    
+    if (data.contents) {
+      // Réponse via proxy
+      const wpData = JSON.parse(data.contents);
+      posts = wpData;
+      // Estimation du nombre total basée sur la pagination
+      totalPosts = posts.length;
+      totalPages = Math.ceil(totalPosts / perPage);
+    } else {
+      // Réponse directe de WordPress
+      posts = data;
+      totalPosts = parseInt(response.headers.get('X-WP-Total') || posts.length.toString());
+      totalPages = parseInt(response.headers.get('X-WP-TotalPages') || '1');
+    }
     
     console.log('Posts fetched successfully:', posts.length);
     
