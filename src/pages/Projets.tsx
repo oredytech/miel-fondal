@@ -15,9 +15,9 @@ const Projets = () => {
             <ArrowLeft className="w-5 h-5 mr-2" />
             Retour à l'accueil
           </Link>
-          <h1 className="text-5xl font-bold text-white">Nos Projets</h1>
+          <h1 className="text-5xl font-bold text-white">Départements</h1>
           <p className="text-white/90 text-lg mt-4 max-w-2xl">
-            Découvrez tous nos projets qui transforment positivement les communautés congolaises à travers l'éducation, la sensibilisation et l'action sociale.
+            Découvrez tous nos départements qui transforment positivement les communautés congolaises à travers l'éducation, la sensibilisation et l'action sociale.
           </p>
         </div>
       </section>
