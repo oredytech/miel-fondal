@@ -117,7 +117,7 @@ const Header = () => {
               <Link to="/" className={`${mobileMenuTextClass} transition-colors`} onClick={()=>setIsMenuOpen(false)}>Accueil</Link>
               <Link to="/realisations" className={`${mobileMenuTextClass} transition-colors`} onClick={()=>setIsMenuOpen(false)}>Réalisations</Link>
               <Link to="/experiences" className={`${mobileMenuTextClass} transition-colors`} onClick={()=>setIsMenuOpen(false)}>Expériences</Link>
-              <Link to="/projets" className={`${mobileMenuTextClass} transition-colors`} onClick={()=>setIsMenuOpen(false)}>Projets</Link>
+              <Link to="/departements" className={`${mobileMenuTextClass} transition-colors`} onClick={()=>setIsMenuOpen(false)}>Départements</Link>
               <Link to="/blog" className={`${mobileMenuTextClass} transition-colors`} onClick={()=>setIsMenuOpen(false)}>Blog</Link>
               <Link to="/contacts" className={`${mobileMenuTextClass} transition-colors`} onClick={()=>setIsMenuOpen(false)}>Contacts</Link>
               <Button
