@@ -38,8 +38,12 @@ const Footer = () => {
             <h3 className="font-bold mb-4">Départements</h3>
             <ul className="space-y-2 text-gray-300">
               <li>Watoto Radio</li>
-              <li>Injili Everywere</li>
+              <li>Tetea Média</li>
               <li>Tetea Mazingira</li>
+              <li>Injili Everywhere</li>
+              <li>FRESE</li>
+              <li>Family Recess Camp</li>
+              <li>LEVERSGN</li>
             </ul>
           </div>
 
