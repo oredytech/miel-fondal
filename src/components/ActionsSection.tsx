@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Radio, Headphones, Bell, Flag } from "lucide-react";
+import { Radio, Headphones, Bell, Flag, Users, Book } from "lucide-react";
 
 const ActionsSection = () => {
   return (
@@ -8,10 +8,10 @@ const ActionsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Nos actions concrètes pour un impact durable
+            Départements
           </h2>
           <p className="text-lg text-gray-600">
-            Depuis sa création, Miel-Fondal a lancé des actions significatives qui transforment positivement les communautés en RDC.
+            Alignement des Départements avec la Vision et la Mission de Miel-Fondal : 
           </p>
         </div>
 
@@ -22,13 +22,13 @@ const ActionsSection = () => {
             <CardContent className="p-6 h-full flex flex-col justify-between">
               <div>
                 <Radio className="w-8 h-8 text-orange-500 mb-4" />
-                <h3 className="font-bold mb-3">Promotion de l'éducation et de la culture</h3>
+                <h3 className="font-bold mb-3">Tetea Média, Tetea Mazingira, FRESE et LEVERSGN</h3>
                 <p className="text-sm text-gray-300 mb-4">
-                  Watoto Radio : Création d'une radio dédiée aux enfants pour leur permettre de s'exprimer et d'apprendre.
+                  Contribuent directement à la sensibilisation et à la promotion de causes environnementales et sociales.
                 </p>
               </div>
               <Button className="text-white text-sm bg-[#d39108]">
-                Ecouter la radio
+                En savoir plus
               </Button>
             </CardContent>
           </Card>
@@ -39,13 +39,13 @@ const ActionsSection = () => {
             <CardContent className="p-6 h-full flex flex-col justify-between">
               <div>
                 <Headphones className="w-8 h-8 text-orange-500 mb-4" />
-                <h3 className="font-bold mb-3">Sensibilisation environnementale</h3>
+                <h3 className="font-bold mb-3">Watoto Radio et Mushakulu Fm</h3>
                 <p className="text-sm text-gray-300 mb-4">
-                  Tetea Mazingira est un podcast de sensibilisation environnementale
+                  Favorisent l'accès à l'information et le dialogue intergénérationnel.
                 </p>
               </div>
               <Button className="text-white text-sm bg-[#d39108]">
-                Ecouter les podcasts
+                Écouter
               </Button>
             </CardContent>
           </Card>
@@ -55,14 +55,14 @@ const ActionsSection = () => {
           }}>
             <CardContent className="p-6 h-full flex flex-col justify-between">
               <div>
-                <Bell className="w-8 h-8 text-orange-500 mb-4" />
-                <h3 className="font-bold mb-3">Inclusion sociale et respect des aînés</h3>
+                <Book className="w-8 h-8 text-orange-500 mb-4" />
+                <h3 className="font-bold mb-3">Injili Everywhere</h3>
                 <p className="text-sm text-gray-300 mb-4">
-                  Mushakulu FM : Espace radiophonique permettant aux personnes âgées de partager leurs expériences et conseils.
+                  Soutient le développement des jeunes et promeut des valeurs positives, chrétiennes.
                 </p>
               </div>
               <Button className="text-white text-sm bg-[#d39108]">
-                Ecouter la radio
+                Soutenir
               </Button>
             </CardContent>
           </Card>
@@ -72,10 +72,10 @@ const ActionsSection = () => {
           }}>
             <CardContent className="p-6 h-full flex flex-col justify-between">
               <div>
-                <Flag className="w-8 h-8 text-orange-500 mb-4" />
-                <h3 className="font-bold mb-3">Sécurité routière et citoyenneté active</h3>
+                <Users className="w-8 h-8 text-orange-500 mb-4" />
+                <h3 className="font-bold mb-3">Family Recess Camp “Camp de récréation familial” </h3>
                 <p className="text-sm text-gray-300 mb-4">
-                  FRESE : Campagnes pour sensibiliser à la sécurité routière.
+                  Offre des formations professionnelles et linguistiques aux enfants et aux personnes adultes dans un format ludique et familial.
                 </p>
               </div>
               <Button className="text-white text-sm bg-[#d39108]">
