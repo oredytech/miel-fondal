@@ -80,7 +80,7 @@ const HeroSection = () => {
                 <Link to="/" className="text-white hover:text-[#d39108]" onClick={()=>setIsMenuOpen(false)}>Accueil</Link>
                 <Link to="/realisations" className="text-white hover:text-[#d39108]" onClick={()=>setIsMenuOpen(false)}>Réalisations</Link>
                 <Link to="/experiences" className="text-white hover:text-[#d39108]" onClick={()=>setIsMenuOpen(false)}>Expériences</Link>
-                <Link to="/projets" className="text-white hover:text-[#d39108]" onClick={()=>setIsMenuOpen(false)}>Projets</Link>
+                <Link to="/departements" className="text-white hover:text-[#d39108]" onClick={()=>setIsMenuOpen(false)}>Départements</Link>
                 <Link to="/blog" className="text-white hover:text-[#d39108]" onClick={()=>setIsMenuOpen(false)}>Blog</Link>
                 <Link to="/contacts" className="text-white hover:text-[#d39108]" onClick={()=>setIsMenuOpen(false)}>Contacts</Link>
                 <Button asChild className="bg-[#d39108] hover:bg-[#d39108]/90 text-white w-full">
@@ -107,7 +107,7 @@ const HeroSection = () => {
                 <span>Expériences</span>
               </CommandItem>
               <CommandItem>
-                <span>Projets</span>
+                <span>Départements</span>
               </CommandItem>
               <CommandItem>
                 <span>Blog</span>
