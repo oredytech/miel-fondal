@@ -26,10 +26,10 @@ const Article = () => {
     return (
       <Layout>
         <div className="container mx-auto px-4 py-16 text-center">
-          <h1 className="text-2xl font-bold text-gray-800 mb-4">Article non trouvé</h1>
-          <p className="text-gray-600 mb-8">L'article que vous recherchez n'existe pas ou a été supprimé.</p>
+          <h1 className="text-2xl font-bold text-gray-800 mb-4">Chargement...</h1>
+          <p className="text-gray-600 mb-8">Patientez, l'article est en cours de chargement.</p>
           <Button asChild>
-            <Link to="/blog">Retour au blog</Link>
+            <Link to="/blog">Annuler</Link>
           </Button>
         </div>
       </Layout>
@@ -97,7 +97,7 @@ const Article = () => {
                     </div>
                     <div className="flex items-center gap-1">
                       <Clock size={16} />
-                      <span>5 min de lecture</span>
+            
                     </div>
                   </div>
 
@@ -192,7 +192,7 @@ const Article = () => {
               <Card className="mt-8">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <span>Commentaires (3)</span>
+                    <span>Commentaires</span>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -241,27 +241,6 @@ const Article = () => {
                   </form>
 
                   <Separator className="mb-6" />
-
-                  {/* Commentaires existants */}
-                  <div className="space-y-6">
-                    {[1, 2, 3].map((i) => (
-                      <div key={i} className="border-l-2 border-gray-200 pl-4">
-                        <div className="flex items-center gap-3 mb-2">
-                          <div className="w-8 h-8 bg-[#9c6b04] rounded-full flex items-center justify-center text-white text-sm font-semibold">
-                            U{i}
-                          </div>
-                          <div>
-                            <p className="font-semibold text-gray-900">Utilisateur {i}</p>
-                            <p className="text-sm text-gray-600">Il y a {i} jour{i > 1 ? 's' : ''}</p>
-                          </div>
-                        </div>
-                        <p className="text-gray-700">
-                          Excellent article ! Les initiatives de Miel-Fondal sont vraiment inspirantes. 
-                          Merci pour ce partage d'informations précieuses.
-                        </p>
-                      </div>
-                    ))}
-                  </div>
                 </CardContent>
               </Card>
             </div>
