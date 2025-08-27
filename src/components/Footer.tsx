@@ -18,12 +18,10 @@ const Footer = () => {
   }, [api]);
 
   const partners = [
-    { name: "UNESCO", color: "bg-blue-600" },
-    { name: "UNICEF", color: "bg-cyan-500" },
-    { name: "ONU", color: "bg-blue-800" },
-    { name: "UE", color: "bg-yellow-400" },
-    { name: "USAID", color: "bg-red-600" },
-    { name: "AFD", color: "bg-green-600" },
+    { name: "About Christ Prayer Ministry", color: "bg-blue-600" },
+    { name: "Bora FM", color: "bg-cyan-500" },
+    { name: "Amani Fm", color: "bg-blue-800" },
+    { name: "Beroya FM", color: "bg-yellow-400" },
   ];
 
   return (
@@ -54,7 +52,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-2 justify-center md:justify-start">
                 <Mail className="w-4 h-4" />
-                <span>info@meilfondal.org</span>
+                <span>info@mielfondal.org</span>
               </li>
               <li className="flex items-center space-x-2 justify-center md:justify-start">
                 <Facebook className="w-4 h-4" />
