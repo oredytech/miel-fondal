@@ -26,6 +26,36 @@ const Projets = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Projet 0: Tetea Média */}
+            <Card className="shadow-lg hover:shadow-xl transition-shadow" style={{ borderRadius: '10px 0 10px 0' }}>
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-[#d39108] rounded-full flex items-center justify-center mb-4">
+                  <Leaf className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="font-bold text-2xl mb-3 text-[#3e0202]">Tetea Média</h3>
+                <p className="text-gray-600 mb-4">
+                  Tetea Média contribue à la lutte pour le droit d’accès à l’information en mettant en place des campagnes de désinformation et débat citoyen autour de l’accès à l’information.
+                </p>
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center text-sm text-gray-500">
+                    <MapPin className="w-4 h-4 mr-2" />
+                    National, RDC
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <Users className="w-4 h-4 mr-2" />
+                    1,200+ participants
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    Depuis 2022
+                  </div>
+                </div>
+                <Button className="w-full bg-[#d39108] hover:bg-[#d39108]/90 text-white">
+                  En savoir plus
+                </Button>
+              </CardContent>
+            </Card>
+            
             {/* Projet 1: Tetea Mazingira */}
             <Card className="shadow-lg hover:shadow-xl transition-shadow" style={{ borderRadius: '10px 0 10px 0' }}>
               <CardContent className="p-6">
@@ -34,7 +64,7 @@ const Projets = () => {
                 </div>
                 <h3 className="font-bold text-2xl mb-3 text-[#3e0202]">Tetea Mazingira</h3>
                 <p className="text-gray-600 mb-4">
-                  Programme de sensibilisation environnementale visant à protéger notre planète et éduquer les communautés sur les enjeux écologiques.
+                  Tetea Mazingira qui veut dire “Défendons l’Environnement” est un département de Miel-Fondal dont l’objectif consiste à développer des contenus sur la protection de l’environnement à travers des podcasts
                 </p>
                 <div className="space-y-2 mb-4">
                   <div className="flex items-center text-sm text-gray-500">
@@ -64,7 +94,7 @@ const Projets = () => {
                 </div>
                 <h3 className="font-bold text-2xl mb-3 text-[#3e0202]">Watoto Radio</h3>
                 <p className="text-gray-600 mb-4">
-                  Station de radio dédiée aux enfants et aux jeunes, offrant des programmes éducatifs et de divertissement adaptés.
+                  Watoto Radio est une initiative qui soutient l’accès des enfants à la radio. Elle mène une campagne pour que cet accès soit garanti : la Campagne Watoto Radio
                 </p>
                 <div className="space-y-2 mb-4">
                   <div className="flex items-center text-sm text-gray-500">
@@ -86,6 +116,37 @@ const Projets = () => {
               </CardContent>
             </Card>
 
+            {/* Projet 3: Injili Everywhere */}
+            <Card className="shadow-lg hover:shadow-xl transition-shadow" style={{ borderRadius: '10px 0 10px 0' }}>
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-[#d39108] rounded-full flex items-center justify-center mb-4">
+                  <Radio className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="font-bold text-2xl mb-3 text-[#3e0202]">Injili Everywhere</h3>
+                <p className="text-gray-600 mb-4">
+                  Injili Everywhere qui veut dire l’Evangile Partout soutient les initiatives de développement et de l’expansion de la Bonne Nouvelle au sein de groupes de jeunes.
+                </p>
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center text-sm text-gray-500">
+                    <MapPin className="w-4 h-4 mr-2" />
+                    Provinces, RDC
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <Users className="w-4 h-4 mr-2" />
+                    1,500+ auditeurs
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    Depuis 2023
+                  </div>
+                </div>
+                <Button className="w-full bg-[#d39108] hover:bg-[#d39108]/90 text-white">
+                  En savoir plus
+                </Button>
+              </CardContent>
+            </Card>
+
+
             {/* Projet 3: Mushakulu FM */}
             <Card className="shadow-lg hover:shadow-xl transition-shadow" style={{ borderRadius: '10px 0 10px 0' }}>
               <CardContent className="p-6">
@@ -94,7 +155,7 @@ const Projets = () => {
                 </div>
                 <h3 className="font-bold text-2xl mb-3 text-[#3e0202]">Mushakulu FM</h3>
                 <p className="text-gray-600 mb-4">
-                  Radio communautaire axée sur l'information locale, la culture et l'éducation des populations adultes.
+                  Dans le cadre de contribuer au rapprochement intergénérationnel, Mushakulu qui veut dire “Vieux” se veut être une dynamique d’expression des personnes de troisième âge pour transmettre leur sagesse aux générations futures à travers la voix des ondes
                 </p>
                 <div className="space-y-2 mb-4">
                   <div className="flex items-center text-sm text-gray-500">
@@ -146,15 +207,15 @@ const Projets = () => {
               </CardContent>
             </Card>
 
-            {/* Projet 5: Éducation Communautaire */}
+            {/* Projet 5: Frese */}
             <Card className="shadow-lg hover:shadow-xl transition-shadow" style={{ borderRadius: '10px 0 10px 0' }}>
               <CardContent className="p-6">
                 <div className="w-16 h-16 bg-[#d39108] rounded-full flex items-center justify-center mb-4">
                   <Target className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="font-bold text-2xl mb-3 text-[#3e0202]">Éducation Communautaire</h3>
+                <h3 className="font-bold text-2xl mb-3 text-[#3e0202]">Frese</h3>
                 <p className="text-gray-600 mb-4">
-                  Programmes d'alphabétisation et de formation professionnelle pour autonomiser les communautés locales.
+                  FRESE “Faire de nos Routes un Espace Sûr pour les Enfants” est un département ayant pour mission principale de sensibiliser sur la sécurité routière
                 </p>
                 <div className="space-y-2 mb-4">
                   <div className="flex items-center text-sm text-gray-500">
@@ -176,15 +237,15 @@ const Projets = () => {
               </CardContent>
             </Card>
 
-            {/* Projet 6: Action Sociale */}
+            {/* Projet 6: LEVERSGN */}
             <Card className="shadow-lg hover:shadow-xl transition-shadow" style={{ borderRadius: '10px 0 10px 0' }}>
               <CardContent className="p-6">
                 <div className="w-16 h-16 bg-[#3e0202] rounded-full flex items-center justify-center mb-4">
                   <Globe className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="font-bold text-2xl mb-3 text-[#3e0202]">Action Sociale</h3>
+                <h3 className="font-bold text-2xl mb-3 text-[#3e0202]">LEVERSGN</h3>
                 <p className="text-gray-600 mb-4">
-                  Initiatives d'aide humanitaire et de développement social pour améliorer les conditions de vie des plus vulnérables.
+                  LEVERSGN “Le Vers du Genre et de la protection de la Nature” est un département qui encourage les jeunes à la lecture et à l’écriture des oeuvres artistiques sur la protection de l’environnement
                 </p>
                 <div className="space-y-2 mb-4">
                   <div className="flex items-center text-sm text-gray-500">
@@ -205,6 +266,37 @@ const Projets = () => {
                 </Button>
               </CardContent>
             </Card>
+
+            {/* Projet 8: Family Recess Camp “Camp de récréation familial”  */}
+            <Card className="shadow-lg hover:shadow-xl transition-shadow" style={{ borderRadius: '10px 0 10px 0' }}>
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-[#3e0202] rounded-full flex items-center justify-center mb-4">
+                  <Globe className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="font-bold text-2xl mb-3 text-[#3e0202]">Family Recess Camp “Camp de récréation familial” </h3>
+                <p className="text-gray-600 mb-4">
+                  Family Recess Camp est un département dont la vocation est la formation sur divers métiers et langues
+                </p>
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center text-sm text-gray-500">
+                    <MapPin className="w-4 h-4 mr-2" />
+                    National, RDC
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <Users className="w-4 h-4 mr-2" />
+                    1,000+ bénéficiaires
+                  </div>
+                  <div className="flex items-center text-sm text-gray-500">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    Depuis 2021
+                  </div>
+                </div>
+                <Button className="w-full bg-[#3e0202] hover:bg-[#3e0202]/90 text-white">
+                  En savoir plus
+                </Button>
+              </CardContent>
+            </Card>
+            
           </div>
         </div>
       </section>
@@ -215,19 +307,23 @@ const Projets = () => {
           <h2 className="text-4xl font-bold text-[#3e0202] text-center mb-12">Notre Impact Global</h2>
           <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
             <div className="text-center">
-              <div className="text-4xl font-bold text-[#d39108] mb-2">6</div>
+              <div className="text-4xl font-bold text-[#d39108] mb-2">3</div>
               <p className="text-gray-600">Projets Actifs</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-[#d39108] mb-2">7,100+</div>
+              <div className="text-4xl font-bold text-[#d39108] mb-2">1000+</div>
               <p className="text-gray-600">Bénéficiaires Directs</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-[#d39108] mb-2">12</div>
+              <div className="text-4xl font-bold text-[#d39108] mb-2">10 000+</div>
+              <p className="text-gray-600">Bénéficiaires indirects</p>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-[#d39108] mb-2">2</div>
               <p className="text-gray-600">Provinces Couvertes</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-[#d39108] mb-2">4</div>
+              <div className="text-4xl font-bold text-[#d39108] mb-2">15</div>
               <p className="text-gray-600">Années d'Expérience</p>
             </div>
           </div>
