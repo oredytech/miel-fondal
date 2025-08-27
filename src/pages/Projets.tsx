@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Users, Heart, Radio, Leaf, Globe, Calendar, MapPin, Target } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const Projets = () => {
+const departements = () => {
   return (
     <Layout>
       {/* Header avec navigation de retour */}
