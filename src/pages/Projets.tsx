@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Users, Heart, Radio, Leaf, Globe, Calendar, MapPin, Target } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const departements = () => {
+const Departements = () => {
   return (
     <Layout>
       {/* Header avec navigation de retour */}
@@ -357,4 +357,4 @@ const departements = () => {
   );
 };
 
-export default Projets;
+export default Departements;
