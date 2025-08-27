@@ -305,7 +305,7 @@ const Projets = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-[#3e0202] text-center mb-12">Notre Impact Global</h2>
-          <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-5 gap-8 max-w-6xl mx-auto">
             <div className="text-center">
               <div className="text-4xl font-bold text-[#d39108] mb-2">3</div>
               <p className="text-gray-600">Projets Actifs</p>
