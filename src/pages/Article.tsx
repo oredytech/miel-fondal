@@ -160,8 +160,8 @@ const Article = () => {
 
                   {/* Contenu de l'article */}
                   <div 
-                    className="article-content"
-                    dangerouslySetInnerHTML={{ __html: cleanArticleContent(article.content.rendered) }}
+                    className="prose prose-lg max-w-none prose-headings:font-bold prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-p:leading-relaxed prose-blockquote:border-l-4 prose-blockquote:border-[#9c6b04] prose-blockquote:pl-4 prose-blockquote:italic prose-img:rounded-lg prose-ul:list-disc prose-ol:list-decimal prose-li:my-1 prose-a:text-[#9c6b04] hover:prose-a:underline"
+  dangerouslySetInnerHTML={{ __html: cleanArticleContent(article.content.rendered) }}
                   />
 
                   {/* Tags */}
