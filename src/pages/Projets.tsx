@@ -346,7 +346,7 @@ const Projets = () => {
               </Button>
             </Link>
             <Link to="/proposer-projet">
-              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-[#d39108] px-8 py-3 text-lg">
+              <Button variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-[#d39108] px-8 py-3 text-lg">
                 Proposer un Projet
               </Button>
             </Link>
