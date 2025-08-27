@@ -85,7 +85,7 @@ const Header = () => {
               <Link to="/" className={`${mainTextClass} transition-colors font-medium`}>Accueil</Link>
               <Link to="/realisations" className={`${mainTextClass} transition-colors font-medium`}>Réalisations</Link>
               <Link to="/experiences" className={`${mainTextClass} transition-colors font-medium`}>Expériences</Link>
-              <Link to="/projets" className={`${mainTextClass} transition-colors font-medium`}>Projets</Link>
+              <Link to="/departements" className={`${mainTextClass} transition-colors font-medium`}>Départements</Link>
               <Link to="/blog" className={`${mainTextClass} transition-colors font-medium`}>Blog</Link>
               <Link to="/contacts" className={`${mainTextClass} transition-colors font-medium`}>Contacts</Link>
               <Button
