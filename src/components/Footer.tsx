@@ -56,11 +56,11 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-2 justify-center md:justify-start">
                 <Facebook className="w-4 h-4" />
-                <span>Facebook</span>
+                <a href="https://www.facebook.com/mielfondal"><span>Facebook</span></a>
               </li>
               <li className="flex items-center space-x-2 justify-center md:justify-start">
                 <Send className="w-4 h-4" />
-                <span>Telegram</span>
+                <a href="https://x.com/campagnefrese"><span>X</span></a>
               </li>
             </ul>
           </div>
