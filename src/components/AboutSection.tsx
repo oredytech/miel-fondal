@@ -24,7 +24,7 @@ const AboutSection = () => {
           </div>
           <div className="flex justify-center">
             <Button asChild className="text-white px-8 py-3 bg-[#d39108]">
-              <Link to="/departements">VOIR PLUS DE PROJETS</Link>
+              <Link to="/departements">VOIR PLUS</Link>
             </Button>
           </div>
         </div>
