@@ -1,5 +1,5 @@
 
-import { Mail, Phone, MapPin, Facebook, x } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, twitter } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { useEffect, useState } from 'react';
 
@@ -63,8 +63,8 @@ const Footer = () => {
                 <a href="https://www.facebook.com/mielfondal"><span>Facebook</span></a>
               </li>
               <li className="flex items-center space-x-2 justify-center md:justify-start">
-                <x className="w-4 h-4" />
-                <a href="https://x.com/campagnefrese"><span>Tweeter</span></a>
+                <twitter className="w-4 h-4" />
+                <a href="https://x.com/campagnefrese"><span>Twitter / X </span></a>
               </li>
             </ul>
           </div>
