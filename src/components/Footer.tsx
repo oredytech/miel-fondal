@@ -1,5 +1,5 @@
 
-import { Mail, Phone, MapPin, Facebook, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Tweeter } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { useEffect, useState } from 'react';
 
