@@ -38,15 +38,12 @@ const OrganizationSection = () => {
               <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mb-4">
                 <Megaphone className="w-6 h-6 text-white" />
               </div>
-              <h3 className="font-bold text-lg mb-3">Watoto Radio</h3>
+              <h3 className="font-bold text-lg mb-3">Département Communication et Sensibilisation</h3>
               <p className="text-sm text-gray-600 mb-2">
-                <strong>Mission :</strong> Donner la parole aux enfants et aux jeunes à travers des émissions de radio.
-              </p>
-              <p className="text-sm text-gray-600 mb-2">
-                <strong>Objectifs :</strong> Renforcer l'accès des enfants à la radio, sensibiliser les radiodiffuseurs, initier à la production radiophonique.
+                <strong>Mission :</strong> Amplifier l'impact des campagnes de sensibilisation et toucher des publics variés grâce à des outils innovants.
               </p>
               <p className="text-sm text-gray-600">
-                <strong>Région :</strong> Nord-Kivu (Goma) et Est de la RDC.
+                <strong>Projets phares :</strong> Tetea Média, Tetea Mazingira, Watoto Radio, FRESE.
               </p>
             </CardContent>
           </Card>
