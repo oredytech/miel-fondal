@@ -1,21 +1,7 @@
 
 import { Mail, Phone, MapPin, Facebook, Twitter } from 'lucide-react';
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
-import { useEffect, useState } from 'react';
 
 const Footer = () => {
-  const [api, setApi] = useState<any>();
-
-  // Auto-scroll effect
-  useEffect(() => {
-    if (!api) return;
-
-    const interval = setInterval(() => {
-      api.scrollNext();
-    }, 2000);
-
-    return () => clearInterval(interval);
-  }, [api]);
 
   const partners = [
     { name: "About Christ Prayer Ministry", color: "bg-blue-600" },
@@ -27,7 +13,27 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white py-[29px]">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-8">
+        {/* Section Partenaires */}
+        <div className="bg-gray-100 rounded-lg py-12 px-8 mb-12 text-center">
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">
+            Nous travaillons avec les meilleurs partenaires
+          </h2>
+          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+            Bien que nous soyons à l'avant-garde et que nous nous spécialisations dans la conception-construction, nous connaissons très bien un certain nombre de méthodes de livraison et sommes convaincus que nous pouvons trouver le processus qui vous aidera le mieux à atteindre vos objectifs.
+          </p>
+          <button className="border border-gray-400 text-gray-700 px-6 py-2 rounded hover:bg-gray-200 transition-colors mb-8">
+            LIRE LA SUITE
+          </button>
+          <div className="flex justify-center items-center space-x-12 flex-wrap gap-4">
+            {partners.map((partner, index) => (
+              <div key={index} className="text-gray-500 font-semibold text-lg">
+                {partner.name}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8">
           <div className="text-center md:text-left">
             <div className="mb-4">
               <img src="/lovable-uploads/8ea7e9f0-b6a9-4a64-a8a6-44636ba3eb85.png" alt="Miel Fondal Logo" className="w-full h-auto" />
@@ -69,31 +75,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="text-center md:text-left">
-            <h3 className="font-bold mb-4">Partenaires</h3>
-            <div className="w-full max-w-[200px] mx-auto md:mx-0">
-              <Carousel
-                setApi={setApi}
-                opts={{
-                  align: "start",
-                  loop: true,
-                }}
-                className="w-full"
-              >
-                <CarouselContent className="-ml-2 md:-ml-4">
-                  {partners.map((partner, index) => (
-                    <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/3">
-                      <div className={`w-12 h-8 ${partner.color} rounded flex items-center justify-center`}>
-                        <span className="text-white text-xs font-bold">
-                          {partner.name}
-                        </span>
-                      </div>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-              </Carousel>
-            </div>
-          </div>
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 my-0 py-0">
