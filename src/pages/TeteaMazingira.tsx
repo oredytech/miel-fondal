@@ -57,6 +57,153 @@ const TeteaMazingira = () => {
         </div>
       </section>
 
+      {/* Section épisodes en swahili */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl font-bold text-[#3e0202] text-center mb-4">Épisodes en Swahili</h2>
+            <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+              Découvrez nos discussions en swahili sur les questions environnementales qui touchent directement nos communautés locales.
+            </p>
+            
+            <div className="space-y-6">
+              <Card className="shadow-lg hover:shadow-xl transition-shadow" style={{ borderRadius: '10px 0 10px 0' }}>
+                <CardContent className="p-6">
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <h3 className="font-bold text-lg mb-2 text-[#3e0202]">
+                        7. Ujumbe wa DYFEM kuhusu Zahabu Safi pa Bikenge Jimboni Maniema inchini Kongo
+                      </h3>
+                      <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
+                        <span>10 novembre 2023</span>
+                        <span>3:20</span>
+                      </div>
+                    </div>
+                    <div className="w-12 h-12 bg-[#d39108] rounded-full flex items-center justify-center ml-4">
+                      <Headphones className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="shadow-lg hover:shadow-xl transition-shadow" style={{ borderRadius: '10px 0 10px 0' }}>
+                <CardContent className="p-6">
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <h3 className="font-bold text-lg mb-2 text-[#3e0202]">
+                        6. Bangi nayo ni mboleo, polisi isi ilunguze tena - Philippe Aksanti, Bio Grand Lac
+                      </h3>
+                      <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
+                        <span>23 mai 2023</span>
+                        <span>11:03</span>
+                      </div>
+                    </div>
+                    <div className="w-12 h-12 bg-[#3e0202] rounded-full flex items-center justify-center ml-4">
+                      <Headphones className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="shadow-lg hover:shadow-xl transition-shadow" style={{ borderRadius: '10px 0 10px 0' }}>
+                <CardContent className="p-6">
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <h3 className="font-bold text-lg mb-2 text-[#3e0202]">
+                        5. Angalisho - Apana kuchoma bangi - Fiston Muhingo
+                      </h3>
+                      <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
+                        <span>19 mai 2023</span>
+                        <span>16:26</span>
+                      </div>
+                    </div>
+                    <div className="w-12 h-12 bg-[#d39108] rounded-full flex items-center justify-center ml-4">
+                      <Headphones className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="shadow-lg hover:shadow-xl transition-shadow" style={{ borderRadius: '10px 0 10px 0' }}>
+                <CardContent className="p-6">
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <h3 className="font-bold text-lg mb-2 text-[#3e0202]">
+                        4. Mti ni mtu, Mtu ni mti - Master Philippe Aksanti, Ajanac/Goma
+                      </h3>
+                      <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
+                        <span>28 avril 2023</span>
+                        <span>15:00</span>
+                      </div>
+                    </div>
+                    <div className="w-12 h-12 bg-[#3e0202] rounded-full flex items-center justify-center ml-4">
+                      <Headphones className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="shadow-lg hover:shadow-xl transition-shadow" style={{ borderRadius: '10px 0 10px 0' }}>
+                <CardContent className="p-6">
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <h3 className="font-bold text-lg mb-2 text-[#3e0202]">
+                        3. Kama ulishaka kula kihembe - Thadhée Katshuva
+                      </h3>
+                      <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
+                        <span>26 avril 2023</span>
+                        <span>14:21</span>
+                      </div>
+                    </div>
+                    <div className="w-12 h-12 bg-[#d39108] rounded-full flex items-center justify-center ml-4">
+                      <Headphones className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="shadow-lg hover:shadow-xl transition-shadow" style={{ borderRadius: '10px 0 10px 0' }}>
+                <CardContent className="p-6">
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <h3 className="font-bold text-lg mb-2 text-[#3e0202]">
+                        2. Muji wa Goma ume kuwa kwenye hatari ya kuvamiwa na uchafu - Fiston Muhindo
+                      </h3>
+                      <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
+                        <span>28 mars 2023</span>
+                        <span>15:46</span>
+                      </div>
+                    </div>
+                    <div className="w-12 h-12 bg-[#3e0202] rounded-full flex items-center justify-center ml-4">
+                      <Headphones className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="shadow-lg hover:shadow-xl transition-shadow" style={{ borderRadius: '10px 0 10px 0' }}>
+                <CardContent className="p-6">
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <h3 className="font-bold text-lg mb-2 text-[#3e0202]">
+                        1. Mulimo wa buyoga - Ir Faustin Mupira
+                      </h3>
+                      <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
+                        <span>4 novembre 2022</span>
+                        <span>5:13</span>
+                      </div>
+                    </div>
+                    <div className="w-12 h-12 bg-[#d39108] rounded-full flex items-center justify-center ml-4">
+                      <Headphones className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Section objectifs */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">

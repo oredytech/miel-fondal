@@ -45,7 +45,7 @@ const Footer = () => {
             <ul className="space-y-2 text-gray-300">
               <li>Watoto Radio</li>
               <li>Tetea Média</li>
-              <li>Tetea Mazingira</li>
+              <li><a href="/tetea-mazingira" className="hover:text-white transition-colors">Tetea Mazingira</a></li>
               <li>Injili Everywhere</li>
               <li>FRESE</li>
               <li>Family Recess Camp</li>
