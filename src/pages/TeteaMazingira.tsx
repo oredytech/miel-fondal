@@ -1,6 +1,6 @@
 import Layout from '@/components/Layout';
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, Mic, Headphones, Globe, Target, Users, MapPin } from "lucide-react";
+import { ArrowLeft, Mic, Headphones, Globe, Target, Users, MapPin, Play } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const TeteaMazingira = () => {
@@ -79,8 +79,13 @@ const TeteaMazingira = () => {
                         <span>3:20</span>
                       </div>
                     </div>
-                    <div className="w-12 h-12 bg-[#d39108] rounded-full flex items-center justify-center ml-4">
-                      <Headphones className="w-6 h-6 text-white" />
+                    <div className="flex items-center gap-3 ml-4">
+                      <button className="w-12 h-12 bg-[#d39108] rounded-full flex items-center justify-center hover:bg-[#b8570a] transition-colors">
+                        <Play className="w-6 h-6 text-white" />
+                      </button>
+                      <div className="w-12 h-12 bg-[#d39108] rounded-full flex items-center justify-center">
+                        <Headphones className="w-6 h-6 text-white" />
+                      </div>
                     </div>
                   </div>
                 </CardContent>
@@ -98,8 +103,13 @@ const TeteaMazingira = () => {
                         <span>11:03</span>
                       </div>
                     </div>
-                    <div className="w-12 h-12 bg-[#3e0202] rounded-full flex items-center justify-center ml-4">
-                      <Headphones className="w-6 h-6 text-white" />
+                    <div className="flex items-center gap-3 ml-4">
+                      <button className="w-12 h-12 bg-[#3e0202] rounded-full flex items-center justify-center hover:bg-[#2a0101] transition-colors">
+                        <Play className="w-6 h-6 text-white" />
+                      </button>
+                      <div className="w-12 h-12 bg-[#3e0202] rounded-full flex items-center justify-center">
+                        <Headphones className="w-6 h-6 text-white" />
+                      </div>
                     </div>
                   </div>
                 </CardContent>
@@ -117,8 +127,13 @@ const TeteaMazingira = () => {
                         <span>16:26</span>
                       </div>
                     </div>
-                    <div className="w-12 h-12 bg-[#d39108] rounded-full flex items-center justify-center ml-4">
-                      <Headphones className="w-6 h-6 text-white" />
+                    <div className="flex items-center gap-3 ml-4">
+                      <button className="w-12 h-12 bg-[#d39108] rounded-full flex items-center justify-center hover:bg-[#b8570a] transition-colors">
+                        <Play className="w-6 h-6 text-white" />
+                      </button>
+                      <div className="w-12 h-12 bg-[#d39108] rounded-full flex items-center justify-center">
+                        <Headphones className="w-6 h-6 text-white" />
+                      </div>
                     </div>
                   </div>
                 </CardContent>
@@ -136,8 +151,13 @@ const TeteaMazingira = () => {
                         <span>15:00</span>
                       </div>
                     </div>
-                    <div className="w-12 h-12 bg-[#3e0202] rounded-full flex items-center justify-center ml-4">
-                      <Headphones className="w-6 h-6 text-white" />
+                    <div className="flex items-center gap-3 ml-4">
+                      <button className="w-12 h-12 bg-[#3e0202] rounded-full flex items-center justify-center hover:bg-[#2a0101] transition-colors">
+                        <Play className="w-6 h-6 text-white" />
+                      </button>
+                      <div className="w-12 h-12 bg-[#3e0202] rounded-full flex items-center justify-center">
+                        <Headphones className="w-6 h-6 text-white" />
+                      </div>
                     </div>
                   </div>
                 </CardContent>
@@ -155,8 +175,13 @@ const TeteaMazingira = () => {
                         <span>14:21</span>
                       </div>
                     </div>
-                    <div className="w-12 h-12 bg-[#d39108] rounded-full flex items-center justify-center ml-4">
-                      <Headphones className="w-6 h-6 text-white" />
+                    <div className="flex items-center gap-3 ml-4">
+                      <button className="w-12 h-12 bg-[#d39108] rounded-full flex items-center justify-center hover:bg-[#b8570a] transition-colors">
+                        <Play className="w-6 h-6 text-white" />
+                      </button>
+                      <div className="w-12 h-12 bg-[#d39108] rounded-full flex items-center justify-center">
+                        <Headphones className="w-6 h-6 text-white" />
+                      </div>
                     </div>
                   </div>
                 </CardContent>
@@ -174,8 +199,13 @@ const TeteaMazingira = () => {
                         <span>15:46</span>
                       </div>
                     </div>
-                    <div className="w-12 h-12 bg-[#3e0202] rounded-full flex items-center justify-center ml-4">
-                      <Headphones className="w-6 h-6 text-white" />
+                    <div className="flex items-center gap-3 ml-4">
+                      <button className="w-12 h-12 bg-[#3e0202] rounded-full flex items-center justify-center hover:bg-[#2a0101] transition-colors">
+                        <Play className="w-6 h-6 text-white" />
+                      </button>
+                      <div className="w-12 h-12 bg-[#3e0202] rounded-full flex items-center justify-center">
+                        <Headphones className="w-6 h-6 text-white" />
+                      </div>
                     </div>
                   </div>
                 </CardContent>
@@ -193,8 +223,13 @@ const TeteaMazingira = () => {
                         <span>5:13</span>
                       </div>
                     </div>
-                    <div className="w-12 h-12 bg-[#d39108] rounded-full flex items-center justify-center ml-4">
-                      <Headphones className="w-6 h-6 text-white" />
+                    <div className="flex items-center gap-3 ml-4">
+                      <button className="w-12 h-12 bg-[#d39108] rounded-full flex items-center justify-center hover:bg-[#b8570a] transition-colors">
+                        <Play className="w-6 h-6 text-white" />
+                      </button>
+                      <div className="w-12 h-12 bg-[#d39108] rounded-full flex items-center justify-center">
+                        <Headphones className="w-6 h-6 text-white" />
+                      </div>
                     </div>
                   </div>
                 </CardContent>
