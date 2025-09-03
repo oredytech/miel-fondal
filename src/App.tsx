@@ -17,7 +17,11 @@ import Partenaire from "./pages/Partenaire";
 import Benevole from "./pages/Benevole";
 import ProposerProjet from "./pages/ProposerProjet";
 import Search from "./pages/Search";
-import TeteaMazingira from "./pages/TeteaMazingira";
+import TeteaMazingira from "@/pages/TeteaMazingira";
+import WatotoRadio from "@/pages/WatotoRadio";
+import FRESE from "@/pages/FRESE";
+import MushakuluFM from "@/pages/MushakuluFM";
+import InjiliEverywhere from "@/pages/InjiliEverywhere";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -44,6 +48,10 @@ const App = () => (
           <Route path="/proposer-projet" element={<ProposerProjet />} />
           <Route path="/search" element={<Search />} />
           <Route path="/tetea-mazingira" element={<TeteaMazingira />} />
+          <Route path="/watoto-radio" element={<WatotoRadio />} />
+          <Route path="/frese" element={<FRESE />} />
+          <Route path="/mushakulu-fm" element={<MushakuluFM />} />
+          <Route path="/injili-everywhere" element={<InjiliEverywhere />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

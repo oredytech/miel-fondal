@@ -1,4 +1,3 @@
-
 import { Mail, Phone, MapPin, Facebook, Twitter } from 'lucide-react';
 
 const Footer = () => {
@@ -6,8 +5,8 @@ const Footer = () => {
   const partners = [
     { name: "About Christ Prayer Ministry", color: "bg-blue-600" },
     { name: "Bora FM", color: "bg-cyan-500" },
-    { name: "Amani Fm", color: "bg-blue-800" },
-    { name: "Beroya FM", color: "bg-yellow-400" },
+    { name: "Amani Fm", color: "bg-blue-800" },
+    { name: "Beroya FM", color: "bg-yellow-400" },
   ];
 
   return (
@@ -43,12 +42,13 @@ const Footer = () => {
           <div className="text-center md:text-left">
             <h3 className="font-bold mb-4">Départements</h3>
             <ul className="space-y-2 text-gray-300">
-              <li>Watoto Radio</li>
+              <li><a href="/watoto-radio" className="hover:text-white transition-colors">Watoto Radio</a></li>
               <li>Tetea Média</li>
               <li><a href="/tetea-mazingira" className="hover:text-white transition-colors">Tetea Mazingira</a></li>
-              <li>Injili Everywhere</li>
-              <li>FRESE</li>
-              <li>Family Recess Camp</li>
+              <li><a href="/injili-everywhere" className="hover:text-white transition-colors">Injili Everywhere</a></li>
+              <li><a href="/frese" className="hover:text-white transition-colors">FRESE</a></li>
+              <li><a href="/mushakulu-fm" className="hover:text-white transition-colors">Mushakulu FM</a></li>
+              <li>Family Recess Camp</li>
               <li>LEVERSGN</li>
             </ul>
           </div>
