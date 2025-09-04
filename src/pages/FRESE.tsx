@@ -1,32 +1,33 @@
-import { ArrowLeft, Shield, Users, Target, MapPin, Car } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Layout from '@/components/Layout';
+import { Shield, Users, Target, MapPin, Car } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 const FRESE = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8">
-        {/* Header */}
-        <div className="flex items-center gap-4 mb-8">
-          <Link to="/" className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors">
-            <ArrowLeft className="w-5 h-5" />
-            <span>Retour à l'accueil</span>
-          </Link>
-        </div>
-
-        <div className="max-w-4xl mx-auto space-y-8">
-          {/* Hero Section */}
-          <div className="text-center space-y-4">
-            <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-              <Shield className="w-8 h-8 text-white" />
+    <Layout>
+      <div className="min-h-screen bg-background">
+        {/* Hero Section */}
+        <section className="relative bg-gradient-to-r from-red-600 to-orange-500 text-white py-20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Shield className="w-10 h-10" />
+              </div>
+              <h1 className="text-5xl font-bold mb-6">FRESE</h1>
+              <p className="text-xl mb-8 leading-relaxed">
+                Faire de nos Routes un Espace Sûr pour les Enfants
+              </p>
+              <p className="text-lg opacity-90 max-w-3xl mx-auto">
+                Un programme de la Fondation Miel-Fondal sur la sensibilisation et le plaidoyer 
+                visant à améliorer la sécurité routière spécifiquement pour les enfants en RDC.
+              </p>
             </div>
-            <h1 className="text-4xl font-bold text-foreground">FRESE</h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Faire de nos Routes un Espace Sûr pour les Enfants
-            </p>
           </div>
+        </section>
 
-          {/* Description */}
+        <div className="container mx-auto px-4 py-12">
+          <div className="max-w-4xl mx-auto space-y-8">
+            {/* Description */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -193,9 +194,10 @@ const FRESE = () => {
               </p>
             </CardContent>
           </Card>
+          </div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

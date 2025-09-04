@@ -43,13 +43,13 @@ const Footer = () => {
             <h3 className="font-bold mb-4">Départements</h3>
             <ul className="space-y-2 text-gray-300">
               <li><a href="/watoto-radio" className="hover:text-white transition-colors">Watoto Radio</a></li>
-              <li>Tetea Média</li>
+              <li><a href="/tetea-media" className="hover:text-white transition-colors">Tetea Média</a></li>
               <li><a href="/tetea-mazingira" className="hover:text-white transition-colors">Tetea Mazingira</a></li>
               <li><a href="/injili-everywhere" className="hover:text-white transition-colors">Injili Everywhere</a></li>
               <li><a href="/frese" className="hover:text-white transition-colors">FRESE</a></li>
               <li><a href="/mushakulu-fm" className="hover:text-white transition-colors">Mushakulu FM</a></li>
-              <li>Family Recess Camp</li>
-              <li>LEVERSGN</li>
+              <li><a href="/family-recess-camp" className="hover:text-white transition-colors">Family Recess Camp</a></li>
+              <li><a href="/leversgn" className="hover:text-white transition-colors">LEVERSGN</a></li>
             </ul>
           </div>
 
