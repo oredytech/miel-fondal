@@ -127,9 +127,7 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
           <div className="text-white space-y-8">
             <div className="space-y-2">
-              <p className="text-sm uppercase tracking-wider font-medium text-slate-200">
-                NOTRE MISSION
-              </p>
+              
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
                 Miroir des Enfants Libres - <span className="text-[#3e0202]">Fondation Daniel Levergénois</span> "Miel-Fondal"
               </h1>
