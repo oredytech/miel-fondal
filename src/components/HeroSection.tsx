@@ -131,9 +131,7 @@ const HeroSection = () => {
                 NOTRE MISSION
               </p>
               <h1 className="text-5xl font-bold leading-tight lg:text-5xl">
-                Un avenir 
-                <span className="text-[#3e0202]"> durable</span> et 
-                <span className="text-white"> inclusif</span>
+                Miroir des Enfants Libres - Fondation Daniel Levergénois "Miel-Fondal"
               </h1>
             </div>
             
