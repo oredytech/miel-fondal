@@ -130,8 +130,8 @@ const HeroSection = () => {
               <p className="text-sm uppercase tracking-wider font-medium text-slate-200">
                 NOTRE MISSION
               </p>
-              <h1 className="text-5xl font-bold leading-tight lg:text-5xl">
-                Miroir des Enfants Libres - Fondation Daniel Levergénois "Miel-Fondal"
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+                Miroir des Enfants Libres - <span className="text-[#d39108]">Fondation Daniel Levergénois</span> "Miel-Fondal"
               </h1>
             </div>
             
