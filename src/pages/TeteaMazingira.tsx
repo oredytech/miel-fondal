@@ -133,45 +133,17 @@ const TeteaMazingira = () => {
               Découvrez nos discussions en swahili sur les questions environnementales qui touchent directement nos communautés locales.
             </p>
             
-            <div className="space-y-6">
-              {episodes.map((episode, index) => {
-                const isCurrentlyPlaying = currentEpisode === episode.id && isPlaying;
-                const bgColor = index % 2 === 0 ? "bg-[#d39108]" : "bg-[#3e0202]";
-                const hoverColor = index % 2 === 0 ? "hover:bg-[#b8570a]" : "hover:bg-[#2a0101]";
-                
-                return (
-                  <Card key={episode.id} className="shadow-lg hover:shadow-xl transition-shadow" style={{ borderRadius: '10px 0 10px 0' }}>
-                    <CardContent className="p-6">
-                      <div className="flex items-start justify-between">
-                        <div className="flex-1">
-                          <h3 className="font-bold text-lg mb-2 text-[#3e0202]">
-                            {episode.title}
-                          </h3>
-                          <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
-                            <span>{episode.date}</span>
-                            <span>{episode.duration}</span>
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-3 ml-4">
-                          <button 
-                            onClick={() => handlePlayEpisode(episode.id, episode.audioUrl)}
-                            className={`w-12 h-12 ${bgColor} rounded-full flex items-center justify-center ${hoverColor} transition-colors`}
-                          >
-                            {isCurrentlyPlaying ? (
-                              <Pause className="w-6 h-6 text-white" />
-                            ) : (
-                              <Play className="w-6 h-6 text-white" />
-                            )}
-                          </button>
-                          <div className={`w-12 h-12 ${bgColor} rounded-full flex items-center justify-center`}>
-                            <Headphones className="w-6 h-6 text-white" />
-                          </div>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                );
-              })}
+            <div className="bg-gray-50 rounded-lg p-4">
+              <iframe 
+                src="https://www.listennotes.com/podcasts/tetea-mazingira-swahili-podcast-makasi-CbFK5kHvMqy/embed/" 
+                height="600px" 
+                width="100%" 
+                style={{ width: '1px', minWidth: '100%' }}
+                loading="lazy" 
+                frameBorder="0" 
+                scrolling="no"
+                title="Tetea Mazingira Swahili Podcast"
+              />
             </div>
           </div>
         </div>
