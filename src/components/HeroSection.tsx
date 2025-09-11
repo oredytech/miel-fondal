@@ -1,13 +1,60 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Menu, X, Search } from 'lucide-react';
+import { Menu, X, Search, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { CommandDialog, CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem } from "@/components/ui/command";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
 const HeroSection = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isTranslateOpen, setIsTranslateOpen] = useState(false);
+
+  const languages = [
+    { code: 'fr', name: 'Français' },
+    { code: 'en', name: 'English' },
+    { code: 'es', name: 'Español' },
+    { code: 'pt', name: 'Português' },
+    { code: 'ar', name: 'العربية' },
+    { code: 'sw', name: 'Kiswahili' },
+    { code: 'ln', name: 'Lingala' },
+    { code: 'kg', name: 'Kikongo' },
+    { code: 'lua', name: 'Tshiluba' }
+  ];
+
+  useEffect(() => {
+    // Load Google Translate script
+    const addScript = () => {
+      const script = document.createElement('script');
+      script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      script.async = true;
+      document.body.appendChild(script);
+    };
+
+    // Initialize Google Translate
+    (window as any).googleTranslateElementInit = () => {
+      new (window as any).google.translate.TranslateElement({
+        pageLanguage: 'fr',
+        includedLanguages: languages.map(lang => lang.code).join(','),
+        layout: (window as any).google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+    };
+
+    if (!(window as any).google || !(window as any).google.translate) {
+      addScript();
+    }
+  }, []);
+
+  const translateTo = (languageCode: string) => {
+    const selectElement = document.querySelector('.goog-te-combo') as HTMLSelectElement;
+    if (selectElement) {
+      selectElement.value = languageCode;
+      selectElement.dispatchEvent(new Event('change'));
+    }
+    setIsTranslateOpen(false);
+  };
 
   return (
     <section
@@ -52,6 +99,27 @@ const HeroSection = () => {
               </button>
               
               <div className="flex items-center space-x-4">
+                <Popover open={isTranslateOpen} onOpenChange={setIsTranslateOpen}>
+                  <PopoverTrigger asChild>
+                    <button className="p-2 text-white hover:text-[#d39108] transition-colors">
+                      <Globe size={20} />
+                    </button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-56 p-2">
+                    <div className="grid gap-1 max-h-60 overflow-y-auto">
+                      {languages.map((language) => (
+                        <button
+                          key={language.code}
+                          onClick={() => translateTo(language.code)}
+                          className="flex items-center px-3 py-2 text-sm text-left hover:bg-accent hover:text-accent-foreground rounded-md transition-colors"
+                        >
+                          {language.name}
+                        </button>
+                      ))}
+                    </div>
+                  </PopoverContent>
+                </Popover>
+                
                 <button onClick={() => setIsSearchOpen(true)} className="p-2 text-white hover:text-[#d39108] transition-colors">
                   <Search size={20} />
                 </button>
@@ -169,6 +237,9 @@ const HeroSection = () => {
           <div className="w-1 h-3 bg-[#d39108] rounded-full mt-2 animate-bounce"></div>
         </div>
       </div>
+      
+      {/* Hidden Google Translate Element */}
+      <div id="google_translate_element" style={{ display: 'none' }}></div>
     </section>
   );
 };
