@@ -1,14 +1,28 @@
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Menu, X, Search } from 'lucide-react';
+import { Menu, X, Search, Globe } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
 const SCROLL_TRIGGER = 30;
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isTranslateOpen, setIsTranslateOpen] = useState(false);
   const navigate = useNavigate();
+
+  const languages = [
+    { code: 'fr', name: 'Français' },
+    { code: 'en', name: 'English' },
+    { code: 'es', name: 'Español' },
+    { code: 'pt', name: 'Português' },
+    { code: 'ar', name: 'العربية' },
+    { code: 'sw', name: 'Kiswahili' },
+    { code: 'ln', name: 'Lingala' },
+    { code: 'kg', name: 'Kikongo' },
+    { code: 'lua', name: 'Tshiluba' }
+  ];
 
   useEffect(() => {
     const onScroll = () => {
@@ -17,6 +31,39 @@ const Header = () => {
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  useEffect(() => {
+    // Load Google Translate script
+    const addScript = () => {
+      const script = document.createElement('script');
+      script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      script.async = true;
+      document.body.appendChild(script);
+    };
+
+    // Initialize Google Translate
+    (window as any).googleTranslateElementInit = () => {
+      new (window as any).google.translate.TranslateElement({
+        pageLanguage: 'fr',
+        includedLanguages: languages.map(lang => lang.code).join(','),
+        layout: (window as any).google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element_header');
+    };
+
+    if (!(window as any).google || !(window as any).google.translate) {
+      addScript();
+    }
+  }, []);
+
+  const translateTo = (languageCode: string) => {
+    const selectElement = document.querySelector('.goog-te-combo') as HTMLSelectElement;
+    if (selectElement) {
+      selectElement.value = languageCode;
+      selectElement.dispatchEvent(new Event('change'));
+    }
+    setIsTranslateOpen(false);
+  };
   
   // Classe pour le header sticky et transition
   const headerClass = [
@@ -74,6 +121,27 @@ const Header = () => {
             {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
           <div className="flex items-center space-x-4">
+            <Popover open={isTranslateOpen} onOpenChange={setIsTranslateOpen}>
+              <PopoverTrigger asChild>
+                <button className={`p-2 transition-colors ${mainTextClass}`}>
+                  <Globe size={20} />
+                </button>
+              </PopoverTrigger>
+              <PopoverContent className="w-56 p-2">
+                <div className="grid gap-1 max-h-60 overflow-y-auto">
+                  {languages.map((language) => (
+                    <button
+                      key={language.code}
+                      onClick={() => translateTo(language.code)}
+                      className="flex items-center px-3 py-2 text-sm text-left hover:bg-accent hover:text-accent-foreground rounded-md transition-colors"
+                    >
+                      {language.name}
+                    </button>
+                  ))}
+                </div>
+              </PopoverContent>
+            </Popover>
+            
             <button
               onClick={() => navigate('/search')}
               className={`p-2 transition-colors ${mainTextClass}`}
@@ -134,6 +202,9 @@ const Header = () => {
           </div>
         </div>
       )}
+      
+      {/* Hidden Google Translate Element */}
+      <div id="google_translate_element_header" style={{ display: 'none' }}></div>
     </header>
   );
 };
