@@ -1,9 +1,76 @@
 import Layout from '@/components/Layout';
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, Mic, Headphones, Globe, Target, Users, MapPin, Play } from "lucide-react";
+import { ArrowLeft, Mic, Headphones, Globe, Target, Users, MapPin, Play, Pause } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const TeteaMazingira = () => {
+  const [currentEpisode, setCurrentEpisode] = useState<string | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const episodes = [
+    {
+      id: "episode-7",
+      title: "7. Ujumbe wa DYFEM kuhusu Zahabu Safi pa Bikenge Jimboni Maniema inchini Kongo",
+      date: "10 novembre 2023",
+      duration: "3:20",
+      audioUrl: "https://www.listennotes.com/e/p/43N89DcHYfd/"
+    },
+    {
+      id: "episode-6", 
+      title: "6. Bangi nayo ni mboleo, polisi isi ilunguze tena - Philippe Aksanti, Bio Grand Lac",
+      date: "23 mai 2023",
+      duration: "11:03",
+      audioUrl: "https://www.listennotes.com/e/p/43N89DcHYfd/"
+    },
+    {
+      id: "episode-5",
+      title: "5. Angalisho - Apana kuchoma bangi - Fiston Muhingo", 
+      date: "19 mai 2023",
+      duration: "16:26",
+      audioUrl: "https://www.listennotes.com/e/p/43N89DcHYfd/"
+    },
+    {
+      id: "episode-4",
+      title: "4. Mti ni mtu, Mtu ni mti - Master Philippe Aksanti, Ajanac/Goma",
+      date: "28 avril 2023", 
+      duration: "15:00",
+      audioUrl: "https://www.listennotes.com/e/p/43N89DcHYfd/"
+    },
+    {
+      id: "episode-3",
+      title: "3. Kama ulishaka kula kihembe - Thadhée Katshuva",
+      date: "26 avril 2023",
+      duration: "14:21", 
+      audioUrl: "https://www.listennotes.com/e/p/43N89DcHYfd/"
+    },
+    {
+      id: "episode-2",
+      title: "2. Muji wa Goma ume kuwa kwenye hatari ya kuvamiwa na uchafu - Fiston Muhindo",
+      date: "28 mars 2023",
+      duration: "15:46",
+      audioUrl: "https://www.listennotes.com/e/p/43N89DcHYfd/"
+    },
+    {
+      id: "episode-1", 
+      title: "1. Mulimo wa buyoga - Ir Faustin Mupira",
+      date: "4 novembre 2022",
+      duration: "5:13",
+      audioUrl: "https://www.listennotes.com/e/p/43N89DcHYfd/"
+    }
+  ];
+
+  const handlePlayEpisode = (episodeId: string, audioUrl: string) => {
+    if (currentEpisode === episodeId && isPlaying) {
+      setIsPlaying(false);
+      setCurrentEpisode(null);
+    } else {
+      setCurrentEpisode(episodeId);
+      setIsPlaying(true);
+      // Ouvrir le lien de l'épisode dans un nouvel onglet pour la lecture
+      window.open(audioUrl, '_blank');
+    }
+  };
   return (
     <Layout>
       {/* Header avec navigation de retour */}
@@ -67,173 +134,44 @@ const TeteaMazingira = () => {
             </p>
             
             <div className="space-y-6">
-              <Card className="shadow-lg hover:shadow-xl transition-shadow" style={{ borderRadius: '10px 0 10px 0' }}>
-                <CardContent className="p-6">
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <h3 className="font-bold text-lg mb-2 text-[#3e0202]">
-                        7. Ujumbe wa DYFEM kuhusu Zahabu Safi pa Bikenge Jimboni Maniema inchini Kongo
-                      </h3>
-                      <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
-                        <span>10 novembre 2023</span>
-                        <span>3:20</span>
+              {episodes.map((episode, index) => {
+                const isCurrentlyPlaying = currentEpisode === episode.id && isPlaying;
+                const bgColor = index % 2 === 0 ? "bg-[#d39108]" : "bg-[#3e0202]";
+                const hoverColor = index % 2 === 0 ? "hover:bg-[#b8570a]" : "hover:bg-[#2a0101]";
+                
+                return (
+                  <Card key={episode.id} className="shadow-lg hover:shadow-xl transition-shadow" style={{ borderRadius: '10px 0 10px 0' }}>
+                    <CardContent className="p-6">
+                      <div className="flex items-start justify-between">
+                        <div className="flex-1">
+                          <h3 className="font-bold text-lg mb-2 text-[#3e0202]">
+                            {episode.title}
+                          </h3>
+                          <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
+                            <span>{episode.date}</span>
+                            <span>{episode.duration}</span>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-3 ml-4">
+                          <button 
+                            onClick={() => handlePlayEpisode(episode.id, episode.audioUrl)}
+                            className={`w-12 h-12 ${bgColor} rounded-full flex items-center justify-center ${hoverColor} transition-colors`}
+                          >
+                            {isCurrentlyPlaying ? (
+                              <Pause className="w-6 h-6 text-white" />
+                            ) : (
+                              <Play className="w-6 h-6 text-white" />
+                            )}
+                          </button>
+                          <div className={`w-12 h-12 ${bgColor} rounded-full flex items-center justify-center`}>
+                            <Headphones className="w-6 h-6 text-white" />
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    <div className="flex items-center gap-3 ml-4">
-                      <button className="w-12 h-12 bg-[#d39108] rounded-full flex items-center justify-center hover:bg-[#b8570a] transition-colors">
-                        <Play className="w-6 h-6 text-white" />
-                      </button>
-                      <div className="w-12 h-12 bg-[#d39108] rounded-full flex items-center justify-center">
-                        <Headphones className="w-6 h-6 text-white" />
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-lg hover:shadow-xl transition-shadow" style={{ borderRadius: '10px 0 10px 0' }}>
-                <CardContent className="p-6">
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <h3 className="font-bold text-lg mb-2 text-[#3e0202]">
-                        6. Bangi nayo ni mboleo, polisi isi ilunguze tena - Philippe Aksanti, Bio Grand Lac
-                      </h3>
-                      <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
-                        <span>23 mai 2023</span>
-                        <span>11:03</span>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3 ml-4">
-                      <button className="w-12 h-12 bg-[#3e0202] rounded-full flex items-center justify-center hover:bg-[#2a0101] transition-colors">
-                        <Play className="w-6 h-6 text-white" />
-                      </button>
-                      <div className="w-12 h-12 bg-[#3e0202] rounded-full flex items-center justify-center">
-                        <Headphones className="w-6 h-6 text-white" />
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-lg hover:shadow-xl transition-shadow" style={{ borderRadius: '10px 0 10px 0' }}>
-                <CardContent className="p-6">
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <h3 className="font-bold text-lg mb-2 text-[#3e0202]">
-                        5. Angalisho - Apana kuchoma bangi - Fiston Muhingo
-                      </h3>
-                      <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
-                        <span>19 mai 2023</span>
-                        <span>16:26</span>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3 ml-4">
-                      <button className="w-12 h-12 bg-[#d39108] rounded-full flex items-center justify-center hover:bg-[#b8570a] transition-colors">
-                        <Play className="w-6 h-6 text-white" />
-                      </button>
-                      <div className="w-12 h-12 bg-[#d39108] rounded-full flex items-center justify-center">
-                        <Headphones className="w-6 h-6 text-white" />
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-lg hover:shadow-xl transition-shadow" style={{ borderRadius: '10px 0 10px 0' }}>
-                <CardContent className="p-6">
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <h3 className="font-bold text-lg mb-2 text-[#3e0202]">
-                        4. Mti ni mtu, Mtu ni mti - Master Philippe Aksanti, Ajanac/Goma
-                      </h3>
-                      <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
-                        <span>28 avril 2023</span>
-                        <span>15:00</span>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3 ml-4">
-                      <button className="w-12 h-12 bg-[#3e0202] rounded-full flex items-center justify-center hover:bg-[#2a0101] transition-colors">
-                        <Play className="w-6 h-6 text-white" />
-                      </button>
-                      <div className="w-12 h-12 bg-[#3e0202] rounded-full flex items-center justify-center">
-                        <Headphones className="w-6 h-6 text-white" />
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-lg hover:shadow-xl transition-shadow" style={{ borderRadius: '10px 0 10px 0' }}>
-                <CardContent className="p-6">
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <h3 className="font-bold text-lg mb-2 text-[#3e0202]">
-                        3. Kama ulishaka kula kihembe - Thadhée Katshuva
-                      </h3>
-                      <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
-                        <span>26 avril 2023</span>
-                        <span>14:21</span>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3 ml-4">
-                      <button className="w-12 h-12 bg-[#d39108] rounded-full flex items-center justify-center hover:bg-[#b8570a] transition-colors">
-                        <Play className="w-6 h-6 text-white" />
-                      </button>
-                      <div className="w-12 h-12 bg-[#d39108] rounded-full flex items-center justify-center">
-                        <Headphones className="w-6 h-6 text-white" />
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-lg hover:shadow-xl transition-shadow" style={{ borderRadius: '10px 0 10px 0' }}>
-                <CardContent className="p-6">
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <h3 className="font-bold text-lg mb-2 text-[#3e0202]">
-                        2. Muji wa Goma ume kuwa kwenye hatari ya kuvamiwa na uchafu - Fiston Muhindo
-                      </h3>
-                      <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
-                        <span>28 mars 2023</span>
-                        <span>15:46</span>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3 ml-4">
-                      <button className="w-12 h-12 bg-[#3e0202] rounded-full flex items-center justify-center hover:bg-[#2a0101] transition-colors">
-                        <Play className="w-6 h-6 text-white" />
-                      </button>
-                      <div className="w-12 h-12 bg-[#3e0202] rounded-full flex items-center justify-center">
-                        <Headphones className="w-6 h-6 text-white" />
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-lg hover:shadow-xl transition-shadow" style={{ borderRadius: '10px 0 10px 0' }}>
-                <CardContent className="p-6">
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <h3 className="font-bold text-lg mb-2 text-[#3e0202]">
-                        1. Mulimo wa buyoga - Ir Faustin Mupira
-                      </h3>
-                      <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
-                        <span>4 novembre 2022</span>
-                        <span>5:13</span>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3 ml-4">
-                      <button className="w-12 h-12 bg-[#d39108] rounded-full flex items-center justify-center hover:bg-[#b8570a] transition-colors">
-                        <Play className="w-6 h-6 text-white" />
-                      </button>
-                      <div className="w-12 h-12 bg-[#d39108] rounded-full flex items-center justify-center">
-                        <Headphones className="w-6 h-6 text-white" />
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           </div>
         </div>
