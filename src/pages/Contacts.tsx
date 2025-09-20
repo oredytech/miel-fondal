@@ -78,8 +78,7 @@ const Contacts = () => {
                       <div>
                         <h3 className="font-semibold mb-1">Adresse</h3>
                         <p className="text-gray-600">
-                          Kinshasa, République Démocratique du Congo<br />
-                          Avenue de la Paix, Commune de Gombe
+                          Goma, Nord-Kivu, République Démocratique du Congo
                         </p>
                       </div>
                     </div>
