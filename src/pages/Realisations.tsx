@@ -252,20 +252,20 @@ const Realisations = () => {
           <h2 className="text-4xl font-bold text-white text-center mb-12">Notre Impact en Chiffres</h2>
           <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center text-white">
-              <div className="text-5xl font-bold mb-2">6</div>
-              <div className="text-xl">Projets Réalisés</div>
+              <div className="text-5xl font-bold mb-2"></div>
+              <div className="text-xl"></div>
             </div>
             <div className="text-center text-white">
-              <div className="text-5xl font-bold mb-2">9K+</div>
-              <div className="text-xl">Personnes Touchées</div>
+              <div className="text-5xl font-bold mb-2">Données en cours de chargement...</div>
+              <div className="text-xl"></div>
             </div>
             <div className="text-center text-white">
-              <div className="text-5xl font-bold mb-2">5</div>
-              <div className="text-xl">Provinces Couvertes</div>
+              <div className="text-5xl font-bold mb-2"></div>
+              <div className="text-xl"></div>
             </div>
             <div className="text-center text-white">
-              <div className="text-5xl font-bold mb-2">3</div>
-              <div className="text-xl">Années d'Expérience</div>
+              <div className="text-5xl font-bold mb-2"></div>
+              <div className="text-xl"></div>
             </div>
           </div>
         </div>
