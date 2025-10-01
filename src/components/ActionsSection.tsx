@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Radio, Headphones, Bell, Flag, Users, Book } from "lucide-react";
+import { Radio, Headphones, Bell, Flag, Users, Book, Shield, Heart, Leaf } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ActionsSection = () => {
   return (
@@ -22,14 +23,16 @@ const ActionsSection = () => {
             <CardContent className="p-6 h-full flex flex-col justify-between">
               <div>
                 <Radio className="w-8 h-8 text-orange-500 mb-4" />
-                <h3 className="font-bold mb-3">Tetea Média, Tetea Mazingira, FRESE et LEVERSGN</h3>
+                <h3 className="font-bold mb-3">Watoto Radio</h3>
                 <p className="text-sm text-gray-300 mb-4">
-                  Contribuent directement à la sensibilisation et à la promotion de causes environnementales et sociales.
+                  Radio dédiée aux enfants pour l'éducation et le divertissement.
                 </p>
               </div>
-              <Button className="text-white text-sm bg-[#d39108]">
-                En savoir plus
-              </Button>
+              <Link to="/watoto-radio">
+                <Button className="text-white text-sm bg-[#d39108] w-full">
+                  Découvrir
+                </Button>
+              </Link>
             </CardContent>
           </Card>
 
@@ -38,15 +41,36 @@ const ActionsSection = () => {
           }}>
             <CardContent className="p-6 h-full flex flex-col justify-between">
               <div>
-                <Headphones className="w-8 h-8 text-orange-500 mb-4" />
-                <h3 className="font-bold mb-3">Watoto Radio et Mushakulu Fm</h3>
+                <Radio className="w-8 h-8 text-orange-500 mb-4" />
+                <h3 className="font-bold mb-3">Tetea Média</h3>
                 <p className="text-sm text-gray-300 mb-4">
-                  Favorisent l'accès à l'information et le dialogue intergénérationnel.
+                  Plateforme de sensibilisation et d'information pour les jeunes.
                 </p>
               </div>
-              <Button className="text-white text-sm bg-[#d39108]">
-                Écouter
-              </Button>
+              <Link to="/tetea-media">
+                <Button className="text-white text-sm bg-[#d39108] w-full">
+                  En savoir plus
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-[#3e0202] text-white" style={{
+            borderRadius: '10px 0 10px 0'
+          }}>
+            <CardContent className="p-6 h-full flex flex-col justify-between">
+              <div>
+                <Leaf className="w-8 h-8 text-orange-500 mb-4" />
+                <h3 className="font-bold mb-3">Tetea Mazingira</h3>
+                <p className="text-sm text-gray-300 mb-4">
+                  Podcast pour la protection de l'environnement.
+                </p>
+              </div>
+              <Link to="/tetea-mazingira">
+                <Button className="text-white text-sm bg-[#d39108] w-full">
+                  Écouter
+                </Button>
+              </Link>
             </CardContent>
           </Card>
 
@@ -58,12 +82,52 @@ const ActionsSection = () => {
                 <Book className="w-8 h-8 text-orange-500 mb-4" />
                 <h3 className="font-bold mb-3">Injili Everywhere</h3>
                 <p className="text-sm text-gray-300 mb-4">
-                  Soutient le développement des jeunes et promeut des valeurs positives, chrétiennes.
+                  L'Évangile au service de l'autonomisation des jeunes chrétiens.
                 </p>
               </div>
-              <Button className="text-white text-sm bg-[#d39108]">
-                Soutenir
-              </Button>
+              <Link to="/injili-everywhere">
+                <Button className="text-white text-sm bg-[#d39108] w-full">
+                  Découvrir
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-[#3e0202] text-white" style={{
+            borderRadius: '10px 0 10px 0'
+          }}>
+            <CardContent className="p-6 h-full flex flex-col justify-between">
+              <div>
+                <Shield className="w-8 h-8 text-orange-500 mb-4" />
+                <h3 className="font-bold mb-3">FRESE</h3>
+                <p className="text-sm text-gray-300 mb-4">
+                  Sécurité routière pour les enfants en RDC.
+                </p>
+              </div>
+              <Link to="/frese">
+                <Button className="text-white text-sm bg-[#d39108] w-full">
+                  En savoir plus
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-[#3e0202] text-white" style={{
+            borderRadius: '10px 0 10px 0'
+          }}>
+            <CardContent className="p-6 h-full flex flex-col justify-between">
+              <div>
+                <Heart className="w-8 h-8 text-orange-500 mb-4" />
+                <h3 className="font-bold mb-3">Mushakulu FM</h3>
+                <p className="text-sm text-gray-300 mb-4">
+                  Dialogue intergénérationnel entre enfants et aînés.
+                </p>
+              </div>
+              <Link to="/mushakulu-fm">
+                <Button className="text-white text-sm bg-[#d39108] w-full">
+                  Écouter
+                </Button>
+              </Link>
             </CardContent>
           </Card>
 
@@ -73,14 +137,35 @@ const ActionsSection = () => {
             <CardContent className="p-6 h-full flex flex-col justify-between">
               <div>
                 <Users className="w-8 h-8 text-orange-500 mb-4" />
-                <h3 className="font-bold mb-3">Family Recess Camp “Camp de récréation familial” </h3>
+                <h3 className="font-bold mb-3">Family Recess Camp</h3>
                 <p className="text-sm text-gray-300 mb-4">
-                  Offre des formations professionnelles et linguistiques aux enfants et aux personnes adultes dans un format ludique et familial.
+                  Formations professionnelles et linguistiques dans un format familial.
                 </p>
               </div>
-              <Button className="text-white text-sm bg-[#d39108]">
-                Découvrir l'impact
-              </Button>
+              <Link to="/family-recess-camp">
+                <Button className="text-white text-sm bg-[#d39108] w-full">
+                  Découvrir
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-[#3e0202] text-white" style={{
+            borderRadius: '10px 0 10px 0'
+          }}>
+            <CardContent className="p-6 h-full flex flex-col justify-between">
+              <div>
+                <Bell className="w-8 h-8 text-orange-500 mb-4" />
+                <h3 className="font-bold mb-3">LEVERSGN</h3>
+                <p className="text-sm text-gray-300 mb-4">
+                  Protection de l'environnement par l'art et la littérature.
+                </p>
+              </div>
+              <Link to="/leversgn">
+                <Button className="text-white text-sm bg-[#d39108] w-full">
+                  En savoir plus
+                </Button>
+              </Link>
             </CardContent>
           </Card>
         </div>
