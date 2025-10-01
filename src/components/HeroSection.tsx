@@ -3,12 +3,10 @@ import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X, Search, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { CommandDialog, CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem } from "@/components/ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
 const HeroSection = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isTranslateOpen, setIsTranslateOpen] = useState(false);
 
   const languages = [
@@ -120,9 +118,9 @@ const HeroSection = () => {
                   </PopoverContent>
                 </Popover>
                 
-                <button onClick={() => setIsSearchOpen(true)} className="p-2 text-white hover:text-[#d39108] transition-colors">
+                <Link to="/search" className="p-2 text-white hover:text-[#d39108] transition-colors">
                   <Search size={20} />
-                </button>
+                </Link>
                 
                 <nav className="hidden md:flex items-center space-x-8">
                   <Link to="/" className="text-white hover:text-[#d39108] transition-colors font-medium">Accueil</Link>
@@ -158,34 +156,6 @@ const HeroSection = () => {
             </div>
           </div>
         )}
-
-        {/* Search Dialog */}
-        <CommandDialog open={isSearchOpen} onOpenChange={setIsSearchOpen}>
-          <CommandInput placeholder="Rechercher..." />
-          <CommandList>
-            <CommandEmpty>Aucun résultat trouvé.</CommandEmpty>
-            <CommandGroup heading="Pages">
-              <CommandItem>
-                <span>Accueil</span>
-              </CommandItem>
-              <CommandItem>
-                <span>Réalisations</span>
-              </CommandItem>
-              <CommandItem>
-                <span>Expériences</span>
-              </CommandItem>
-              <CommandItem>
-                <span>Départements</span>
-              </CommandItem>
-              <CommandItem>
-                <span>Blog</span>
-              </CommandItem>
-              <CommandItem>
-                <span>Contacts</span>
-              </CommandItem>
-            </CommandGroup>
-          </CommandList>
-        </CommandDialog>
       </header>
 
       {/* Content */}
