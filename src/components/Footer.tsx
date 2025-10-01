@@ -78,7 +78,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 my-0 py-0">
-          <p className="py-[6px]">Copyright © 2025 MIEL FONDAL | Fièrement conçu par Oredy TECHNOLOGIES</p>
+          <p className="py-[6px]">Copyright © 2025 MIEL FONDAL | Fièrement conçu par <a href="https://oredytech.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Oredy TECHNOLOGIES</a></p>
         </div>
       </div>
     </footer>
